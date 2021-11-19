@@ -175,6 +175,10 @@
                     <tabBarItem key="tabBarItem" title="Item" image="list.dash" catalog="system" id="5gX-13-ae7"/>
                     <navigationItem key="navigationItem" id="X3u-LY-HB4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2ft-4g-8OD" id="1IX-bo-96Z"/>
+                        <outlet property="collectionViewContainer" destination="9p8-FX-0xB" id="AB9-ch-adp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

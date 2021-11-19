@@ -21,6 +21,17 @@
 		04B5B4D0274618FA00E368FD /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */; };
 		04B5B4D22746190E00E368FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4D12746190E00E368FD /* MapViewController.swift */; };
 		04B5B4D62746211F00E368FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4D52746211F00E368FD /* ViewController.swift */; };
+		04BAA38027476D8000C7BD8E /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA37F27476D8000C7BD8E /* RealmModel.swift */; };
+		04BAA38327476E3300C7BD8E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA38227476E3300C7BD8E /* Realm */; };
+		04BAA38527476E3300C7BD8E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA38427476E3300C7BD8E /* RealmSwift */; };
+		04BAA38827477CB800C7BD8E /* LottoResultAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA38727477CB800C7BD8E /* LottoResultAPIModel.swift */; };
+		04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3892747866900C7BD8E /* LottoSpotAPIModel.swift */; };
+		04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA38B2747870C00C7BD8E /* LottoSpot.swift */; };
+		04BAA38F2747967D00C7BD8E /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA38D2747967D00C7BD8E /* ResultTableViewCell.swift */; };
+		04BAA3902747967D00C7BD8E /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA38E2747967D00C7BD8E /* ResultTableViewCell.xib */; };
+		04BAA396274796E600C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA394274796E600C7BD8E /* MottoPaperCollectionViewCell.swift */; };
+		04BAA397274796E600C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA395274796E600C7BD8E /* MottoPaperCollectionViewCell.xib */; };
+		04BAA399274797B100C7BD8E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA398274797B100C7BD8E /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +51,15 @@
 		04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		04B5B4D12746190E00E368FD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		04B5B4D52746211F00E368FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04BAA37F27476D8000C7BD8E /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		04BAA38727477CB800C7BD8E /* LottoResultAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoResultAPIModel.swift; sourceTree = "<group>"; };
+		04BAA3892747866900C7BD8E /* LottoSpotAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoSpotAPIModel.swift; sourceTree = "<group>"; };
+		04BAA38B2747870C00C7BD8E /* LottoSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoSpot.swift; sourceTree = "<group>"; };
+		04BAA38D2747967D00C7BD8E /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		04BAA38E2747967D00C7BD8E /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
+		04BAA394274796E600C7BD8E /* MottoPaperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoPaperCollectionViewCell.swift; sourceTree = "<group>"; };
+		04BAA395274796E600C7BD8E /* MottoPaperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MottoPaperCollectionViewCell.xib; sourceTree = "<group>"; };
+		04BAA398274797B100C7BD8E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BAA38527476E3300C7BD8E /* RealmSwift in Frameworks */,
+				04BAA38327476E3300C7BD8E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +96,11 @@
 			children = (
 				046783C327455F6400C4C8AC /* AppDelegate.swift */,
 				046783C527455F6400C4C8AC /* SceneDelegate.swift */,
+				04BAA38627477C9400C7BD8E /* Model */,
 				04B5B4CB2746019E00E368FD /* Storyboard */,
 				04B5B4CC274618CD00E368FD /* VC */,
 				046783CC27455F6600C4C8AC /* Assets.xcassets */,
+				04BAA3912747968800C7BD8E /* Cell */,
 				046783CE27455F6600C4C8AC /* LaunchScreen.storyboard */,
 				046783D127455F6600C4C8AC /* Info.plist */,
 			);
@@ -100,11 +124,34 @@
 			children = (
 				04B5B4C32745F9E000E368FD /* HomeViewController.swift */,
 				04B5B4CD274618EC00E368FD /* BuyViewController.swift */,
+				04BAA398274797B100C7BD8E /* ResultViewController.swift */,
 				04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */,
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
 				04B5B4D52746211F00E368FD /* ViewController.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		04BAA38627477C9400C7BD8E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04BAA37F27476D8000C7BD8E /* RealmModel.swift */,
+				04BAA38727477CB800C7BD8E /* LottoResultAPIModel.swift */,
+				04BAA38B2747870C00C7BD8E /* LottoSpot.swift */,
+				04BAA3892747866900C7BD8E /* LottoSpotAPIModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04BAA3912747968800C7BD8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04BAA38D2747967D00C7BD8E /* ResultTableViewCell.swift */,
+				04BAA38E2747967D00C7BD8E /* ResultTableViewCell.xib */,
+				04BAA394274796E600C7BD8E /* MottoPaperCollectionViewCell.swift */,
+				04BAA395274796E600C7BD8E /* MottoPaperCollectionViewCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +170,10 @@
 			dependencies = (
 			);
 			name = SeSAC_Motto;
+			packageProductDependencies = (
+				04BAA38227476E3300C7BD8E /* Realm */,
+				04BAA38427476E3300C7BD8E /* RealmSwift */,
+			);
 			productName = SeSAC_Motto;
 			productReference = 046783C027455F6400C4C8AC /* SeSAC_Motto.app */;
 			productType = "com.apple.product-type.application";
@@ -151,6 +202,9 @@
 				Base,
 			);
 			mainGroup = 046783B727455F6400C4C8AC;
+			packageReferences = (
+				04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 046783C127455F6400C4C8AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -166,7 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				046783D027455F6600C4C8AC /* LaunchScreen.storyboard in Resources */,
+				04BAA397274796E600C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */,
 				04B5B4CA2746019300E368FD /* Map.storyboard in Resources */,
+				04BAA3902747967D00C7BD8E /* ResultTableViewCell.xib in Resources */,
 				046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */,
 				046783CB27455F6400C4C8AC /* Main.storyboard in Resources */,
 				04B5B4C82746018B00E368FD /* Statistics.storyboard in Resources */,
@@ -182,13 +238,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */,
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
 				04B5B4D0274618FA00E368FD /* StatisticsViewController.swift in Sources */,
+				04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */,
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
 				04B5B4D62746211F00E368FD /* ViewController.swift in Sources */,
+				04BAA38027476D8000C7BD8E /* RealmModel.swift in Sources */,
+				04BAA396274796E600C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */,
+				04BAA399274797B100C7BD8E /* ResultViewController.swift in Sources */,
 				04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */,
 				04B5B4D22746190E00E368FD /* MapViewController.swift in Sources */,
+				04BAA38F2747967D00C7BD8E /* ResultTableViewCell.swift in Sources */,
+				04BAA38827477CB800C7BD8E /* LottoResultAPIModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +471,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04BAA38227476E3300C7BD8E /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		04BAA38427476E3300C7BD8E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 046783B827455F6400C4C8AC /* Project object */;
 }
