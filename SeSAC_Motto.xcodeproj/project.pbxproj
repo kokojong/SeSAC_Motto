@@ -27,11 +27,11 @@
 		04BAA38827477CB800C7BD8E /* LottoResultAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA38727477CB800C7BD8E /* LottoResultAPIModel.swift */; };
 		04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3892747866900C7BD8E /* LottoSpotAPIModel.swift */; };
 		04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA38B2747870C00C7BD8E /* LottoSpot.swift */; };
-		04BAA38F2747967D00C7BD8E /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA38D2747967D00C7BD8E /* ResultTableViewCell.swift */; };
-		04BAA3902747967D00C7BD8E /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA38E2747967D00C7BD8E /* ResultTableViewCell.xib */; };
-		04BAA396274796E600C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA394274796E600C7BD8E /* MottoPaperCollectionViewCell.swift */; };
-		04BAA397274796E600C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA395274796E600C7BD8E /* MottoPaperCollectionViewCell.xib */; };
-		04BAA399274797B100C7BD8E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA398274797B100C7BD8E /* ResultViewController.swift */; };
+		04BAA39E2748E57600C7BD8E /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA39C2748E57600C7BD8E /* ResultTableViewCell.swift */; };
+		04BAA39F2748E57600C7BD8E /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA39D2748E57600C7BD8E /* ResultTableViewCell.xib */; };
+		04BAA3A22748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */; };
+		04BAA3A32748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */; };
+		04BAA3A52748E6FA00C7BD8E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +55,11 @@
 		04BAA38727477CB800C7BD8E /* LottoResultAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoResultAPIModel.swift; sourceTree = "<group>"; };
 		04BAA3892747866900C7BD8E /* LottoSpotAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoSpotAPIModel.swift; sourceTree = "<group>"; };
 		04BAA38B2747870C00C7BD8E /* LottoSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoSpot.swift; sourceTree = "<group>"; };
-		04BAA38D2747967D00C7BD8E /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
-		04BAA38E2747967D00C7BD8E /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
-		04BAA394274796E600C7BD8E /* MottoPaperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoPaperCollectionViewCell.swift; sourceTree = "<group>"; };
-		04BAA395274796E600C7BD8E /* MottoPaperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MottoPaperCollectionViewCell.xib; sourceTree = "<group>"; };
-		04BAA398274797B100C7BD8E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		04BAA39C2748E57600C7BD8E /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		04BAA39D2748E57600C7BD8E /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
+		04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoPaperCollectionViewCell.swift; sourceTree = "<group>"; };
+		04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MottoPaperCollectionViewCell.xib; sourceTree = "<group>"; };
+		04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 			children = (
 				04B5B4C32745F9E000E368FD /* HomeViewController.swift */,
 				04B5B4CD274618EC00E368FD /* BuyViewController.swift */,
-				04BAA398274797B100C7BD8E /* ResultViewController.swift */,
+				04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */,
 				04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */,
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
 				04B5B4D52746211F00E368FD /* ViewController.swift */,
@@ -146,10 +146,10 @@
 		04BAA3912747968800C7BD8E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				04BAA38D2747967D00C7BD8E /* ResultTableViewCell.swift */,
-				04BAA38E2747967D00C7BD8E /* ResultTableViewCell.xib */,
-				04BAA394274796E600C7BD8E /* MottoPaperCollectionViewCell.swift */,
-				04BAA395274796E600C7BD8E /* MottoPaperCollectionViewCell.xib */,
+				04BAA39C2748E57600C7BD8E /* ResultTableViewCell.swift */,
+				04BAA39D2748E57600C7BD8E /* ResultTableViewCell.xib */,
+				04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */,
+				04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -220,9 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				046783D027455F6600C4C8AC /* LaunchScreen.storyboard in Resources */,
-				04BAA397274796E600C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */,
+				04BAA3A32748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */,
 				04B5B4CA2746019300E368FD /* Map.storyboard in Resources */,
-				04BAA3902747967D00C7BD8E /* ResultTableViewCell.xib in Resources */,
+				04BAA39F2748E57600C7BD8E /* ResultTableViewCell.xib in Resources */,
 				046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */,
 				046783CB27455F6400C4C8AC /* Main.storyboard in Resources */,
 				04B5B4C82746018B00E368FD /* Statistics.storyboard in Resources */,
@@ -246,12 +246,12 @@
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
 				04B5B4D62746211F00E368FD /* ViewController.swift in Sources */,
 				04BAA38027476D8000C7BD8E /* RealmModel.swift in Sources */,
-				04BAA396274796E600C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */,
-				04BAA399274797B100C7BD8E /* ResultViewController.swift in Sources */,
+				04BAA39E2748E57600C7BD8E /* ResultTableViewCell.swift in Sources */,
+				04BAA3A52748E6FA00C7BD8E /* ResultViewController.swift in Sources */,
 				04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */,
 				04B5B4D22746190E00E368FD /* MapViewController.swift in Sources */,
-				04BAA38F2747967D00C7BD8E /* ResultTableViewCell.swift in Sources */,
 				04BAA38827477CB800C7BD8E /* LottoResultAPIModel.swift in Sources */,
+				04BAA3A22748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

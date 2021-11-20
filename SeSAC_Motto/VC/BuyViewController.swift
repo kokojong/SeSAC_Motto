@@ -53,7 +53,7 @@ extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MottoPaperCollectionViewCell.identifier, for: indexPath) as? MottoPaperCollectionViewCell else { return UICollectionViewCell()}
         
-        cell.testLabel.text = "asdfasdf"
+//        cell.testLabel.text = "asdfasdf"
         cell.backgroundColor = .green
         
         

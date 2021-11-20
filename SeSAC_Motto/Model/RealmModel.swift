@@ -20,12 +20,13 @@ class Motto: Object {
     @Persisted var mottoDrwtNo6: Int // 6
     @Persisted var prize: Int
     @Persisted var mottoNum: Int // 몇 번 모또인지(로또 종이의 번호? - 소속)
+    @Persisted var isMotto: Bool // 모의인지 진짜인지?
 
     // PK(필수): Int, String, UUID, objectID 등 -> AutoIncrement
     @Persisted(primaryKey: true) var _id: ObjectId
       
     // 초기화
-    convenience init(mottoDrwNo: Int, mottoBuyDate: Date, mottoDrwtNo1: Int, mottoDrwtNo2: Int, mottoDrwtNo3: Int, mottoDrwtNo4: Int, mottoDrwtNo5: Int, mottoDrwtNo6: Int, mottoNum: Int) {
+    convenience init(mottoDrwNo: Int, mottoBuyDate: Date, mottoDrwtNo1: Int, mottoDrwtNo2: Int, mottoDrwtNo3: Int, mottoDrwtNo4: Int, mottoDrwtNo5: Int, mottoDrwtNo6: Int, mottoNum: Int, isMotto: Bool) {
         self.init()
         
         self.mottoDrwNo = mottoDrwNo
@@ -37,6 +38,7 @@ class Motto: Object {
         self.mottoDrwtNo5 = mottoDrwtNo5
         self.mottoDrwtNo6 = mottoDrwtNo6
         self.mottoNum = mottoNum
+        self.isMotto = isMotto
         
         self.prize = 0 // 처음에는 0으로 만들고 추후에 당첨이 된다면 업데이트 하는식
 
@@ -48,15 +50,17 @@ class MottoPaper: Object { // 한번에
     @Persisted var mottoPaperDrwNo: Int // 회차
     @Persisted var mottoPaperBuyDate: Date // 구매일자
     @Persisted var mottoPaperNum: Int // 몇 번 모또인지(컬렉션 뷰에서 나타내려고 함
+    @Persisted var isMottoPaper: Bool
     
     @Persisted var mottoPaper: List<Motto>
     
-    convenience init(mottoPaperDrwNo: Int, mottoPaperBuyDate: Date, mottoPaper: [Motto], mottoPaperNum: Int) {
+    convenience init(mottoPaperDrwNo: Int, mottoPaperBuyDate: Date, mottoPaper: [Motto], mottoPaperNum: Int, isMottoPaper: Bool) {
         self.init()
         
         self.mottoPaperDrwNo = mottoPaperDrwNo
         self.mottoPaperBuyDate = mottoPaperBuyDate
         self.mottoPaperNum = mottoPaperNum
+        self.isMottoPaper = isMottoPaper
         
         self.mottoPaper.append(objectsIn: mottoPaper)
         
