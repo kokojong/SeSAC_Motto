@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StatisticsViewController: UIViewController {
+class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

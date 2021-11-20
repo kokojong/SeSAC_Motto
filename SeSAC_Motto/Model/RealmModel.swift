@@ -18,7 +18,7 @@ class Motto: Object {
     @Persisted var mottoDrwtNo4: Int // 4
     @Persisted var mottoDrwtNo5: Int // 5
     @Persisted var mottoDrwtNo6: Int // 6
-    @Persisted var prize: Int
+    @Persisted var prize: Int // 등수(당첨)
     @Persisted var mottoNum: Int // 몇 번 모또인지(로또 종이의 번호? - 소속)
     @Persisted var isMotto: Bool // 모의인지 진짜인지?
 
@@ -76,15 +76,16 @@ class MottoPaper: Object { // 한번에
 //    "drwtNo6":25,"drwtNo4":21,"drwtNo5":22,"drwtNo2":17,"drwtNo3":19,"drwtNo1":11,"bnusNo":24
 //}
 
-class Result: Object {
+class DrawResult: Object {
     @Persisted var drwNo: Int // 회차
-    @Persisted var drwNoDate: Date // 발표일자
+    @Persisted var drwNoDate: String // 발표일자 "2021-10-23"
     @Persisted var drwtNo1: Int // 1
     @Persisted var drwtNo2: Int // 2
     @Persisted var drwtNo3: Int // 3
     @Persisted var drwtNo4: Int // 4
     @Persisted var drwtNo5: Int // 5
     @Persisted var drwtNo6: Int // 6
+    @Persisted var bnusNo: Int
     
 //    @Persisted var totSellamnt: Int // 총 판매액(안써도 될듯)
     @Persisted var firstAccumamnt: Int // 1등 총 당첨액
@@ -95,11 +96,22 @@ class Result: Object {
     
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    convenience init(drwNo: Int, drwNoDate: Date) {
+    convenience init(drwNo: Int, drwNoDate: String, drwtNo1: Int, drwtNo2: Int, drwtNo3: Int, drwtNo4: Int, drwtNo5: Int, drwtNo6: Int, firstAccumamnt: Int, firstWinamnt: Int, firstPrzwnerCo: Int, bnusNo: Int) {
         self.init()
         
         self.drwNo = drwNo
         self.drwNoDate = drwNoDate
+        self.drwtNo1 = drwtNo1
+        self.drwtNo2 = drwtNo2
+        self.drwtNo3 = drwtNo3
+        self.drwtNo4 = drwtNo4
+        self.drwtNo5 = drwtNo5
+        self.drwtNo6 = drwtNo6
+        self.bnusNo = bnusNo
+        
+        self.firstAccumamnt = firstAccumamnt
+        self.firstWinamnt = firstWinamnt
+        self.firstPrzwnerCo = firstPrzwnerCo
         
     }
     

@@ -34,6 +34,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vY9-oH-joB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w69-q9-dDE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -48,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="75.669642857142847"/>
         </scene>
-        <!--Statistics-->
+        <!--History-->
         <scene sceneID="8XM-nG-Uor">
             <objects>
-                <viewControllerPlaceholder storyboardName="Statistics" id="PNG-PK-k4v" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="HistoryViewController" storyboardName="History" id="PNG-PK-k4v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="K5v-Ug-qVm"/>
                     <navigationItem key="navigationItem" id="LA1-K3-hhy"/>
                 </viewControllerPlaceholder>

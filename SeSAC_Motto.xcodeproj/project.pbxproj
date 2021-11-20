@@ -15,10 +15,10 @@
 		04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C12745F8E100E368FD /* Home.storyboard */; };
 		04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4C32745F9E000E368FD /* HomeViewController.swift */; };
 		04B5B4C62746016A00E368FD /* Buy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C52746016A00E368FD /* Buy.storyboard */; };
-		04B5B4C82746018B00E368FD /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C72746018B00E368FD /* Statistics.storyboard */; };
+		04B5B4C82746018B00E368FD /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C72746018B00E368FD /* History.storyboard */; };
 		04B5B4CA2746019300E368FD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C92746019300E368FD /* Map.storyboard */; };
 		04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4CD274618EC00E368FD /* BuyViewController.swift */; };
-		04B5B4D0274618FA00E368FD /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */; };
+		04B5B4D0274618FA00E368FD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4CF274618FA00E368FD /* HistoryViewController.swift */; };
 		04B5B4D22746190E00E368FD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4D12746190E00E368FD /* MapViewController.swift */; };
 		04B5B4D62746211F00E368FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4D52746211F00E368FD /* ViewController.swift */; };
 		04BAA38027476D8000C7BD8E /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA37F27476D8000C7BD8E /* RealmModel.swift */; };
@@ -32,6 +32,8 @@
 		04BAA3A22748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */; };
 		04BAA3A32748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */; };
 		04BAA3A52748E6FA00C7BD8E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */; };
+		04BAA3A927490E8600C7BD8E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3A827490E8600C7BD8E /* Alamofire */; };
+		04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +47,10 @@
 		04B5B4C12745F8E100E368FD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		04B5B4C32745F9E000E368FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04B5B4C52746016A00E368FD /* Buy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Buy.storyboard; sourceTree = "<group>"; };
-		04B5B4C72746018B00E368FD /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
+		04B5B4C72746018B00E368FD /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		04B5B4C92746019300E368FD /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		04B5B4CD274618EC00E368FD /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
-		04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		04B5B4CF274618FA00E368FD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		04B5B4D12746190E00E368FD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		04B5B4D52746211F00E368FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04BAA37F27476D8000C7BD8E /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
@@ -67,7 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BAA3A927490E8600C7BD8E /* Alamofire in Frameworks */,
 				04BAA38527476E3300C7BD8E /* RealmSwift in Frameworks */,
+				04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */,
 				04BAA38327476E3300C7BD8E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,10 +103,10 @@
 				04BAA38627477C9400C7BD8E /* Model */,
 				04B5B4CB2746019E00E368FD /* Storyboard */,
 				04B5B4CC274618CD00E368FD /* VC */,
-				046783CC27455F6600C4C8AC /* Assets.xcassets */,
-				04BAA3912747968800C7BD8E /* Cell */,
 				046783CE27455F6600C4C8AC /* LaunchScreen.storyboard */,
+				04BAA3A62748EC2F00C7BD8E /* Cell */,
 				046783D127455F6600C4C8AC /* Info.plist */,
+				046783CC27455F6600C4C8AC /* Assets.xcassets */,
 			);
 			path = SeSAC_Motto;
 			sourceTree = "<group>";
@@ -113,7 +117,7 @@
 				046783C927455F6400C4C8AC /* Main.storyboard */,
 				04B5B4C12745F8E100E368FD /* Home.storyboard */,
 				04B5B4C52746016A00E368FD /* Buy.storyboard */,
-				04B5B4C72746018B00E368FD /* Statistics.storyboard */,
+				04B5B4C72746018B00E368FD /* History.storyboard */,
 				04B5B4C92746019300E368FD /* Map.storyboard */,
 			);
 			path = Storyboard;
@@ -125,7 +129,7 @@
 				04B5B4C32745F9E000E368FD /* HomeViewController.swift */,
 				04B5B4CD274618EC00E368FD /* BuyViewController.swift */,
 				04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */,
-				04B5B4CF274618FA00E368FD /* StatisticsViewController.swift */,
+				04B5B4CF274618FA00E368FD /* HistoryViewController.swift */,
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
 				04B5B4D52746211F00E368FD /* ViewController.swift */,
 			);
@@ -143,7 +147,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		04BAA3912747968800C7BD8E /* Cell */ = {
+		04BAA3A62748EC2F00C7BD8E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				04BAA39C2748E57600C7BD8E /* ResultTableViewCell.swift */,
@@ -151,7 +155,7 @@
 				04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */,
 				04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */,
 			);
-			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +177,8 @@
 			packageProductDependencies = (
 				04BAA38227476E3300C7BD8E /* Realm */,
 				04BAA38427476E3300C7BD8E /* RealmSwift */,
+				04BAA3A827490E8600C7BD8E /* Alamofire */,
+				04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */,
 			);
 			productName = SeSAC_Motto;
 			productReference = 046783C027455F6400C4C8AC /* SeSAC_Motto.app */;
@@ -204,6 +210,8 @@
 			mainGroup = 046783B727455F6400C4C8AC;
 			packageReferences = (
 				04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				04BAA3A727490E8600C7BD8E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 046783C127455F6400C4C8AC /* Products */;
 			projectDirPath = "";
@@ -225,7 +233,7 @@
 				04BAA39F2748E57600C7BD8E /* ResultTableViewCell.xib in Resources */,
 				046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */,
 				046783CB27455F6400C4C8AC /* Main.storyboard in Resources */,
-				04B5B4C82746018B00E368FD /* Statistics.storyboard in Resources */,
+				04B5B4C82746018B00E368FD /* History.storyboard in Resources */,
 				04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */,
 				04B5B4C62746016A00E368FD /* Buy.storyboard in Resources */,
 			);
@@ -241,7 +249,7 @@
 				04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */,
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
-				04B5B4D0274618FA00E368FD /* StatisticsViewController.swift in Sources */,
+				04B5B4D0274618FA00E368FD /* HistoryViewController.swift in Sources */,
 				04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */,
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
 				04B5B4D62746211F00E368FD /* ViewController.swift in Sources */,
@@ -481,6 +489,22 @@
 				version = 10.18.0;
 			};
 		};
+		04BAA3A727490E8600C7BD8E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -493,6 +517,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		04BAA3A827490E8600C7BD8E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BAA3A727490E8600C7BD8E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
