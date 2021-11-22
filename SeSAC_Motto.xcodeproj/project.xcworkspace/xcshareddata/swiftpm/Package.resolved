@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Pageboy",
+        "repositoryURL": "https://github.com/uias/Pageboy",
+        "state": {
+          "branch": null,
+          "revision": "34ecb6e7c4e0e07494960ab2f7cc9a02293915a6",
+          "version": "3.6.2"
+        }
+      },
+      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa.git",
         "state": {
@@ -35,6 +44,15 @@
           "branch": null,
           "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "Tabman",
+        "repositoryURL": "https://github.com/uias/Tabman.git",
+        "state": {
+          "branch": null,
+          "revision": "f43489cdd743ba7ad86a422ebb5fcbf34e333df4",
+          "version": "2.11.1"
         }
       }
     ]

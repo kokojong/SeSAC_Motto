@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         
         drawResults = localRealm.objects(DrawResult.self)
         
-        for i in 1...3 {
+        for i in 1...10 {
             let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: i))
 
             if drawResults.filter(predicate).count == 0 {
@@ -35,11 +35,6 @@ class HomeViewController: UIViewController {
             
         }
         
-        
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
     func loadDrawData(drwNo: Int) {
@@ -86,27 +81,8 @@ class HomeViewController: UIViewController {
                     let firstWinamnt = json["firstWinamnt"].intValue
                     let firstPrzwnerCo = json["firstPrzwnerCo"].intValue
                     
-                    
-                    //
                     let result = DrawResult(drwNo: drwNo, drwNoDate: drwNoDate, drwtNo1: drwtNo1, drwtNo2: drwtNo2, drwtNo3: drwtNo3, drwtNo4: drwtNo4, drwtNo5: drwtNo5, drwtNo6: drwtNo6, firstAccumamnt: firstAccumamnt, firstWinamnt: firstWinamnt, firstPrzwnerCo: firstPrzwnerCo, bnusNo: bnusNo)
-  
                     self.saveResult(drawResult: result)
-//
-//                    let date = json["drwNoDate"].stringValue
-//                    let drwtNumbers: [Any] = [drwtNo1, drwtNo2, drwtNo3, drwtNo4, drwtNo5, drwtNo6, bnusNo, date]
-//                    UserDefaults.standard.set(drwtNumbers, forKey: drwNo)
-//                    print(drwtNumbers)
-//                    self.drwDateLabel.text = "\(date) 추첨"
-//
-//                    self.result1Label.text = "\(drwtNo1)"
-//                    self.result2Label.text = "\(drwtNo2)"
-//                    self.result3Label.text = "\(drwtNo3)"
-//                    self.result4Label.text = "\(drwtNo4)"
-//                    self.result5Label.text = "\(drwtNo5)"
-//                    self.result6Label.text = "\(drwtNo6)"
-//
-//                    self.resultBonusLabel.text = "\(bnusNo)"
-                    
                     
                 case .failure(let error):
                     // 네트워크 오류라던가
