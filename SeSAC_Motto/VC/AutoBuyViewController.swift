@@ -55,6 +55,7 @@ class AutoBuyViewController: UIViewController {
         exceptCollectionView.collectionViewLayout = exceptLayout
         
         includeCollectionView.allowsMultipleSelection = true
+        exceptCollectionView.allowsMultipleSelection = true
         
     }
     @IBAction func onSave5GamesButtonClicked(_ sender: UIBarButtonItem) {
@@ -62,17 +63,16 @@ class AutoBuyViewController: UIViewController {
         if checkIsPosible() {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoPaperViewController.identifier) as? LottoPaperViewController else { return }
             vc.includedNumberList = self.includedNumberList.sorted()
-            vc.exceptedNumberList = self.includedNumberList.sorted()
+            vc.exceptedNumberList = self.exceptedNumberList.sorted()
+            vc.isMotto = true
             present(vc, animated: true, completion: nil)
             
         } else {
             
             let alert = UIAlertController(title: "잘못된 선택", message: "가능한 조합이 없습니다", preferredStyle: .alert)
-            // 2. UIAlertAction 생성 : 버튼들을 만들어준다
             let ok = UIAlertAction(title: "다시 설정 하기", style: .default)
             alert.addAction(ok)
-            
-            // 4. Present (보여줌) - modal처럼
+        
             present(alert, animated: true, completion: nil)
         }
     
