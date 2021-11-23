@@ -168,10 +168,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXW-w9-5hY" userLabel="ScrollContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="743"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="683"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kx6-Gb-tPP">
-                                                <rect key="frame" x="0.0" y="51" width="414" height="310.5"/>
+                                                <rect key="frame" x="20" y="51" width="374" height="280.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Kx6-Gb-tPP" secondAttribute="height" multiplier="8:6" id="GBK-TH-FFq"/>
@@ -194,7 +194,7 @@
                                                 </cells>
                                             </collectionView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pGT-SN-aJ5">
-                                                <rect key="frame" x="0.0" y="412.5" width="414" height="310.5"/>
+                                                <rect key="frame" x="20" y="382.5" width="374" height="280.5"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pGT-SN-aJ5" secondAttribute="height" multiplier="8:6" id="9RY-0f-ves"/>
@@ -219,7 +219,7 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포함하지 않을 숫자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU3-QA-uJS">
-                                                <rect key="frame" x="8" y="381.5" width="127" height="21"/>
+                                                <rect key="frame" x="8" y="351.5" width="127" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -233,17 +233,17 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
-                                            <constraint firstItem="Kx6-Gb-tPP" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" id="1RF-gN-kb2"/>
+                                            <constraint firstItem="Kx6-Gb-tPP" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" constant="20" id="1RF-gN-kb2"/>
                                             <constraint firstItem="CU3-QA-uJS" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" constant="8" id="E1e-Sp-fRA"/>
                                             <constraint firstItem="CU3-QA-uJS" firstAttribute="top" secondItem="Kx6-Gb-tPP" secondAttribute="bottom" constant="20" id="FFs-rP-h5O"/>
-                                            <constraint firstItem="pGT-SN-aJ5" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" id="NPp-Br-a2d"/>
+                                            <constraint firstItem="pGT-SN-aJ5" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" constant="20" id="NPp-Br-a2d"/>
                                             <constraint firstItem="pGT-SN-aJ5" firstAttribute="top" secondItem="CU3-QA-uJS" secondAttribute="bottom" constant="10" id="Ohm-gW-zoo"/>
                                             <constraint firstItem="Kx6-Gb-tPP" firstAttribute="top" secondItem="fyW-dn-dQA" secondAttribute="bottom" constant="10" id="SC0-VV-D94"/>
                                             <constraint firstItem="fyW-dn-dQA" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" constant="8" id="TOM-b3-Xrl"/>
                                             <constraint firstItem="fyW-dn-dQA" firstAttribute="top" secondItem="ZXW-w9-5hY" secondAttribute="top" constant="20" id="Tkf-PP-U0a"/>
                                             <constraint firstAttribute="bottom" secondItem="pGT-SN-aJ5" secondAttribute="bottom" constant="20" id="XBw-cC-whc"/>
-                                            <constraint firstAttribute="trailing" secondItem="pGT-SN-aJ5" secondAttribute="trailing" id="hpw-RE-5GG"/>
-                                            <constraint firstAttribute="trailing" secondItem="Kx6-Gb-tPP" secondAttribute="trailing" id="pZR-uG-8EU"/>
+                                            <constraint firstAttribute="trailing" secondItem="pGT-SN-aJ5" secondAttribute="trailing" constant="20" id="hpw-RE-5GG"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kx6-Gb-tPP" secondAttribute="trailing" constant="20" id="pZR-uG-8EU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -268,16 +268,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k7o-gC-O7C">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="a1x-kH-Wfs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="tiM-En-1ss">
-                                <rect key="frame" x="345" y="6.5" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="5게임 저장"/>
-                                <connections>
-                                    <segue destination="7ZN-ch-8Wp" kind="modal" id="HJW-qs-Coy"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="JTY-Sl-GEs">
+                            <connections>
+                                <action selector="onSave5GamesButtonClicked:" destination="PXF-Bp-NTw" id="9Jd-fZ-ne2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -364,10 +358,10 @@
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="799.55357142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Lotto Paper View Controller-->
         <scene sceneID="GYo-Gq-VKr">
             <objects>
-                <viewController id="7ZN-ch-8Wp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LottoPaperViewController" id="7ZN-ch-8Wp" customClass="LottoPaperViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZK6-PW-hfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,9 +408,6 @@
             <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="HJW-qs-Coy"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">

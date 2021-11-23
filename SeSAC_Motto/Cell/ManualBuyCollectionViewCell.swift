@@ -17,9 +17,12 @@ class ManualBuyCollectionViewCell: UICollectionViewCell {
         didSet {
             if isSelected {
                 self.backgroundColor = .yellow
+                print(isSelected)
             } else {
                 self.backgroundColor = .green
+                print(isSelected)
             }
+            
             
         }
     }

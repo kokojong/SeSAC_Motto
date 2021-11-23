@@ -30,7 +30,9 @@ class AutoBuyViewController: UIViewController {
 
         let spacing:CGFloat = 10
         let includeLayout = UICollectionViewFlowLayout()
-        let itemSize = (UIScreen.main.bounds.width - 9 * spacing) / 8
+//        let test = view.frame.size.width // 이렇게 하면 된다던데..? -> 똑같은 결과(스크린의 크기)
+        let itemSize = (UIScreen.main.bounds.width - 9 * spacing - 40) / 8 // 좌우 제약조건만큼 빼주고 나누기
+
         includeLayout.itemSize = CGSize(width: itemSize, height: itemSize)
         includeLayout.minimumLineSpacing = spacing
         includeLayout.minimumInteritemSpacing = spacing
@@ -55,13 +57,48 @@ class AutoBuyViewController: UIViewController {
         includeCollectionView.allowsMultipleSelection = true
         
     }
-    
-    func countIncludedNumber() -> Int {
+    @IBAction func onSave5GamesButtonClicked(_ sender: UIBarButtonItem) {
         
-        return includedNumberList.count
+        if checkIsPosible() {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoPaperViewController.identifier) as? LottoPaperViewController else { return }
+            vc.includedNumberList = self.includedNumberList.sorted()
+            vc.exceptedNumberList = self.includedNumberList.sorted()
+            present(vc, animated: true, completion: nil)
+            
+        } else {
+            
+            let alert = UIAlertController(title: "잘못된 선택", message: "가능한 조합이 없습니다", preferredStyle: .alert)
+            // 2. UIAlertAction 생성 : 버튼들을 만들어준다
+            let ok = UIAlertAction(title: "다시 설정 하기", style: .default)
+            alert.addAction(ok)
+            
+            // 4. Present (보여줌) - modal처럼
+            present(alert, animated: true, completion: nil)
+        }
+    
+        
+        
+        
     }
-
-
+    
+    func checkIsPosible() -> Bool {
+        
+        let commonNumList = includedNumberList.filter{exceptedNumberList.contains($0) }
+        print(includedNumberList)
+        
+        if includedNumberList.count > 6  || exceptedNumberList.count > 39 {
+            
+            return false
+            
+        } else if commonNumList.count > 0 {
+            return false
+        } else {
+            return true
+        }
+        
+        
+    }
+    
 }
 
 extension AutoBuyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -92,28 +129,49 @@ extension AutoBuyViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == includeCollectionView {
-//            guard let cell = includeCollectionView.dequeueReusableCell(withReuseIdentifier: ManualBuyCollectionViewCell.identifier, for: indexPath) as? ManualBuyCollectionViewCell else { return }
-            guard let cell = includeCollectionView.cellForItem(at: indexPath) as? ManualBuyCollectionViewCell else { return }
-            
-            cell.isSelected = !cell.isSelected
-            let num = indexPath.row
-            
-            if includedNumberList.contains(indexPath.row + 1){ // 해당하는 넘버가 있는 경우(다시 누르는 경우)
+            includedNumberList.append(indexPath.row + 1)
+ 
+        } else { // exceptCollectionView
+            exceptedNumberList.append(indexPath.row + 1)
+
+        }
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == includeCollectionView {
+            if includedNumberList.contains(indexPath.row + 1){
                 if let index = includedNumberList.firstIndex(of: indexPath.row + 1) {
-                    includedNumberList.remove(at: index) // array is now ["world"]
-                print(includedNumberList)
+                    includedNumberList.remove(at: index)
+                   
                 }
-            } else {
-                includedNumberList.append(indexPath.row + 1)
-                print(includedNumberList)
+            }
+        } else {
+            if exceptedNumberList.contains(indexPath.row + 1){
+                if let index = exceptedNumberList.firstIndex(of: indexPath.row + 1) {
+                    exceptedNumberList.remove(at: index)
+             
+                }
             }
             
-        
-        } else { // exceptCollectionView
-           
         }
-        
     }
+    
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+//        if let selectedItems = collectionView.indexPathsForSelectedItems {
+//            if selectedItems.contains(indexPath) {
+//                collectionView.deselectItem(at: indexPath, animated: true)
+//                print("contains")
+//                return false
+//            }
+//
+//        }
+//        print("true")
+//        return true
+//
+//    }
     
     
     
