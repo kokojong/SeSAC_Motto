@@ -33,8 +33,6 @@
 		04BAA3A52748E6FA00C7BD8E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */; };
 		04BAA3A927490E8600C7BD8E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3A827490E8600C7BD8E /* Alamofire */; };
 		04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */; };
-		04BAA3B8274B53CF00C7BD8E /* ManualBuyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3B6274B53CF00C7BD8E /* ManualBuyTableViewCell.swift */; };
-		04BAA3B9274B53CF00C7BD8E /* ManualBuyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3B7274B53CF00C7BD8E /* ManualBuyTableViewCell.xib */; };
 		04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */; };
 		04BAA3BD274B540600C7BD8E /* ManualBuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */; };
 		04BAA3BF274B626000C7BD8E /* AutoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BE274B626000C7BD8E /* AutoBuyViewController.swift */; };
@@ -66,8 +64,6 @@
 		04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoPaperCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MottoPaperCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		04BAA3B6274B53CF00C7BD8E /* ManualBuyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBuyTableViewCell.swift; sourceTree = "<group>"; };
-		04BAA3B7274B53CF00C7BD8E /* ManualBuyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBuyTableViewCell.xib; sourceTree = "<group>"; };
 		04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBuyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBuyCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BAA3BE274B626000C7BD8E /* AutoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBuyViewController.swift; sourceTree = "<group>"; };
@@ -163,8 +159,6 @@
 			children = (
 				04BAA39C2748E57600C7BD8E /* ResultTableViewCell.swift */,
 				04BAA39D2748E57600C7BD8E /* ResultTableViewCell.xib */,
-				04BAA3B6274B53CF00C7BD8E /* ManualBuyTableViewCell.swift */,
-				04BAA3B7274B53CF00C7BD8E /* ManualBuyTableViewCell.xib */,
 				04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */,
 				04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */,
 				04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */,
@@ -242,7 +236,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BAA3B9274B53CF00C7BD8E /* ManualBuyTableViewCell.xib in Resources */,
 				046783D027455F6600C4C8AC /* LaunchScreen.storyboard in Resources */,
 				04BAA3A32748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */,
 				04B5B4CA2746019300E368FD /* Map.storyboard in Resources */,
@@ -278,7 +271,6 @@
 				04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */,
 				04B5B4D22746190E00E368FD /* MapViewController.swift in Sources */,
 				04BAA38827477CB800C7BD8E /* LottoResultAPIModel.swift in Sources */,
-				04BAA3B8274B53CF00C7BD8E /* ManualBuyTableViewCell.swift in Sources */,
 				04BAA3A22748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

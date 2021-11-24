@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     
     var drawResults : Results<DrawResult>!
     
+    
     var recentDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") {
         didSet {
             drawNumLabel.text = "\(recentDrawNo)"

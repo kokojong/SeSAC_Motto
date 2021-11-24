@@ -38,8 +38,7 @@ class BuyViewController: UIViewController {
         
         let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
         mottoPapers = localRealm.objects(MottoPaper.self).filter(predicate)
-        print("mottoPapers", mottoPapers)
-        print("nextDrawNo", nextDrawNo)
+      
         
         collectionView.delegate = self
         collectionView.dataSource = self
