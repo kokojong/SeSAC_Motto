@@ -6,14 +6,40 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BuyViewController: UIViewController {
     @IBOutlet weak var collectionViewContainer: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var nextDrawNoLabel: UILabel!
+    
+    let localRealm = try! Realm()
+    
+    var mottoPapers: Results<MottoPaper>! // 해당 회차의 paper(realm 데이터)
+    
+    var nextDrawNo = 0 {
+        didSet {
+            nextDrawNoLabel.text = "\(nextDrawNo)"
+            print("nextDrawNo",nextDrawNo)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.reloadData()
+        nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
+        
+        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
+        mottoPapers = localRealm.objects(MottoPaper.self).filter(predicate)
+        print("mottoPapers", mottoPapers)
+        print("nextDrawNo", nextDrawNo)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -37,15 +63,15 @@ class BuyViewController: UIViewController {
         
         collectionView.collectionViewLayout = flowLayout
         
+       
         
-        // Do any additional setup after loading the view.
     }
     
 }
 
 extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return mottoPapers.count
     }
     
     
@@ -53,8 +79,31 @@ extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MottoPaperCollectionViewCell.identifier, for: indexPath) as? MottoPaperCollectionViewCell else { return UICollectionViewCell()}
         
-//        cell.testLabel.text = "asdfasdf"
-        cell.backgroundColor = .green
+        let row = indexPath.row
+        
+        let predicate = NSPredicate(format: "mottoPaperNum == %@", NSNumber(integerLiteral: indexPath.row))
+        // 5개의 게임 정보를 담고있는 List<Motto>
+        let mottoPaper = mottoPapers.filter(predicate).first!.mottoPaper
+       
+        let gameCount = mottoPaper.count
+        
+        for i in 0...gameCount-1 {
+            let predicate = NSPredicate(format: "mottoNum == %@", NSNumber(integerLiteral: i))
+            let game = mottoPaper.filter(predicate).first! // 0~4번 게임
+            
+            switch i {
+            case 0 : cell.gameALabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
+            case 1 : cell.gameBLabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
+            case 2 : cell.gameCLabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
+            case 3 : cell.gameDLabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
+            case 4 : cell.gameELabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
+            default : print("default")
+            }
+            
+        
+        }
+        
+        cell.backgroundColor = .yellow
         
         
         return cell

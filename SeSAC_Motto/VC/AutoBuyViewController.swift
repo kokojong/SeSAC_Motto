@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AutoBuyViewController: UIViewController {
 
@@ -15,8 +16,16 @@ class AutoBuyViewController: UIViewController {
     var includedNumberList: [Int] = []
     var exceptedNumberList: [Int] = []
     
+    let localRealm = try! Realm()
+    
+    var mottoPapers: Results<MottoPaper>!
+    
+    var nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mottoPapers = localRealm.objects(MottoPaper.self)
         
         includeCollectionView.delegate = self
         includeCollectionView.dataSource = self
@@ -30,7 +39,6 @@ class AutoBuyViewController: UIViewController {
 
         let spacing:CGFloat = 10
         let includeLayout = UICollectionViewFlowLayout()
-//        let test = view.frame.size.width // 이렇게 하면 된다던데..? -> 똑같은 결과(스크린의 크기)
         let itemSize = (UIScreen.main.bounds.width - 9 * spacing - 40) / 8 // 좌우 제약조건만큼 빼주고 나누기
 
         includeLayout.itemSize = CGSize(width: itemSize, height: itemSize)
@@ -65,6 +73,12 @@ class AutoBuyViewController: UIViewController {
             vc.includedNumberList = self.includedNumberList.sorted()
             vc.exceptedNumberList = self.exceptedNumberList.sorted()
             vc.isMotto = true
+            
+            // 여기에
+//            vc.mottoPaperCount =
+            let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
+            vc.mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
+            print("vc.mottoPaperCount",vc.mottoPaperCount)
             present(vc, animated: true, completion: nil)
             
         } else {

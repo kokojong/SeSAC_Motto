@@ -31,10 +31,25 @@ class LottoPaperViewController: UIViewController {
     
     var isMotto: Bool = false
     
-    var mottoDrwNo = 1
+    var mottoPaperCount = 0
+    
+    var nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1 {
+        didSet {
+            print("nextDrawNo",nextDrawNo)
+        }
+    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        // 해당 회차에 paper가 몇개인지 세주기 -> 그걸 mottoPaperNum로 해주기
+//        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
+//        mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
+//        print("mottoPaperCount",mottoPaperCount)
+//
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         mottoPapers = localRealm.objects(MottoPaper.self)
         
@@ -51,10 +66,10 @@ class LottoPaperViewController: UIViewController {
         var mottoList: [Motto] = []
         for i in 0...4 {
             let resultNumberList = createNumberList()[0...5].sorted()
-            let motto =  Motto(mottoDrwNo: mottoDrwNo, mottoBuyDate: Date(), mottoDrwtNo1: resultNumberList[0], mottoDrwtNo2: resultNumberList[1], mottoDrwtNo3: resultNumberList[2], mottoDrwtNo4: resultNumberList[3], mottoDrwtNo5: resultNumberList[4], mottoDrwtNo6: resultNumberList[5], mottoNum: i, isMotto: isMotto)
+            let motto =  Motto(mottoDrwNo: nextDrawNo, mottoBuyDate: Date(), mottoDrwtNo1: resultNumberList[0], mottoDrwtNo2: resultNumberList[1], mottoDrwtNo3: resultNumberList[2], mottoDrwtNo4: resultNumberList[3], mottoDrwtNo5: resultNumberList[4], mottoDrwtNo6: resultNumberList[5], mottoNum: i, isMotto: isMotto)
             mottoList.append(motto)
         }
-        let mottoPaper = MottoPaper(mottoPaperDrwNo: 1, mottoPaperBuyDate: Date(), mottoPaper: mottoList, mottoPaperNum: 1, isMottoPaper: isMotto)
+        let mottoPaper = MottoPaper(mottoPaperDrwNo: nextDrawNo, mottoPaperBuyDate: Date(), mottoPaper: mottoList, mottoPaperNum: mottoPaperCount, isMottoPaper: isMotto)
        
         
         try! localRealm.write{

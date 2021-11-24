@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--BuyViewController-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="BuyViewController" id="Y6W-OH-hqX" customClass="BuyViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyViewController" id="Y6W-OH-hqX" userLabel="BuyViewController" customClass="BuyViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,6 +150,7 @@
                     <connections>
                         <outlet property="collectionView" destination="2ft-4g-8OD" id="1IX-bo-96Z"/>
                         <outlet property="collectionViewContainer" destination="9p8-FX-0xB" id="AB9-ch-adp"/>
+                        <outlet property="nextDrawNoLabel" destination="m5a-gg-t5M" id="9oQ-wf-PWU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -268,7 +269,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k7o-gC-O7C">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="JTY-Sl-GEs">
+                        <barButtonItem key="rightBarButtonItem" title="5게임 저장" id="JTY-Sl-GEs">
                             <connections>
                                 <action selector="onSave5GamesButtonClicked:" destination="PXF-Bp-NTw" id="9Jd-fZ-ne2"/>
                             </connections>
@@ -348,9 +349,6 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="저장"/>
                             </button>
-                            <connections>
-                                <segue destination="7ZN-ch-8Wp" kind="modal" id="9jP-7A-Pna"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -363,7 +361,7 @@
             <objects>
                 <viewController storyboardIdentifier="LottoPaperViewController" id="7ZN-ch-8Wp" customClass="LottoPaperViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZK6-PW-hfK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nm1-wJ-GRx">

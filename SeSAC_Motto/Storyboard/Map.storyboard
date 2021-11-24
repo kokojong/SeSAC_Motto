@@ -16,13 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zyb-ue-BPl">
-                                <rect key="frame" x="20" y="64" width="374" height="721"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zyb-ue-BPl">
+                                <rect key="frame" x="20" y="64" width="374" height="729"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zyb-ue-BPl" secondAttribute="trailing" constant="20" id="0mS-cL-CBd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Zyb-ue-BPl" secondAttribute="bottom" constant="20" id="f8Q-hb-vJi"/>
+                            <constraint firstItem="Zyb-ue-BPl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="gxf-26-tJz"/>
+                            <constraint firstItem="Zyb-ue-BPl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="lIz-zW-2Tt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="map.fill" catalog="system" id="O92-qt-Ltt"/>
                     <navigationItem key="navigationItem" id="OS6-TN-nqI"/>
