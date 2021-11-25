@@ -17,14 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-TL-N9y" userLabel="container">
-                                <rect key="frame" x="8" y="128" width="398" height="725"/>
+                                <rect key="frame" x="10.5" y="163" width="393" height="580"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06C-hz-UrM">
-                                        <rect key="frame" x="8" y="69" width="382" height="200"/>
+                                        <rect key="frame" x="8" y="49" width="377" height="174"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-mz-g3X">
-                                                <rect key="frame" x="8" y="100.5" width="366" height="31"/>
+                                                <rect key="frame" x="8" y="110" width="361" height="44"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="FqL-BV-0WL"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
                                                 <connections>
@@ -32,7 +35,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc9-Oc-re2">
-                                                <rect key="frame" x="8" y="40" width="366" height="20.5"/>
+                                                <rect key="frame" x="8" y="8" width="361" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -41,26 +44,22 @@
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstItem="BfN-mz-g3X" firstAttribute="leading" secondItem="06C-hz-UrM" secondAttribute="leading" constant="8" id="0PX-4V-Jyv"/>
-                                            <constraint firstAttribute="height" constant="200" id="7gK-4n-wit"/>
                                             <constraint firstItem="xc9-Oc-re2" firstAttribute="leading" secondItem="06C-hz-UrM" secondAttribute="leading" constant="8" id="SCu-jz-zkU"/>
                                             <constraint firstAttribute="trailing" secondItem="xc9-Oc-re2" secondAttribute="trailing" constant="8" id="UdA-Um-Nb7"/>
-                                            <constraint firstItem="BfN-mz-g3X" firstAttribute="top" secondItem="xc9-Oc-re2" secondAttribute="bottom" constant="40" id="WKG-0q-Za0"/>
-                                            <constraint firstItem="xc9-Oc-re2" firstAttribute="top" secondItem="06C-hz-UrM" secondAttribute="top" constant="40" id="lON-4L-kW4"/>
+                                            <constraint firstAttribute="bottom" secondItem="BfN-mz-g3X" secondAttribute="bottom" constant="20" id="dir-rp-pZe"/>
+                                            <constraint firstItem="xc9-Oc-re2" firstAttribute="top" secondItem="06C-hz-UrM" secondAttribute="top" constant="8" id="lON-4L-kW4"/>
                                             <constraint firstAttribute="trailing" secondItem="BfN-mz-g3X" secondAttribute="trailing" constant="8" id="y9X-74-CDu"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Ej-U9t">
-                                        <rect key="frame" x="8" y="424" width="382" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-ko-z7c">
-                                        <rect key="frame" x="8" y="485" width="382" height="200"/>
+                                        <rect key="frame" x="8" y="304" width="377" height="174"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jED-hw-tRt">
-                                                <rect key="frame" x="8" y="100.5" width="366" height="31"/>
+                                                <rect key="frame" x="8" y="110" width="361" height="44"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="afJ-Ay-qjq"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
                                                 <connections>
@@ -68,7 +67,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsG-cz-m43">
-                                                <rect key="frame" x="8" y="40" width="366" height="20.5"/>
+                                                <rect key="frame" x="8" y="8" width="361" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -79,33 +78,39 @@
                                             <constraint firstItem="DsG-cz-m43" firstAttribute="leading" secondItem="Rpb-ko-z7c" secondAttribute="leading" constant="8" id="WOJ-yD-TZV"/>
                                             <constraint firstAttribute="trailing" secondItem="DsG-cz-m43" secondAttribute="trailing" constant="8" id="eIB-v2-mmw"/>
                                             <constraint firstAttribute="trailing" secondItem="jED-hw-tRt" secondAttribute="trailing" constant="8" id="gtr-Sa-f6m"/>
-                                            <constraint firstItem="jED-hw-tRt" firstAttribute="top" secondItem="DsG-cz-m43" secondAttribute="bottom" constant="40" id="mP4-Pq-Q81"/>
-                                            <constraint firstItem="DsG-cz-m43" firstAttribute="top" secondItem="Rpb-ko-z7c" secondAttribute="top" constant="40" id="u6q-Qf-kmS"/>
+                                            <constraint firstAttribute="bottom" secondItem="jED-hw-tRt" secondAttribute="bottom" constant="20" id="i5c-Tc-sfU"/>
+                                            <constraint firstItem="DsG-cz-m43" firstAttribute="top" secondItem="Rpb-ko-z7c" secondAttribute="top" constant="8" id="u6q-Qf-kmS"/>
                                             <constraint firstItem="jED-hw-tRt" firstAttribute="leading" secondItem="Rpb-ko-z7c" secondAttribute="leading" constant="8" id="wOU-5Y-trt"/>
-                                            <constraint firstAttribute="height" constant="200" id="x9m-ys-nME"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-wx-b2r">
-                                        <rect key="frame" x="8" y="8" width="382" height="21"/>
+                                        <rect key="frame" x="8" y="8" width="377" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Ej-U9t">
+                                        <rect key="frame" x="8" y="263" width="377" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Mat-wx-b2r" secondAttribute="trailing" constant="8" id="5eR-FD-SKs"/>
                                     <constraint firstItem="Rpb-ko-z7c" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="7MZ-Hu-0eW"/>
                                     <constraint firstAttribute="trailing" secondItem="Rpb-ko-z7c" secondAttribute="trailing" constant="8" id="Cgh-Xu-k73"/>
+                                    <constraint firstItem="06C-hz-UrM" firstAttribute="height" secondItem="fAS-TL-N9y" secondAttribute="height" multiplier="0.3" id="Jly-BQ-CZ2"/>
                                     <constraint firstAttribute="trailing" secondItem="06C-hz-UrM" secondAttribute="trailing" constant="8" id="Km3-7E-7nY"/>
-                                    <constraint firstItem="Rpb-ko-z7c" firstAttribute="top" secondItem="7RF-Ej-U9t" secondAttribute="bottom" constant="40" id="OTu-eL-7kC"/>
-                                    <constraint firstItem="7RF-Ej-U9t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="06C-hz-UrM" secondAttribute="bottom" constant="40" id="Pat-hq-pWx"/>
-                                    <constraint firstItem="06C-hz-UrM" firstAttribute="top" secondItem="Mat-wx-b2r" secondAttribute="bottom" constant="40" id="RQM-Yz-IFD"/>
+                                    <constraint firstItem="Rpb-ko-z7c" firstAttribute="height" secondItem="06C-hz-UrM" secondAttribute="height" id="Ljp-ZZ-4fR"/>
+                                    <constraint firstItem="Rpb-ko-z7c" firstAttribute="top" secondItem="7RF-Ej-U9t" secondAttribute="bottom" constant="20" id="OTu-eL-7kC"/>
+                                    <constraint firstItem="06C-hz-UrM" firstAttribute="top" secondItem="Mat-wx-b2r" secondAttribute="bottom" constant="20" id="RQM-Yz-IFD"/>
                                     <constraint firstItem="06C-hz-UrM" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="SaS-Ut-G8s"/>
                                     <constraint firstItem="Mat-wx-b2r" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="T3N-nW-FFq"/>
                                     <constraint firstItem="7RF-Ej-U9t" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="Xbz-VG-Bb6"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rpb-ko-z7c" secondAttribute="bottom" constant="40" id="ad7-ey-EPp"/>
                                     <constraint firstAttribute="trailing" secondItem="7RF-Ej-U9t" secondAttribute="trailing" constant="8" id="hBo-4M-nm0"/>
+                                    <constraint firstItem="7RF-Ej-U9t" firstAttribute="top" secondItem="06C-hz-UrM" secondAttribute="bottom" constant="40" id="hIR-Rp-YHo"/>
                                     <constraint firstItem="Mat-wx-b2r" firstAttribute="top" secondItem="fAS-TL-N9y" secondAttribute="top" constant="8" id="sLI-YC-XBu"/>
                                 </constraints>
                             </view>
@@ -113,10 +118,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fAS-TL-N9y" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="40" id="Ihz-hE-iIG"/>
-                            <constraint firstItem="fAS-TL-N9y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="QVz-fS-3FY"/>
-                            <constraint firstItem="fAS-TL-N9y" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="h4Y-t1-vrv"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fAS-TL-N9y" secondAttribute="trailing" constant="8" id="vZm-gZ-DdI"/>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="9QW-1o-QJK"/>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="2.5" id="ffA-E7-S2g"/>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.95" id="kmw-Ts-YPW"/>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.8" id="rOM-JR-EFk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="brain" catalog="system" id="vXX-nl-UxH"/>

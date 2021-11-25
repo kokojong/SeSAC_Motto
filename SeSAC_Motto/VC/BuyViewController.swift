@@ -11,7 +11,8 @@ import RealmSwift
 class BuyViewController: UIViewController {
     @IBOutlet weak var collectionViewContainer: UIView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var mottoCollectionView: UICollectionView!
+    @IBOutlet weak var lottoCollectionView: UICollectionView!
     @IBOutlet weak var nextDrawNoLabel: UILabel!
     
     let localRealm = try! Realm()
@@ -27,7 +28,7 @@ class BuyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.reloadData()
+        mottoCollectionView.reloadData()
         nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
     }
     
@@ -40,16 +41,16 @@ class BuyViewController: UIViewController {
         mottoPapers = localRealm.objects(MottoPaper.self).filter(predicate)
       
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        mottoCollectionView.delegate = self
+        mottoCollectionView.dataSource = self
         
         let nibName = UINib(nibName: MottoPaperCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(nibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
+        mottoCollectionView.register(nibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
         
         let flowLayout = UICollectionViewFlowLayout()
         let space: CGFloat = 20
-        let w = collectionView.frame.size.width - 3*space
-        let h = collectionView.frame.size.height - 2*space
+        let w = mottoCollectionView.frame.size.width - 3*space
+        let h = mottoCollectionView.frame.size.height - 2*space
         let totalWidth = UIScreen.main.bounds.width - 3*space // 2개 배치 -> 공간은 3개 비우기(여백까지)
         flowLayout.itemSize = CGSize(width: w/2, height: h)
 //        flowLayout.minimumLineSpacing = CGFloat(50)
@@ -60,7 +61,7 @@ class BuyViewController: UIViewController {
         flowLayout.sectionInset = UIEdgeInsets(top: space, left: space, bottom: space, right: space) // padding
         
         
-        collectionView.collectionViewLayout = flowLayout
+        mottoCollectionView.collectionViewLayout = flowLayout
         
        
         

@@ -37,6 +37,9 @@
 		04BAA3BD274B540600C7BD8E /* ManualBuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */; };
 		04BAA3BF274B626000C7BD8E /* MottoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */; };
 		04BAA3C1274CD2EF00C7BD8E /* LottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */; };
+		04BAA3C3274FA61C00C7BD8E /* LottoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */; };
+		04BAA3C6274FB71800C7BD8E /* LottoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */; };
+		04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBuyCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoBuyViewController.swift; sourceTree = "<group>"; };
 		04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperViewController.swift; sourceTree = "<group>"; };
+		04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoBuyViewController.swift; sourceTree = "<group>"; };
+		04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoTableViewCell.swift; sourceTree = "<group>"; };
+		04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 				04B5B4CF274618FA00E368FD /* HistoryViewController.swift */,
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
 				04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */,
+				04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */,
 				04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */,
 			);
 			path = VC;
@@ -163,6 +170,8 @@
 				04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */,
 				04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */,
 				04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */,
+				04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */,
+				04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -241,6 +250,7 @@
 				04B5B4CA2746019300E368FD /* Map.storyboard in Resources */,
 				04BAA39F2748E57600C7BD8E /* ResultTableViewCell.xib in Resources */,
 				046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */,
+				04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */,
 				046783CB27455F6400C4C8AC /* Main.storyboard in Resources */,
 				04B5B4C82746018B00E368FD /* History.storyboard in Resources */,
 				04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */,
@@ -258,6 +268,7 @@
 			files = (
 				04BAA3BF274B626000C7BD8E /* MottoBuyViewController.swift in Sources */,
 				04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */,
+				04BAA3C3274FA61C00C7BD8E /* LottoBuyViewController.swift in Sources */,
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
 				04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */,
@@ -265,6 +276,7 @@
 				04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */,
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
 				04BAA38027476D8000C7BD8E /* RealmModel.swift in Sources */,
+				04BAA3C6274FB71800C7BD8E /* LottoTableViewCell.swift in Sources */,
 				04BAA39E2748E57600C7BD8E /* ResultTableViewCell.swift in Sources */,
 				04BAA3A52748E6FA00C7BD8E /* ResultViewController.swift in Sources */,
 				04BAA3C1274CD2EF00C7BD8E /* LottoPaperViewController.swift in Sources */,
