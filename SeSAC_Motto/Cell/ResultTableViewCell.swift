@@ -11,7 +11,9 @@ class ResultTableViewCell: UITableViewCell {
     
     static let identifier = "ResultTableViewCell"
 
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    @IBOutlet weak var winLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

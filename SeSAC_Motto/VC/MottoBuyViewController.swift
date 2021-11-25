@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class AutoBuyViewController: UIViewController {
+class MottoBuyViewController: UIViewController {
 
     @IBOutlet weak var includeCollectionView: UICollectionView!
     @IBOutlet weak var exceptCollectionView: UICollectionView!
@@ -75,7 +75,6 @@ class AutoBuyViewController: UIViewController {
             vc.isMotto = true
             
             // 여기에
-//            vc.mottoPaperCount =
             let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
             vc.mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
             print("vc.mottoPaperCount",vc.mottoPaperCount)
@@ -89,9 +88,6 @@ class AutoBuyViewController: UIViewController {
         
             present(alert, animated: true, completion: nil)
         }
-    
-        
-        
         
     }
     
@@ -115,7 +111,7 @@ class AutoBuyViewController: UIViewController {
     
 }
 
-extension AutoBuyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 45
     }
@@ -170,23 +166,5 @@ extension AutoBuyViewController: UICollectionViewDelegate, UICollectionViewDataS
             
         }
     }
-    
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//        if let selectedItems = collectionView.indexPathsForSelectedItems {
-//            if selectedItems.contains(indexPath) {
-//                collectionView.deselectItem(at: indexPath, animated: true)
-//                print("contains")
-//                return false
-//            }
-//
-//        }
-//        print("true")
-//        return true
-//
-//    }
-    
-    
     
 }

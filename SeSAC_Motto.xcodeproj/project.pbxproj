@@ -35,7 +35,7 @@
 		04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */; };
 		04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */; };
 		04BAA3BD274B540600C7BD8E /* ManualBuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */; };
-		04BAA3BF274B626000C7BD8E /* AutoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BE274B626000C7BD8E /* AutoBuyViewController.swift */; };
+		04BAA3BF274B626000C7BD8E /* MottoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */; };
 		04BAA3C1274CD2EF00C7BD8E /* LottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +66,7 @@
 		04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBuyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBuyCollectionViewCell.xib; sourceTree = "<group>"; };
-		04BAA3BE274B626000C7BD8E /* AutoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBuyViewController.swift; sourceTree = "<group>"; };
+		04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoBuyViewController.swift; sourceTree = "<group>"; };
 		04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +137,7 @@
 				04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */,
 				04B5B4CF274618FA00E368FD /* HistoryViewController.swift */,
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
-				04BAA3BE274B626000C7BD8E /* AutoBuyViewController.swift */,
+				04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */,
 				04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */,
 			);
 			path = VC;
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BAA3BF274B626000C7BD8E /* AutoBuyViewController.swift in Sources */,
+				04BAA3BF274B626000C7BD8E /* MottoBuyViewController.swift in Sources */,
 				04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */,
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
@@ -426,6 +426,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -437,7 +438,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,6 +455,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -465,7 +467,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

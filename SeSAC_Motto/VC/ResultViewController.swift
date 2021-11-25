@@ -22,10 +22,23 @@ class ResultViewController: UIViewController {
     
     var winDrawResults: [DrawResult] = []
     
+    var isMotto: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mottoes = localRealm.objects(Motto.self)
+        
+//        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
+        
+        if isMotto {
+            let predicate = NSPredicate(format: "isMotto == true")
+            mottoes = localRealm.objects(Motto.self).filter(predicate)
+        } else {
+            let predicate = NSPredicate(format: "isMotto == false")
+            mottoes = localRealm.objects(Motto.self).filter(predicate)
+        }
+        
+        
         drawResults = localRealm.objects(DrawResult.self)
         
 
@@ -52,8 +65,8 @@ class ResultViewController: UIViewController {
         print(winMottoes)
         print(winDrawResults)
         
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 70
+//        tableView.rowHeight = UITableView.automaticDimension
         
         
     }
@@ -69,10 +82,15 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.identifier, for: indexPath) as? ResultTableViewCell else { return UITableViewCell() }
         
-        cell.testLabel.text = "\(winMottoes[indexPath.row].mottoDrwNo)회차 1등 상금: \(winDrawResults[indexPath.row].firstWinamnt)"
+//        cell.testLabel.text = "\(winMottoes[indexPath.row].mottoDrwNo)회차 구매, \(winDrawResults[indexPath.row].drwNo)회차 1등! 상금: \(winDrawResults[indexPath.row].firstWinamnt)"
         
-//        cell.testLabel.text = "test"
+        let winMotto = winMottoes[indexPath.row]
+        let winDrawResult = winDrawResults[indexPath.row]
+        // 1000회차 구매 번호  1 2 3 4 5 6
+        cell.numberLabel.text = "\(winMotto.mottoDrwNo)회차 구매 번호 \(winMotto.mottoDrwtNo1) \(winMotto.mottoDrwtNo2) \(winMotto.mottoDrwtNo3) \(winMotto.mottoDrwtNo4) \(winMotto.mottoDrwtNo5) \(winMotto.mottoDrwtNo6)"
         
+        // 900회차 1등 상금 : 123456789원
+        cell.winLabel.text = "\(winDrawResult.drwNo)회차 1등! 상금 : \(winDrawResult.firstWinamnt)원"
         cell.backgroundColor = .yellow
         
         return cell

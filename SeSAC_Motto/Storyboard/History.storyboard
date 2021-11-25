@@ -16,71 +16,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모의 구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-wx-b2r">
-                                <rect key="frame" x="25" y="131" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06C-hz-UrM">
-                                <rect key="frame" x="25" y="180" width="364" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-TL-N9y" userLabel="container">
+                                <rect key="frame" x="8" y="128" width="398" height="725"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-mz-g3X">
-                                        <rect key="frame" x="8" y="113" width="348" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
-                                        <connections>
-                                            <segue destination="BJQ-Sa-MfK" kind="push" id="yAJ-du-7Sk"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc9-Oc-re2">
-                                        <rect key="frame" x="8" y="28" width="348" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06C-hz-UrM">
+                                        <rect key="frame" x="8" y="69" width="382" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BfN-mz-g3X">
+                                                <rect key="frame" x="8" y="100.5" width="366" height="31"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
+                                                <connections>
+                                                    <segue destination="BJQ-Sa-MfK" kind="push" id="yAJ-du-7Sk"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc9-Oc-re2">
+                                                <rect key="frame" x="8" y="40" width="366" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstItem="BfN-mz-g3X" firstAttribute="leading" secondItem="06C-hz-UrM" secondAttribute="leading" constant="8" id="0PX-4V-Jyv"/>
+                                            <constraint firstAttribute="height" constant="200" id="7gK-4n-wit"/>
+                                            <constraint firstItem="xc9-Oc-re2" firstAttribute="leading" secondItem="06C-hz-UrM" secondAttribute="leading" constant="8" id="SCu-jz-zkU"/>
+                                            <constraint firstAttribute="trailing" secondItem="xc9-Oc-re2" secondAttribute="trailing" constant="8" id="UdA-Um-Nb7"/>
+                                            <constraint firstItem="BfN-mz-g3X" firstAttribute="top" secondItem="xc9-Oc-re2" secondAttribute="bottom" constant="40" id="WKG-0q-Za0"/>
+                                            <constraint firstItem="xc9-Oc-re2" firstAttribute="top" secondItem="06C-hz-UrM" secondAttribute="top" constant="40" id="lON-4L-kW4"/>
+                                            <constraint firstAttribute="trailing" secondItem="BfN-mz-g3X" secondAttribute="trailing" constant="8" id="y9X-74-CDu"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Ej-U9t">
+                                        <rect key="frame" x="8" y="424" width="382" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-ko-z7c">
+                                        <rect key="frame" x="8" y="485" width="382" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jED-hw-tRt">
+                                                <rect key="frame" x="8" y="100.5" width="366" height="31"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
+                                                <connections>
+                                                    <segue destination="BJQ-Sa-MfK" kind="push" id="WJx-Fj-8RL"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsG-cz-m43">
+                                                <rect key="frame" x="8" y="40" width="366" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstItem="DsG-cz-m43" firstAttribute="leading" secondItem="Rpb-ko-z7c" secondAttribute="leading" constant="8" id="WOJ-yD-TZV"/>
+                                            <constraint firstAttribute="trailing" secondItem="DsG-cz-m43" secondAttribute="trailing" constant="8" id="eIB-v2-mmw"/>
+                                            <constraint firstAttribute="trailing" secondItem="jED-hw-tRt" secondAttribute="trailing" constant="8" id="gtr-Sa-f6m"/>
+                                            <constraint firstItem="jED-hw-tRt" firstAttribute="top" secondItem="DsG-cz-m43" secondAttribute="bottom" constant="40" id="mP4-Pq-Q81"/>
+                                            <constraint firstItem="DsG-cz-m43" firstAttribute="top" secondItem="Rpb-ko-z7c" secondAttribute="top" constant="40" id="u6q-Qf-kmS"/>
+                                            <constraint firstItem="jED-hw-tRt" firstAttribute="leading" secondItem="Rpb-ko-z7c" secondAttribute="leading" constant="8" id="wOU-5Y-trt"/>
+                                            <constraint firstAttribute="height" constant="200" id="x9m-ys-nME"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-wx-b2r">
+                                        <rect key="frame" x="8" y="8" width="382" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="실구매한 로또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-Ej-U9t">
-                                <rect key="frame" x="25" y="484" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-ko-z7c">
-                                <rect key="frame" x="25" y="540" width="364" height="175"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jED-hw-tRt">
-                                        <rect key="frame" x="8" y="85" width="348" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
-                                        <connections>
-                                            <segue destination="BJQ-Sa-MfK" kind="push" id="WJx-Fj-8RL"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsG-cz-m43">
-                                        <rect key="frame" x="8" y="8" width="348" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Mat-wx-b2r" secondAttribute="trailing" constant="8" id="5eR-FD-SKs"/>
+                                    <constraint firstItem="Rpb-ko-z7c" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="7MZ-Hu-0eW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rpb-ko-z7c" secondAttribute="trailing" constant="8" id="Cgh-Xu-k73"/>
+                                    <constraint firstAttribute="trailing" secondItem="06C-hz-UrM" secondAttribute="trailing" constant="8" id="Km3-7E-7nY"/>
+                                    <constraint firstItem="Rpb-ko-z7c" firstAttribute="top" secondItem="7RF-Ej-U9t" secondAttribute="bottom" constant="40" id="OTu-eL-7kC"/>
+                                    <constraint firstItem="7RF-Ej-U9t" firstAttribute="top" relation="greaterThanOrEqual" secondItem="06C-hz-UrM" secondAttribute="bottom" constant="40" id="Pat-hq-pWx"/>
+                                    <constraint firstItem="06C-hz-UrM" firstAttribute="top" secondItem="Mat-wx-b2r" secondAttribute="bottom" constant="40" id="RQM-Yz-IFD"/>
+                                    <constraint firstItem="06C-hz-UrM" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="SaS-Ut-G8s"/>
+                                    <constraint firstItem="Mat-wx-b2r" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="T3N-nW-FFq"/>
+                                    <constraint firstItem="7RF-Ej-U9t" firstAttribute="leading" secondItem="fAS-TL-N9y" secondAttribute="leading" constant="8" id="Xbz-VG-Bb6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rpb-ko-z7c" secondAttribute="bottom" constant="40" id="ad7-ey-EPp"/>
+                                    <constraint firstAttribute="trailing" secondItem="7RF-Ej-U9t" secondAttribute="trailing" constant="8" id="hBo-4M-nm0"/>
+                                    <constraint firstItem="Mat-wx-b2r" firstAttribute="top" secondItem="fAS-TL-N9y" secondAttribute="top" constant="8" id="sLI-YC-XBu"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="40" id="Ihz-hE-iIG"/>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="QVz-fS-3FY"/>
+                            <constraint firstItem="fAS-TL-N9y" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="h4Y-t1-vrv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fAS-TL-N9y" secondAttribute="trailing" constant="8" id="vZm-gZ-DdI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="brain" catalog="system" id="vXX-nl-UxH"/>
                     <navigationItem key="navigationItem" id="sbT-nC-8Uh"/>
@@ -98,11 +135,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tQ8-eX-cwt">
-                                <rect key="frame" x="20" y="127" width="374" height="662"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 또는 실구매 1등 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iR-HT-16y">
+                                <rect key="frame" x="8" y="108" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tQ8-eX-cwt">
+                                <rect key="frame" x="20" y="148.5" width="374" height="644.5"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="59" id="JbS-aZ-kzO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResultTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="59" id="JbS-aZ-kzO" customClass="ResultTableViewCell" customModule="SeSAC_Motto" customModuleProvider="target">
                                         <rect key="frame" x="20" y="49.5" width="334" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JbS-aZ-kzO" id="e4x-iL-7DZ">
@@ -128,16 +170,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="모의 또는 실구매 1등 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iR-HT-16y">
-                                <rect key="frame" x="20" y="88" width="150" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2tx-mm-D17"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9iR-HT-16y" firstAttribute="top" secondItem="2tx-mm-D17" secondAttribute="top" constant="20" id="13b-Oe-yvf"/>
+                            <constraint firstItem="2tx-mm-D17" firstAttribute="trailing" secondItem="9iR-HT-16y" secondAttribute="trailing" constant="8" id="5bP-La-bTu"/>
+                            <constraint firstItem="tQ8-eX-cwt" firstAttribute="leading" secondItem="2tx-mm-D17" secondAttribute="leading" constant="20" id="6yA-Ld-Loc"/>
+                            <constraint firstItem="9iR-HT-16y" firstAttribute="leading" secondItem="2tx-mm-D17" secondAttribute="leading" constant="8" id="Bwc-n8-YO1"/>
+                            <constraint firstItem="2tx-mm-D17" firstAttribute="bottom" secondItem="tQ8-eX-cwt" secondAttribute="bottom" constant="20" id="IkL-FI-XmC"/>
+                            <constraint firstItem="2tx-mm-D17" firstAttribute="trailing" secondItem="tQ8-eX-cwt" secondAttribute="trailing" constant="20" id="KFB-9x-SJY"/>
+                            <constraint firstItem="tQ8-eX-cwt" firstAttribute="top" secondItem="9iR-HT-16y" secondAttribute="bottom" constant="20" id="gts-9a-1Fd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vIr-CH-aCj"/>
                     <connections>
