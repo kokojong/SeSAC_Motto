@@ -19,7 +19,7 @@ class Motto: Object {
     @Persisted var mottoDrwtNo5: Int // 5
     @Persisted var mottoDrwtNo6: Int // 6
     @Persisted var prize: Int // 등수(당첨)
-    @Persisted var mottoNum: Int // 몇 번 모또인지(로또 종이의 번호? - 소속)
+    @Persisted var mottoNum: Int // 몇 번 모또인지(로또 종이 내의 번호)
     @Persisted var isMotto: Bool // 모의인지 진짜인지?
 
     // PK(필수): Int, String, UUID, objectID 등 -> AutoIncrement

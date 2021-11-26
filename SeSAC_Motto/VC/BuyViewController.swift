@@ -66,7 +66,22 @@ class BuyViewController: UIViewController {
        
         
     }
+    @IBAction func onMottoBuyButtonClicked(_ sender: UIButton) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: MottoBuyViewController.identifier) as? MottoBuyViewController else { return }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
     
+    @IBAction func onLottoBuyButtonClicked(_ sender: UIButton) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoBuyViewController.identifier) as? LottoBuyViewController else { return }
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSource {

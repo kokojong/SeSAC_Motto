@@ -13,6 +13,8 @@ class MottoBuyViewController: UIViewController {
     @IBOutlet weak var includeCollectionView: UICollectionView!
     @IBOutlet weak var exceptCollectionView: UICollectionView!
     
+    static let identifier = "MottoBuyViewController"
+    
     var includedNumberList: [Int] = []
     var exceptedNumberList: [Int] = []
     
@@ -21,6 +23,8 @@ class MottoBuyViewController: UIViewController {
     var mottoPapers: Results<MottoPaper>!
     
     var nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,15 +73,14 @@ class MottoBuyViewController: UIViewController {
     @IBAction func onSave5GamesButtonClicked(_ sender: UIBarButtonItem) {
         
         if checkIsPosible() {
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoPaperViewController.identifier) as? LottoPaperViewController else { return }
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: MottoPaperViewController.identifier) as? MottoPaperViewController else { return }
             vc.includedNumberList = self.includedNumberList.sorted()
             vc.exceptedNumberList = self.exceptedNumberList.sorted()
-            vc.isMotto = true
+
             
             // 여기에
-            let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
+            let predicate = NSPredicate(format: "mottoPaperDrwNo == %@ AND isMottoPaper == true", NSNumber(integerLiteral: nextDrawNo))
             vc.mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
-            print("vc.mottoPaperCount",vc.mottoPaperCount)
             present(vc, animated: true, completion: nil)
             
         } else {
@@ -94,7 +97,6 @@ class MottoBuyViewController: UIViewController {
     func checkIsPosible() -> Bool {
         
         let commonNumList = includedNumberList.filter{exceptedNumberList.contains($0) }
-        print(includedNumberList)
         
         if includedNumberList.count > 6  || exceptedNumberList.count > 39 {
             
@@ -153,7 +155,6 @@ extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewData
             if includedNumberList.contains(indexPath.row + 1){
                 if let index = includedNumberList.firstIndex(of: indexPath.row + 1) {
                     includedNumberList.remove(at: index)
-                   
                 }
             }
         } else {
@@ -163,7 +164,6 @@ extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewData
              
                 }
             }
-            
         }
     }
     

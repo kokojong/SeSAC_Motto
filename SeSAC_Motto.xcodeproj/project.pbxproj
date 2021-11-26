@@ -36,10 +36,11 @@
 		04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */; };
 		04BAA3BD274B540600C7BD8E /* ManualBuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */; };
 		04BAA3BF274B626000C7BD8E /* MottoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */; };
-		04BAA3C1274CD2EF00C7BD8E /* LottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */; };
+		04BAA3C1274CD2EF00C7BD8E /* MottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C0274CD2EF00C7BD8E /* MottoPaperViewController.swift */; };
 		04BAA3C3274FA61C00C7BD8E /* LottoBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */; };
 		04BAA3C6274FB71800C7BD8E /* LottoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */; };
 		04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */; };
+		04BAA3C92750C47100C7BD8E /* LottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,10 +71,11 @@
 		04BAA3BA274B540600C7BD8E /* ManualBuyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBuyCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualBuyCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoBuyViewController.swift; sourceTree = "<group>"; };
-		04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperViewController.swift; sourceTree = "<group>"; };
+		04BAA3C0274CD2EF00C7BD8E /* MottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MottoPaperViewController.swift; sourceTree = "<group>"; };
 		04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoBuyViewController.swift; sourceTree = "<group>"; };
 		04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoTableViewCell.swift; sourceTree = "<group>"; };
 		04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottoTableViewCell.xib; sourceTree = "<group>"; };
+		04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,8 @@
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
 				04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */,
 				04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */,
-				04BAA3C0274CD2EF00C7BD8E /* LottoPaperViewController.swift */,
+				04BAA3C0274CD2EF00C7BD8E /* MottoPaperViewController.swift */,
+				04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -279,10 +282,11 @@
 				04BAA3C6274FB71800C7BD8E /* LottoTableViewCell.swift in Sources */,
 				04BAA39E2748E57600C7BD8E /* ResultTableViewCell.swift in Sources */,
 				04BAA3A52748E6FA00C7BD8E /* ResultViewController.swift in Sources */,
-				04BAA3C1274CD2EF00C7BD8E /* LottoPaperViewController.swift in Sources */,
+				04BAA3C1274CD2EF00C7BD8E /* MottoPaperViewController.swift in Sources */,
 				04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */,
 				04B5B4D22746190E00E368FD /* MapViewController.swift in Sources */,
 				04BAA38827477CB800C7BD8E /* LottoResultAPIModel.swift in Sources */,
+				04BAA3C92750C47100C7BD8E /* LottoPaperViewController.swift in Sources */,
 				04BAA3A22748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

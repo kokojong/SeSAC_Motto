@@ -95,13 +95,13 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Cb-JsW">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Cb-JsW" userLabel="mottoBuyButton">
                                                 <rect key="frame" x="361" y="56" width="33" height="31"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
                                                 <connections>
-                                                    <segue destination="PXF-Bp-NTw" kind="push" id="f7S-SD-huR"/>
+                                                    <action selector="onMottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dO3-Vz-6gz"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900회" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-gg-t5M">
@@ -145,13 +145,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LY-mh-k7r">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LY-mh-k7r" userLabel="lottoBuyButton">
                                                 <rect key="frame" x="361" y="457" width="33" height="31"/>
                                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="+"/>
                                                 <connections>
-                                                    <segue destination="DJ5-76-3g0" kind="push" id="2ih-Lh-X2a"/>
+                                                    <action selector="onLottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xDh-mK-cEq"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -219,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ul5-0e-9Bs">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXW-w9-5hY" userLabel="ScrollContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="683"/>
@@ -346,7 +346,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bxa-c7-wVg">
-                                <rect key="frame" x="8" y="108" width="398" height="200"/>
+                                <rect key="frame" x="8" y="64" width="398" height="200"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4kf-Ra-Rhe"/>
@@ -363,7 +363,7 @@
                                 </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="up8-OT-7g3">
-                                <rect key="frame" x="8" y="355" width="398" height="298.5"/>
+                                <rect key="frame" x="8" y="311" width="398" height="298.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="up8-OT-7g3" secondAttribute="height" multiplier="8:6" id="40U-5K-g2t"/>
@@ -386,11 +386,11 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GJ-CV-ywT">
-                                <rect key="frame" x="339" y="316" width="67" height="31"/>
+                                <rect key="frame" x="314.5" y="272" width="91.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="saveGame"/>
                                 <connections>
-                                    <action selector="onSaveButtonClicked:" destination="DJ5-76-3g0" eventType="touchUpInside" id="agH-pO-vCF"/>
+                                    <action selector="onSaveGameButtonClicked:" destination="DJ5-76-3g0" eventType="touchUpInside" id="hDs-i5-w7D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -409,7 +409,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tfq-3R-jlB">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="emc-6L-LJI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="emc-6L-LJI">
+                            <connections>
+                                <action selector="onSavePaperButtonClicked:" destination="DJ5-76-3g0" id="Mvd-iJ-2Tx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="up8-OT-7g3" id="VVp-Ig-aB1"/>
@@ -420,10 +424,10 @@
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="799.55357142857144"/>
         </scene>
-        <!--Lotto Paper View Controller-->
+        <!--Motto Paper View Controller-->
         <scene sceneID="GYo-Gq-VKr">
             <objects>
-                <viewController storyboardIdentifier="LottoPaperViewController" id="7ZN-ch-8Wp" customClass="LottoPaperViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MottoPaperViewController" id="7ZN-ch-8Wp" customClass="MottoPaperViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZK6-PW-hfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,10 +525,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Lotto Paper View Controller-->
         <scene sceneID="MD3-K5-Ksb">
             <objects>
-                <viewController id="t2R-Ns-ZMp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LottoPaperViewController" id="t2R-Ns-ZMp" customClass="LottoPaperViewController" customModule="SeSAC_Motto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xgo-kJ-nfI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,7 +573,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A게임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDl-DT-b2v">
-                                        <rect key="frame" x="18" y="222" width="242" height="21"/>
+                                        <rect key="frame" x="18" y="208" width="242" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -591,12 +595,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ofk-MJ-c3D"/>
                     <connections>
-                        <outlet property="drawNoLabel" destination="TEJ-6S-V8x" id="KQ9-Xy-duj"/>
-                        <outlet property="gameALabel" destination="fj9-ha-Ntf" id="LZK-FT-H9J"/>
-                        <outlet property="gameBLabel" destination="aEL-Rb-hZg" id="uH3-vv-44B"/>
-                        <outlet property="gameCLabel" destination="hsL-P4-aEu" id="3x2-8G-eEx"/>
-                        <outlet property="gameDLabel" destination="3vv-qm-dqk" id="Gwl-EW-2Vh"/>
-                        <outlet property="gameELabel" destination="MDl-DT-b2v" id="J1O-Vb-BwB"/>
+                        <outlet property="drawNoLabel" destination="TEJ-6S-V8x" id="ydc-lb-6dl"/>
+                        <outlet property="gameALabel" destination="fj9-ha-Ntf" id="mOP-th-YoU"/>
+                        <outlet property="gameBLabel" destination="aEL-Rb-hZg" id="1vK-0Q-yth"/>
+                        <outlet property="gameCLabel" destination="hsL-P4-aEu" id="SkV-X2-NQb"/>
+                        <outlet property="gameDLabel" destination="3vv-qm-dqk" id="Gga-OI-5OC"/>
+                        <outlet property="gameELabel" destination="MDl-DT-b2v" id="WCl-Ug-bPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zw0-uX-dIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

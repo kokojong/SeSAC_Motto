@@ -2,7 +2,7 @@
 //  LottoPaperViewController.swift
 //  SeSAC_Motto
 //
-//  Created by kokojong on 2021/11/23.
+//  Created by kokojong on 2021/11/26.
 //
 
 import UIKit
@@ -10,94 +10,71 @@ import RealmSwift
 
 class LottoPaperViewController: UIViewController {
     
-    static let identifier = "LottoPaperViewController"
-    
     @IBOutlet weak var drawNoLabel: UILabel!
-    
     @IBOutlet weak var gameALabel: UILabel!
     @IBOutlet weak var gameBLabel: UILabel!
     @IBOutlet weak var gameCLabel: UILabel!
     @IBOutlet weak var gameDLabel: UILabel!
     @IBOutlet weak var gameELabel: UILabel!
     
-    var includedNumberList: [Int] = []
-    var exceptedNumberList: [Int] = []
     
-    var posibleNumberList: [Int] = [] //
+    static let identifier = "LottoPaperViewController"
+
+    var lottoNumerList: [[Int]] = []
     
     let localRealm = try! Realm()
     
-    var mottoPapers: Results<MottoPaper>!
-    
-    var isMotto: Bool = false
+    var lottoPapers: Results<MottoPaper>!
     
     var mottoPaperCount = 0
+    
+    var isMotto: Bool = false
     
     var nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1 {
         didSet {
             print("nextDrawNo",nextDrawNo)
         }
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        // 해당 회차에 paper가 몇개인지 세주기 -> 그걸 mottoPaperNum로 해주기
-//        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
-//        mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
-//        print("mottoPaperCount",mottoPaperCount)
-//
-//    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        lottoPapers = localRealm.objects(MottoPaper.self)
         
-        
-        mottoPapers = localRealm.objects(MottoPaper.self)
-        
-        for i in 1...45 {
-            if exceptedNumberList.contains(i) {
-                
-            } else if includedNumberList.contains(i) {
-                
-            } else { // 나머지 수
-                posibleNumberList.append(i)
-            }
+        var lottoList: [Motto] = []
+        for i in 0...lottoNumerList.count - 1 {
+            let resultNumberList = lottoNumerList[i].sorted()
+            let lotto =  Motto(mottoDrwNo: nextDrawNo, mottoBuyDate: Date(), mottoDrwtNo1: resultNumberList[0], mottoDrwtNo2: resultNumberList[1], mottoDrwtNo3: resultNumberList[2], mottoDrwtNo4: resultNumberList[3], mottoDrwtNo5: resultNumberList[4], mottoDrwtNo6: resultNumberList[5], mottoNum: i, isMotto: isMotto)
+            lottoList.append(lotto)
         }
         
-        var mottoList: [Motto] = []
-        for i in 0...4 {
-            let resultNumberList = createNumberList()[0...5].sorted()
-            let motto =  Motto(mottoDrwNo: nextDrawNo, mottoBuyDate: Date(), mottoDrwtNo1: resultNumberList[0], mottoDrwtNo2: resultNumberList[1], mottoDrwtNo3: resultNumberList[2], mottoDrwtNo4: resultNumberList[3], mottoDrwtNo5: resultNumberList[4], mottoDrwtNo6: resultNumberList[5], mottoNum: i, isMotto: isMotto)
-            mottoList.append(motto)
-        }
-        let mottoPaper = MottoPaper(mottoPaperDrwNo: nextDrawNo, mottoPaperBuyDate: Date(), mottoPaper: mottoList, mottoPaperNum: mottoPaperCount, isMottoPaper: isMotto)
+        let lottoPaper = MottoPaper(mottoPaperDrwNo: nextDrawNo, mottoPaperBuyDate: Date(), mottoPaper: lottoList, mottoPaperNum: mottoPaperCount, isMottoPaper: isMotto)
        
         
         try! localRealm.write{
-            localRealm.add(mottoPaper)
+            localRealm.add(lottoPaper)
         }
         
         
-        // 데이터 넣어서 보여주기
+        for i in 0...lottoNumerList.count - 1 {
+            switch i {
+            case 0: updateTextOnLabel(label: gameALabel, lottoPaper: lottoPaper, game: i)
+            case 1: updateTextOnLabel(label: gameBLabel, lottoPaper: lottoPaper, game: i)
+            case 2: updateTextOnLabel(label: gameCLabel, lottoPaper: lottoPaper, game: i)
+            case 3: updateTextOnLabel(label: gameDLabel, lottoPaper: lottoPaper, game: i)
+            case 4: updateTextOnLabel(label: gameELabel, lottoPaper: lottoPaper, game: i)
+            default :
+                print("error")
+            }
+            
+        }
         
-        drawNoLabel.text = "\(mottoPaper.mottoPaperDrwNo)회차"
-        updateTextOnLabel(label: gameALabel, mottoPaper: mottoPaper, game: 0)
-        updateTextOnLabel(label: gameBLabel, mottoPaper: mottoPaper, game: 1)
-        updateTextOnLabel(label: gameCLabel, mottoPaper: mottoPaper, game: 2)
-        updateTextOnLabel(label: gameDLabel, mottoPaper: mottoPaper, game: 3)
-        updateTextOnLabel(label: gameELabel, mottoPaper: mottoPaper, game: 4)
-        
-        
-    
     }
     
+    func updateTextOnLabel(label: UILabel, lottoPaper: MottoPaper ,game: Int){
+        label.text = "\(lottoPaper.mottoPaper[game].mottoDrwtNo1) \(lottoPaper.mottoPaper[game].mottoDrwtNo2) \(lottoPaper.mottoPaper[game].mottoDrwtNo3) \(lottoPaper.mottoPaper[game].mottoDrwtNo4) \(lottoPaper.mottoPaper[game].mottoDrwtNo5) \(lottoPaper.mottoPaper[game].mottoDrwtNo6)"
+    }
 
-    func createNumberList () -> [Int] {
-        
-        let resultList = includedNumberList + posibleNumberList.shuffled()
-        return resultList
-    }
-    
-    func updateTextOnLabel(label: UILabel, mottoPaper: MottoPaper ,game: Int){
-        label.text = "\(mottoPaper.mottoPaper[game].mottoDrwtNo1) \(mottoPaper.mottoPaper[game].mottoDrwtNo2) \(mottoPaper.mottoPaper[game].mottoDrwtNo3) \(mottoPaper.mottoPaper[game].mottoDrwtNo4) \(mottoPaper.mottoPaper[game].mottoDrwtNo5) \(mottoPaper.mottoPaper[game].mottoDrwtNo6)"
-    }
+  
+
 }

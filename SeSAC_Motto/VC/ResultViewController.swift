@@ -38,7 +38,6 @@ class ResultViewController: UIViewController {
             mottoes = localRealm.objects(Motto.self).filter(predicate)
         }
         
-        
         drawResults = localRealm.objects(DrawResult.self)
         
 
