@@ -55,6 +55,7 @@ class LottoPaperViewController: UIViewController {
             localRealm.add(lottoPaper)
         }
         
+        drawNoLabel.text = "\(nextDrawNo)"
         
         for i in 0...lottoNumerList.count - 1 {
             switch i {

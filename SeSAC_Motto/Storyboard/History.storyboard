@@ -31,7 +31,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
                                                 <connections>
-                                                    <segue destination="BJQ-Sa-MfK" kind="push" id="yAJ-du-7Sk"/>
+                                                    <action selector="onMottoResultButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cuK-VR-9da"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc9-Oc-re2">
@@ -63,7 +63,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="아깝게 놓친 1등"/>
                                                 <connections>
-                                                    <segue destination="BJQ-Sa-MfK" kind="push" id="WJx-Fj-8RL"/>
+                                                    <action selector="onLottoResultButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Bi9-x6-BAx"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구매액, 등수별 당첨 횟수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsG-cz-m43">
@@ -141,13 +141,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 또는 실구매 1등 기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iR-HT-16y">
-                                <rect key="frame" x="8" y="108" width="398" height="20.5"/>
+                                <rect key="frame" x="8" y="64" width="398" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tQ8-eX-cwt">
-                                <rect key="frame" x="20" y="148.5" width="374" height="644.5"/>
+                                <rect key="frame" x="20" y="104.5" width="374" height="737.5"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ResultTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="59" id="JbS-aZ-kzO" customClass="ResultTableViewCell" customModule="SeSAC_Motto" customModuleProvider="target">
                                         <rect key="frame" x="20" y="49.5" width="334" height="59"/>
@@ -286,9 +286,6 @@
             <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="WJx-Fj-8RL"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="brain" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">

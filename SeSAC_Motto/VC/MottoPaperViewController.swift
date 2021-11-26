@@ -61,6 +61,7 @@ class MottoPaperViewController: UIViewController {
             let motto =  Motto(mottoDrwNo: nextDrawNo, mottoBuyDate: Date(), mottoDrwtNo1: resultNumberList[0], mottoDrwtNo2: resultNumberList[1], mottoDrwtNo3: resultNumberList[2], mottoDrwtNo4: resultNumberList[3], mottoDrwtNo5: resultNumberList[4], mottoDrwtNo6: resultNumberList[5], mottoNum: i, isMotto: isMotto)
             mottoList.append(motto)
         }
+        
         let mottoPaper = MottoPaper(mottoPaperDrwNo: nextDrawNo, mottoPaperBuyDate: Date(), mottoPaper: mottoList, mottoPaperNum: mottoPaperCount, isMottoPaper: isMotto)
        
         

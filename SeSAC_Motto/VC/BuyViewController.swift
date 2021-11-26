@@ -18,6 +18,7 @@ class BuyViewController: UIViewController {
     let localRealm = try! Realm()
     
     var mottoPapers: Results<MottoPaper>! // 해당 회차의 paper(realm 데이터)
+    var lottoPapers: Results<MottoPaper>!
     
     var nextDrawNo = 0 {
         didSet {
@@ -29,6 +30,7 @@ class BuyViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         mottoCollectionView.reloadData()
+        lottoCollectionView.reloadData()
         nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
     }
     
@@ -37,15 +39,21 @@ class BuyViewController: UIViewController {
         
         nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
         
-        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
-        mottoPapers = localRealm.objects(MottoPaper.self).filter(predicate)
+        let predicate1 = NSPredicate(format: "mottoPaperDrwNo == %@ AND isMottoPaper == true", NSNumber(integerLiteral: nextDrawNo))
+        mottoPapers = localRealm.objects(MottoPaper.self).filter(predicate1)
       
+        let predicate2 = NSPredicate(format: "mottoPaperDrwNo == %@ AND isMottoPaper == false",NSNumber(integerLiteral: nextDrawNo))
+        lottoPapers = localRealm.objects(MottoPaper.self).filter(predicate2)
         
         mottoCollectionView.delegate = self
         mottoCollectionView.dataSource = self
+       
+        lottoCollectionView.delegate = self
+        lottoCollectionView.dataSource = self
         
         let nibName = UINib(nibName: MottoPaperCollectionViewCell.identifier, bundle: nil)
         mottoCollectionView.register(nibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
+        lottoCollectionView.register(nibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
         
         let flowLayout = UICollectionViewFlowLayout()
         let space: CGFloat = 20
@@ -62,6 +70,10 @@ class BuyViewController: UIViewController {
         
         
         mottoCollectionView.collectionViewLayout = flowLayout
+        lottoCollectionView.collectionViewLayout = flowLayout
+        
+        print(mottoPapers.count)
+        print(lottoPapers.count)
         
        
         
@@ -86,42 +98,76 @@ class BuyViewController: UIViewController {
 
 extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mottoPapers.count
+        if collectionView == mottoCollectionView {
+            return mottoPapers.count
+        } else {
+            return lottoPapers.count
+        }
+       
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MottoPaperCollectionViewCell.identifier, for: indexPath) as? MottoPaperCollectionViewCell else { return UICollectionViewCell()}
         
-        let row = indexPath.row
-        
-        let predicate = NSPredicate(format: "mottoPaperNum == %@", NSNumber(integerLiteral: indexPath.row))
-        // 5개의 게임 정보를 담고있는 List<Motto>
-        let mottoPaper = mottoPapers.filter(predicate).first!.mottoPaper
-       
-        let gameCount = mottoPaper.count
-        
-        for i in 0...gameCount-1 {
-            let predicate = NSPredicate(format: "mottoNum == %@", NSNumber(integerLiteral: i))
-            let game = mottoPaper.filter(predicate).first! // 0~4번 게임
+        if collectionView == mottoCollectionView {
             
-            switch i {
-            case 0 : cell.gameALabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
-            case 1 : cell.gameBLabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
-            case 2 : cell.gameCLabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
-            case 3 : cell.gameDLabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
-            case 4 : cell.gameELabel.text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2)"
-            default : print("default")
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MottoPaperCollectionViewCell.identifier, for: indexPath) as? MottoPaperCollectionViewCell else { return UICollectionViewCell()}
+            
+            let row = indexPath.row
+            
+            let predicate = NSPredicate(format: "mottoPaperNum == %@ AND isMottoPaper == true", NSNumber(integerLiteral: row))
+            let mottoPaper = mottoPapers.filter(predicate).first!.mottoPaper
+
+            
+            for i in 0...mottoPaper.count-1 {
+                let predicate = NSPredicate(format: "mottoNum == %@", NSNumber(integerLiteral: i))
+                let game = mottoPaper.filter(predicate).first! // 0~4번 게임
+                
+                let text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2) \(game.mottoDrwtNo3) \(game.mottoDrwtNo4) \(game.mottoDrwtNo5) \(game.mottoDrwtNo6)"
+                switch i {
+                case 0 : cell.gameALabel.text = text
+                case 1 : cell.gameBLabel.text = text
+                case 2 : cell.gameCLabel.text = text
+                case 3 : cell.gameDLabel.text = text
+                case 4 : cell.gameELabel.text = text
+                default : print("default")
+                }
+                
+            
             }
+            cell.backgroundColor = .orange
+            return cell
             
-        
+        } else {
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MottoPaperCollectionViewCell.identifier, for: indexPath) as? MottoPaperCollectionViewCell else { return UICollectionViewCell()}
+            
+            let row = indexPath.row
+            
+            let predicate = NSPredicate(format: "mottoPaperNum == %@ AND isMottoPaper == false", NSNumber(integerLiteral: row))
+            let lottoPaper = lottoPapers.filter(predicate).first!.mottoPaper
+            
+            for i in 0...lottoPaper.count-1 {
+                let predicate = NSPredicate(format: "mottoNum == %@", NSNumber(integerLiteral: i))
+                let game = lottoPaper.filter(predicate).first! // 0~4번 게임
+                
+                let text = "\(game.mottoDrwtNo1) \(game.mottoDrwtNo2) \(game.mottoDrwtNo3) \(game.mottoDrwtNo4) \(game.mottoDrwtNo5) \(game.mottoDrwtNo6)"
+                switch i {
+                case 0 : cell.gameALabel.text = text
+                case 1 : cell.gameBLabel.text = text
+                case 2 : cell.gameCLabel.text = text
+                case 3 : cell.gameDLabel.text = text
+                case 4 : cell.gameELabel.text = text
+                default : print("default")
+                }
+                
+            
+            }
+            cell.backgroundColor = .yellow
+            return cell
         }
-        
-        cell.backgroundColor = .yellow
-        
-        
-        return cell
+     
     }
  
     

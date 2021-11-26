@@ -12,14 +12,12 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    static let identifier = "ResultViewController"
+    
     let localRealm = try! Realm()
-    
     var mottoes: Results<Motto>!
-    
     var drawResults: Results<DrawResult>!
-    
     var winMottoes: [Motto] = []
-    
     var winDrawResults: [DrawResult] = []
     
     var isMotto: Bool = false
@@ -27,8 +25,6 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@", NSNumber(integerLiteral: nextDrawNo))
         
         if isMotto {
             let predicate = NSPredicate(format: "isMotto == true")
@@ -61,8 +57,6 @@ class ResultViewController: UIViewController {
             }
             
         }
-        print(winMottoes)
-        print(winDrawResults)
         
         tableView.estimatedRowHeight = 70
 //        tableView.rowHeight = UITableView.automaticDimension

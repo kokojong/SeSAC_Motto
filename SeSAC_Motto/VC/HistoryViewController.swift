@@ -12,18 +12,25 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onMottoResultButtonClicked(_ sender: UIButton) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: ResultViewController.identifier) as? ResultViewController else { return }
+        
+        vc.isMotto = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
-    */
+    
+   
 
+    @IBAction func onLottoResultButtonClicked(_ sender: UIButton) {
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: ResultViewController.identifier) as? ResultViewController else { return }
+        vc.isMotto = false
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
