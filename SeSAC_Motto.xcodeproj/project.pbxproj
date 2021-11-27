@@ -41,6 +41,12 @@
 		04BAA3C6274FB71800C7BD8E /* LottoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */; };
 		04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */; };
 		04BAA3C92750C47100C7BD8E /* LottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */; };
+		04BAA3CC27521B7100C7BD8E /* LottoPaperCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3CA27521B7100C7BD8E /* LottoPaperCollectionViewCell.swift */; };
+		04BAA3CD27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3CB27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib */; };
+		04BAA3D0275234DB00C7BD8E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3CE275234DB00C7BD8E /* HomeTableViewCell.swift */; };
+		04BAA3D1275234DB00C7BD8E /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3CF275234DB00C7BD8E /* HomeTableViewCell.xib */; };
+		04BAA3D42752695E00C7BD8E /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3D32752695E00C7BD8E /* JGProgressHUD */; };
+		04BAA3D727526A2A00C7BD8E /* KRProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3D627526A2A00C7BD8E /* KRProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,10 @@
 		04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoTableViewCell.swift; sourceTree = "<group>"; };
 		04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottoTableViewCell.xib; sourceTree = "<group>"; };
 		04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperViewController.swift; sourceTree = "<group>"; };
+		04BAA3CA27521B7100C7BD8E /* LottoPaperCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperCollectionViewCell.swift; sourceTree = "<group>"; };
+		04BAA3CB27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottoPaperCollectionViewCell.xib; sourceTree = "<group>"; };
+		04BAA3CE275234DB00C7BD8E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		04BAA3CF275234DB00C7BD8E /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +93,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BAA3D727526A2A00C7BD8E /* KRProgressHUD in Frameworks */,
 				04BAA3A927490E8600C7BD8E /* Alamofire in Frameworks */,
 				04BAA38527476E3300C7BD8E /* RealmSwift in Frameworks */,
 				04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */,
 				04BAA38327476E3300C7BD8E /* Realm in Frameworks */,
+				04BAA3D42752695E00C7BD8E /* JGProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,8 +185,12 @@
 				04BAA3BB274B540600C7BD8E /* ManualBuyCollectionViewCell.xib */,
 				04BAA3A02748E59E00C7BD8E /* MottoPaperCollectionViewCell.swift */,
 				04BAA3A12748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib */,
+				04BAA3CA27521B7100C7BD8E /* LottoPaperCollectionViewCell.swift */,
+				04BAA3CB27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib */,
 				04BAA3C4274FB71800C7BD8E /* LottoTableViewCell.swift */,
 				04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */,
+				04BAA3CE275234DB00C7BD8E /* HomeTableViewCell.swift */,
+				04BAA3CF275234DB00C7BD8E /* HomeTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -200,6 +216,8 @@
 				04BAA38427476E3300C7BD8E /* RealmSwift */,
 				04BAA3A827490E8600C7BD8E /* Alamofire */,
 				04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */,
+				04BAA3D32752695E00C7BD8E /* JGProgressHUD */,
+				04BAA3D627526A2A00C7BD8E /* KRProgressHUD */,
 			);
 			productName = SeSAC_Motto;
 			productReference = 046783C027455F6400C4C8AC /* SeSAC_Motto.app */;
@@ -233,6 +251,8 @@
 				04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				04BAA3A727490E8600C7BD8E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				04BAA3D22752695E00C7BD8E /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				04BAA3D527526A2A00C7BD8E /* XCRemoteSwiftPackageReference "KRProgressHUD" */,
 			);
 			productRefGroup = 046783C127455F6400C4C8AC /* Products */;
 			projectDirPath = "";
@@ -252,9 +272,11 @@
 				04BAA3A32748E59E00C7BD8E /* MottoPaperCollectionViewCell.xib in Resources */,
 				04B5B4CA2746019300E368FD /* Map.storyboard in Resources */,
 				04BAA39F2748E57600C7BD8E /* ResultTableViewCell.xib in Resources */,
+				04BAA3CD27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib in Resources */,
 				046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */,
 				04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */,
 				046783CB27455F6400C4C8AC /* Main.storyboard in Resources */,
+				04BAA3D1275234DB00C7BD8E /* HomeTableViewCell.xib in Resources */,
 				04B5B4C82746018B00E368FD /* History.storyboard in Resources */,
 				04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */,
 				04BAA3BD274B540600C7BD8E /* ManualBuyCollectionViewCell.xib in Resources */,
@@ -275,8 +297,10 @@
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
 				04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */,
+				04BAA3CC27521B7100C7BD8E /* LottoPaperCollectionViewCell.swift in Sources */,
 				04B5B4D0274618FA00E368FD /* HistoryViewController.swift in Sources */,
 				04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */,
+				04BAA3D0275234DB00C7BD8E /* HomeTableViewCell.swift in Sources */,
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
 				04BAA38027476D8000C7BD8E /* RealmModel.swift in Sources */,
 				04BAA3C6274FB71800C7BD8E /* LottoTableViewCell.swift in Sources */,
@@ -535,6 +559,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		04BAA3D22752695E00C7BD8E /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		04BAA3D527526A2A00C7BD8E /* XCRemoteSwiftPackageReference "KRProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krimpedance/KRProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -557,6 +597,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		04BAA3D32752695E00C7BD8E /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BAA3D22752695E00C7BD8E /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+		04BAA3D627526A2A00C7BD8E /* KRProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BAA3D527526A2A00C7BD8E /* XCRemoteSwiftPackageReference "KRProgressHUD" */;
+			productName = KRProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

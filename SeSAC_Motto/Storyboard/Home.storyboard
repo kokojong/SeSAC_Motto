@@ -426,6 +426,8 @@
                         <outlet property="firstAccumamntLabel" destination="2xa-FC-9Bg" id="Swl-Rf-Jy4"/>
                         <outlet property="firstPrzwnerCoLabel" destination="TpP-H8-MSJ" id="vyK-V3-r4K"/>
                         <outlet property="firstWinamntLabel" destination="Lrp-jh-BdH" id="FFH-ge-U4O"/>
+                        <outlet property="lottoTableView" destination="LeW-1E-NCT" id="AfI-Gd-5In"/>
+                        <outlet property="mottoTableView" destination="jEF-Db-HHs" id="iZU-vg-f2d"/>
                         <outlet property="resultStackView" destination="NKx-bE-V64" id="ME0-3g-vha"/>
                     </connections>
                 </viewController>

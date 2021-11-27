@@ -51,26 +51,36 @@ class BuyViewController: UIViewController {
         lottoCollectionView.delegate = self
         lottoCollectionView.dataSource = self
         
-        let nibName = UINib(nibName: MottoPaperCollectionViewCell.identifier, bundle: nil)
-        mottoCollectionView.register(nibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
-        lottoCollectionView.register(nibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
+        let mottoNibName = UINib(nibName: MottoPaperCollectionViewCell.identifier, bundle: nil)
+        mottoCollectionView.register(mottoNibName, forCellWithReuseIdentifier: MottoPaperCollectionViewCell.identifier)
+        let lottoNibName = UINib(nibName: LottoPaperCollectionViewCell.identifier, bundle: nil)
+        lottoCollectionView.register(lottoNibName, forCellWithReuseIdentifier: LottoPaperCollectionViewCell.identifier)
         
-        let flowLayout = UICollectionViewFlowLayout()
+        let flowLayout1 = UICollectionViewFlowLayout()
         let space: CGFloat = 20
         let w = mottoCollectionView.frame.size.width - 3*space
         let h = mottoCollectionView.frame.size.height - 2*space
         let totalWidth = UIScreen.main.bounds.width - 3*space // 2개 배치 -> 공간은 3개 비우기(여백까지)
-        flowLayout.itemSize = CGSize(width: w/2, height: h)
-//        flowLayout.minimumLineSpacing = CGFloat(50)
-//        flowLayout.minimumInteritemSpacing = CGFloat(50)
+        flowLayout1.itemSize = CGSize(width: w/2, height: h)
         
-        flowLayout.scrollDirection = .horizontal // 가로 스크롤
+        flowLayout1.scrollDirection = .horizontal // 가로 스크롤
         
-        flowLayout.sectionInset = UIEdgeInsets(top: space, left: space, bottom: space, right: space) // padding
+        flowLayout1.sectionInset = UIEdgeInsets(top: space, left: space, bottom: space, right: space) // padding
+        
+        let flowLayout2 = UICollectionViewFlowLayout()
+        let w2 = lottoCollectionView.frame.size.width - 3*space
+        let h2 = lottoCollectionView.frame.size.height - 2*space
+//        let totalWidth = UIScreen.main.bounds.width - 3*space // 2개 배치 -> 공간은 3개 비우기(여백까지)
+        flowLayout2.itemSize = CGSize(width: w2/2, height: h2)
+        
+        flowLayout2.scrollDirection = .horizontal // 가로 스크롤
+        
+        flowLayout2.sectionInset = UIEdgeInsets(top: space, left: space, bottom: space, right: space) // padding
         
         
-        mottoCollectionView.collectionViewLayout = flowLayout
-        lottoCollectionView.collectionViewLayout = flowLayout
+        
+        mottoCollectionView.collectionViewLayout = flowLayout1
+        lottoCollectionView.collectionViewLayout = flowLayout2
         
         print(mottoPapers.count)
         print(lottoPapers.count)
@@ -141,7 +151,7 @@ extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             
         } else {
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MottoPaperCollectionViewCell.identifier, for: indexPath) as? MottoPaperCollectionViewCell else { return UICollectionViewCell()}
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LottoPaperCollectionViewCell.identifier, for: indexPath) as? LottoPaperCollectionViewCell else { return UICollectionViewCell()}
             
             let row = indexPath.row
             

@@ -42,7 +42,6 @@
                         <segue destination="an7-DO-eiK" kind="relationship" relationship="viewControllers" id="z53-F8-2JA"/>
                         <segue destination="pXN-0r-aqC" kind="relationship" relationship="viewControllers" id="fSd-GI-CxS"/>
                         <segue destination="PNG-PK-k4v" kind="relationship" relationship="viewControllers" id="Luf-RI-Pu9"/>
-                        <segue destination="Xkg-3B-VAr" kind="relationship" relationship="viewControllers" id="f0y-ls-ukb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aws-OI-qif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -59,17 +58,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiT-7p-LoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1274" y="48"/>
-        </scene>
-        <!--Map-->
-        <scene sceneID="C0Q-cu-hw4">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Map" id="Xkg-3B-VAr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ltx-Tj-HMm"/>
-                    <navigationItem key="navigationItem" id="Uel-MR-qbT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jFt-Xa-ngx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1309" y="258"/>
         </scene>
     </scenes>
 </document>
