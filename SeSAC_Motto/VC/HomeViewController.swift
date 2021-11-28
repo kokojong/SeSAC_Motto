@@ -10,9 +10,6 @@ import SwiftyJSON
 import Alamofire
 import RealmSwift
 import Network
-import JGProgressHUD
-import KRProgressHUD
-
 
 class HomeViewController: UIViewController {
     
@@ -22,8 +19,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var firstPrzwnerCoLabel: UILabel!
     @IBOutlet weak var resultStackView: UIStackView!
     
-    @IBOutlet weak var mottoTableView: UITableView!
-    @IBOutlet weak var lottoTableView: UITableView!
+//    @IBOutlet weak var mottoTableView: UITableView!
+//    @IBOutlet weak var lottoTableView: UITableView!
+    
+    @IBOutlet weak var mottoPrz1CountLabel: UILabel!
+    @IBOutlet weak var mottoPrz2CountLabel: UILabel!
+    @IBOutlet weak var mottoPrz3CountLabel: UILabel!
+    @IBOutlet weak var mottoPrz4CountLabel: UILabel!
+    @IBOutlet weak var mottoPrz5CountLabel: UILabel!
+    
+    @IBOutlet weak var lottoPrz1CountLabel: UILabel!
+    @IBOutlet weak var lottoPrz2CountLabel: UILabel!
+    @IBOutlet weak var lottoPrz3CountLabel: UILabel!
+    @IBOutlet weak var lottoPrz4CountLabel: UILabel!
+    @IBOutlet weak var lottoPrz5CountLabel: UILabel!
+    
     let localRealm = try! Realm()
     
     var drawResults : Results<DrawResult>!
@@ -43,7 +53,7 @@ class HomeViewController: UIViewController {
             // 이걸 지금 못받아옴(처음 991)
             recentDrawResults = drawResults.filter(predicate)// 가장 최근 회차 정보
             checkIsRecent(recent: recentDrawNo)
-            updateTableViewByRecentDrawNo()
+            updateBottomViewByRecentDrawNo()
             updateUIByRecentDrawNo(recentDrawNo: recentDrawNo)
             
         }
@@ -66,15 +76,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "홈"
         
-        mottoTableView.delegate = self
-        mottoTableView.dataSource = self
-        lottoTableView.delegate = self
-        lottoTableView.dataSource = self
-        
-        let nibName = UINib(nibName: HomeTableViewCell.identifier, bundle: nil)
-        mottoTableView.register(nibName, forCellReuseIdentifier: HomeTableViewCell.identifier)
-        lottoTableView.register(nibName, forCellReuseIdentifier: HomeTableViewCell.identifier)
+       
         
         let result = monitorNetwork()
         
@@ -87,17 +91,13 @@ class HomeViewController: UIViewController {
 
         checkIsRecent(recent: recentDrawNo)
         
-        updateTableViewByRecentDrawNo()
+        updateBottomViewByRecentDrawNo()
         
         updateUIByRecentDrawNo(recentDrawNo: recentDrawNo)
         
         // 기본적으로 처음에 realm에 저장
         if drawResults.count < 991 { // 네트워크 오류,  등으로 991개를 못받은 경우 -> 모자란 만큼 받아오자
 //            DispatchQueue.global().sync {
-               
-                let progress = JGProgressHUD()
-                progress.textLabel.text = "loading"
-                progress.show(in: self.view)
                 
                 for i in 1...991 {
                     let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: 991 - i))
@@ -112,12 +112,12 @@ class HomeViewController: UIViewController {
                 print(drawResults.count)
                 let c = drawResults.count
                 self.recentDrawNo = 991
-                progress.dismiss(afterDelay: 6.0)
 //            }
         }
         
         let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
         recentDrawResults = drawResults.filter(predicate) // 가장 최근 회차 정보
+        
         
         
     }
@@ -169,7 +169,7 @@ class HomeViewController: UIViewController {
         }
         if drawResult.drwNo == recentDrawNo {
             updateUIByRecentDrawNo(recentDrawNo: recentDrawNo)
-            updateTableViewByRecentDrawNo()
+            updateBottomViewByRecentDrawNo()
         }
     }
     
@@ -205,8 +205,6 @@ class HomeViewController: UIViewController {
                         let result = DrawResult(drwNo: drwNo, drwNoDate: drwNoDate, drwtNo1: drwtNo1, drwtNo2: drwtNo2, drwtNo3: drwtNo3, drwtNo4: drwtNo4, drwtNo5: drwtNo5, drwtNo6: drwtNo6, firstAccumamnt: firstAccumamnt, firstWinamnt: firstWinamnt, firstPrzwnerCo: firstPrzwnerCo, bnusNo: bnusNo)
                         self.saveResult(drawResult: result)
                         
-//                        UserDefaults.standard.set(recent+1, forKey: "recentDrawNo")
-                        print("UD: ", UserDefaults.standard.integer(forKey: "recentDrawNo"))
                         self.recentDrawNo = recent+1
                     }
                     
@@ -216,9 +214,6 @@ class HomeViewController: UIViewController {
                 }
             
             }
-            
-            
-            
 //        }
         
     }
@@ -272,6 +267,9 @@ class HomeViewController: UIViewController {
         var index = 1
         for v in resultStackView.arrangedSubviews {
             let label = v as! UILabel
+            label.clipsToBounds = true
+            label.layer.cornerRadius = label.layer.frame.size.width / 2
+            label.textColor = .white
             
             switch index {
             case 1: label.text = "\(recentResult.drwtNo1)"
@@ -283,6 +281,15 @@ class HomeViewController: UIViewController {
             case 8: label.text = "\(recentResult.bnusNo)"
             default: // 7번은 +
                 label.text = "+"
+            }
+            let num = Int(label.text!) ?? 0
+            switch num {
+            case 1...9: label.backgroundColor = .yellow
+            case 10...19: label.backgroundColor = .blue
+            case 20...29: label.backgroundColor = .red
+            case 30...39: label.backgroundColor = .gray
+            case 40...45: label.backgroundColor = .green
+            default: label.backgroundColor = .clear
             }
        
             index += 1
@@ -296,7 +303,7 @@ class HomeViewController: UIViewController {
         
     }
     
-    func updateTableViewByRecentDrawNo() {
+    func updateBottomViewByRecentDrawNo() {
         let recentMottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == true", NSNumber(integerLiteral: recentDrawNo))
         let recentLottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == false", NSNumber(integerLiteral: recentDrawNo))
         recentMottoLists = localRealm.objects(Motto.self).filter(recentMottoPredicate)
@@ -356,55 +363,25 @@ class HomeViewController: UIViewController {
             
         }
         
+//        var recentTargetList: Results<Motto>!
+//        if tableView == mottoTableView {
+//            recentTargetList = recentMottoLists
+//        } else {
+//            recentTargetList = recentLottoLists
+//        }
+        
+        
+        mottoPrz1CountLabel.text = "\(recentMottoLists.filter("prize == 1").count)개"
+        mottoPrz2CountLabel.text = "\(recentMottoLists.filter("prize == 2").count)개"
+        mottoPrz3CountLabel.text = "\(recentMottoLists.filter("prize == 3").count)개"
+        mottoPrz4CountLabel.text = "\(recentMottoLists.filter("prize == 4").count)개"
+        mottoPrz5CountLabel.text = "\(recentMottoLists.filter("prize == 5").count)개"
+        
+        lottoPrz1CountLabel.text = "\(recentLottoLists.filter("prize == 1").count)개"
+        lottoPrz2CountLabel.text = "\(recentLottoLists.filter("prize == 2").count)개"
+        lottoPrz3CountLabel.text = "\(recentLottoLists.filter("prize == 3").count)개"
+        lottoPrz4CountLabel.text = "\(recentLottoLists.filter("prize == 4").count)개"
+        lottoPrz5CountLabel.text = "\(recentLottoLists.filter("prize == 5").count)개"
+        
     }
-}
-
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier) as? HomeTableViewCell else { return UITableViewCell() }
-        
-        let row = indexPath.row
-        
-        var recentTargetList: Results<Motto>!
-        if tableView == mottoTableView {
-            recentTargetList = recentMottoLists
-        } else {
-            recentTargetList = recentLottoLists
-        }
-        
-        switch row {
-        case 0:
-            let count = recentTargetList.filter("prize == 1").count
-            cell.prizeLabel.text = "1등"
-            cell.countLabel.text = "\(count)개"
-        case 1:
-            let count = recentTargetList.filter("prize == 2").count
-            cell.prizeLabel.text = "2등"
-            cell.countLabel.text = "\(count)개"
-        case 2:
-            let count = recentTargetList.filter("prize == 3").count
-            cell.prizeLabel.text = "3등"
-            cell.countLabel.text = "\(count)개"
-        case 3:
-            let count = recentTargetList.filter("prize == 4").count
-            cell.prizeLabel.text = "4등"
-            cell.countLabel.text = "\(count)개"
-        case 4:
-            let count = recentTargetList.filter("prize == 5").count
-            cell.prizeLabel.text = "5등"
-            cell.countLabel.text = "\(count)개"
-        default:
-            print("error")
-        }
-        
-        
-        return cell
-    }
-    
-    
 }

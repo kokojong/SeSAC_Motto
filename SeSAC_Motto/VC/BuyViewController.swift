@@ -37,6 +37,8 @@ class BuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "구매"
+        
         nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
         
         let predicate1 = NSPredicate(format: "mottoPaperDrwNo == %@ AND isMottoPaper == true", NSNumber(integerLiteral: nextDrawNo))

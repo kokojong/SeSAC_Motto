@@ -25,6 +25,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "아깝게 놓친 1등"
+        
         
         if isMotto {
             let predicate = NSPredicate(format: "isMotto == true")

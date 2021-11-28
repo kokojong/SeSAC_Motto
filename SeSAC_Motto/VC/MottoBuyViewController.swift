@@ -29,6 +29,8 @@ class MottoBuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "모의 로또 구매"
+        
         mottoPapers = localRealm.objects(MottoPaper.self)
         
         includeCollectionView.delegate = self

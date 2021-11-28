@@ -26,6 +26,8 @@ class LottoBuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "구매 기록 추가"
+        
         tableView.delegate = self
         tableView.dataSource = self
         collectionView.delegate = self
@@ -80,19 +82,24 @@ class LottoBuyViewController: UIViewController {
     }
     
     @IBAction func onSavePaperButtonClicked(_ sender: UIBarButtonItem) {
+        
+        if lottoList.count == 0 {
+            showAlert(title: "게임 정보 없음", message: "최소 한 개 이상의 게임을 추가해주세요")
+        } else {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoPaperViewController.identifier) as? LottoPaperViewController else { return }
+            
+            vc.lottoNumerList = lottoList
+            let predicate = NSPredicate(format: "mottoPaperDrwNo == %@ AND isMottoPaper == false", NSNumber(integerLiteral: nextDrawNo))
+            vc.mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
+            vc.isMotto = false
+            
+            present(vc, animated: true, completion: nil)
+            lottoList = []
+            
+            tableView.reloadData()
+        }
     
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoPaperViewController.identifier) as? LottoPaperViewController else { return }
         
-        vc.lottoNumerList = lottoList
-        let predicate = NSPredicate(format: "mottoPaperDrwNo == %@ AND isMottoPaper == false", NSNumber(integerLiteral: nextDrawNo))
-        vc.mottoPaperCount = localRealm.objects(MottoPaper.self).filter(predicate).count
-        vc.isMotto = false
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        lottoList = []
-        
-        tableView.reloadData()
     }
     
 }

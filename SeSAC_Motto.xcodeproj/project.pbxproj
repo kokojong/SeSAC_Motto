@@ -45,8 +45,7 @@
 		04BAA3CD27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3CB27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib */; };
 		04BAA3D0275234DB00C7BD8E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3CE275234DB00C7BD8E /* HomeTableViewCell.swift */; };
 		04BAA3D1275234DB00C7BD8E /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3CF275234DB00C7BD8E /* HomeTableViewCell.xib */; };
-		04BAA3D42752695E00C7BD8E /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3D32752695E00C7BD8E /* JGProgressHUD */; };
-		04BAA3D727526A2A00C7BD8E /* KRProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 04BAA3D627526A2A00C7BD8E /* KRProgressHUD */; };
+		04BAA3D92753418600C7BD8E /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3D82753418500C7BD8E /* MyColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +85,7 @@
 		04BAA3CB27521B7100C7BD8E /* LottoPaperCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottoPaperCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BAA3CE275234DB00C7BD8E /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		04BAA3CF275234DB00C7BD8E /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		04BAA3D82753418500C7BD8E /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BAA3D727526A2A00C7BD8E /* KRProgressHUD in Frameworks */,
 				04BAA3A927490E8600C7BD8E /* Alamofire in Frameworks */,
 				04BAA38527476E3300C7BD8E /* RealmSwift in Frameworks */,
 				04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */,
 				04BAA38327476E3300C7BD8E /* Realm in Frameworks */,
-				04BAA3D42752695E00C7BD8E /* JGProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				046783C327455F6400C4C8AC /* AppDelegate.swift */,
+				04BAA3D82753418500C7BD8E /* MyColor.swift */,
 				046783C527455F6400C4C8AC /* SceneDelegate.swift */,
 				04BAA38627477C9400C7BD8E /* Model */,
 				04B5B4CB2746019E00E368FD /* Storyboard */,
@@ -216,8 +215,6 @@
 				04BAA38427476E3300C7BD8E /* RealmSwift */,
 				04BAA3A827490E8600C7BD8E /* Alamofire */,
 				04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */,
-				04BAA3D32752695E00C7BD8E /* JGProgressHUD */,
-				04BAA3D627526A2A00C7BD8E /* KRProgressHUD */,
 			);
 			productName = SeSAC_Motto;
 			productReference = 046783C027455F6400C4C8AC /* SeSAC_Motto.app */;
@@ -251,8 +248,6 @@
 				04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				04BAA3A727490E8600C7BD8E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				04BAA3D22752695E00C7BD8E /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				04BAA3D527526A2A00C7BD8E /* XCRemoteSwiftPackageReference "KRProgressHUD" */,
 			);
 			productRefGroup = 046783C127455F6400C4C8AC /* Products */;
 			projectDirPath = "";
@@ -294,6 +289,7 @@
 				04BAA3BF274B626000C7BD8E /* MottoBuyViewController.swift in Sources */,
 				04BAA38C2747870C00C7BD8E /* LottoSpot.swift in Sources */,
 				04BAA3C3274FA61C00C7BD8E /* LottoBuyViewController.swift in Sources */,
+				04BAA3D92753418600C7BD8E /* MyColor.swift in Sources */,
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
 				04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */,
@@ -559,22 +555,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		04BAA3D22752695E00C7BD8E /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		04BAA3D527526A2A00C7BD8E /* XCRemoteSwiftPackageReference "KRProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/krimpedance/KRProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -597,16 +577,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		04BAA3D32752695E00C7BD8E /* JGProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04BAA3D22752695E00C7BD8E /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
-			productName = JGProgressHUD;
-		};
-		04BAA3D627526A2A00C7BD8E /* KRProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04BAA3D527526A2A00C7BD8E /* XCRemoteSwiftPackageReference "KRProgressHUD" */;
-			productName = KRProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

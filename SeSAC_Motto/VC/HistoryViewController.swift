@@ -12,7 +12,7 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        title = "구매 기록"
         
     }
     
