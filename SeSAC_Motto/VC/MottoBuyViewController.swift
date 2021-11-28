@@ -44,13 +44,14 @@ class MottoBuyViewController: UIViewController {
         
 
         let spacing:CGFloat = 10
+        let inset:CGFloat = 25
         let includeLayout = UICollectionViewFlowLayout()
         let itemSize = (UIScreen.main.bounds.width - 9 * spacing - 40) / 8 // 좌우 제약조건만큼 빼주고 나누기
 
         includeLayout.itemSize = CGSize(width: itemSize, height: itemSize)
         includeLayout.minimumLineSpacing = spacing
         includeLayout.minimumInteritemSpacing = spacing
-        includeLayout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        includeLayout.sectionInset = UIEdgeInsets(top: spacing, left: inset, bottom: spacing, right: inset)
         
         includeLayout.scrollDirection = .vertical
 
@@ -61,7 +62,7 @@ class MottoBuyViewController: UIViewController {
         exceptLayout.itemSize = CGSize(width: itemSize, height: itemSize)
         exceptLayout.minimumLineSpacing = spacing
         exceptLayout.minimumInteritemSpacing = spacing
-        exceptLayout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        exceptLayout.sectionInset = UIEdgeInsets(top: spacing, left: inset, bottom: spacing, right: inset)
         
         exceptLayout.scrollDirection = .vertical
 
@@ -125,7 +126,7 @@ extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == includeCollectionView {
             guard let cell = includeCollectionView.dequeueReusableCell(withReuseIdentifier: ManualBuyCollectionViewCell.identifier, for: indexPath) as? ManualBuyCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.backgroundColor = .green
+//            cell.backgroundColor = .green
             cell.numberLabel.text = String(indexPath.row + 1)
             
             return cell
@@ -134,7 +135,7 @@ extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewData
         else {
             guard let cell = exceptCollectionView.dequeueReusableCell(withReuseIdentifier: ManualBuyCollectionViewCell.identifier, for: indexPath) as? ManualBuyCollectionViewCell else { return UICollectionViewCell() }
             
-            cell.backgroundColor = .green
+//            cell.backgroundColor = .green
             cell.numberLabel.text = String(indexPath.row + 1)
             return cell
         }

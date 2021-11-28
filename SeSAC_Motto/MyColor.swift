@@ -11,7 +11,8 @@ import UIKit
 extension UIColor {
     class var test1: UIColor? { return UIColor(named: "test1") }
         /// Secondary color - (0, 0, 205, 100%)
-    class var secondary: UIColor? { return UIColor(named: "secondary") }
+    class var myOrange: UIColor? { return UIColor(named: "myOrange") }
         /// Tertiary color - (0, 0, 139, 100%)
-    class var tertiary: UIColor? { return UIColor(named: "tertiary") }
+    class var myGrayBackground: UIColor? { return UIColor(named: "myGrayBackground") }
+    // FAFAFA
 }

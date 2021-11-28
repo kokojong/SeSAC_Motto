@@ -14,6 +14,7 @@ import Network
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var drawNumLabel: UILabel!
+    @IBOutlet weak var drawDateLabel: UILabel!
     @IBOutlet weak var firstAccumamntLabel: UILabel!
     @IBOutlet weak var firstWinamntLabel: UILabel!
     @IBOutlet weak var firstPrzwnerCoLabel: UILabel!
@@ -34,6 +35,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var lottoPrz4CountLabel: UILabel!
     @IBOutlet weak var lottoPrz5CountLabel: UILabel!
     
+    @IBOutlet weak var numbersView: UIView!
+    @IBOutlet weak var drawView: UIView!
+    @IBOutlet weak var resultView: UIView!
+    
+    
+    
     let localRealm = try! Realm()
     
     var drawResults : Results<DrawResult>!
@@ -44,8 +51,7 @@ class HomeViewController: UIViewController {
     
     var recentDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") {
         didSet {
-            drawNumLabel.text = "\(recentDrawNo)"
-            print("recentDrawNo",recentDrawNo)
+            drawNumLabel.text = "\(recentDrawNo) 회차"
             
             UserDefaults.standard.set(recentDrawNo, forKey: "recentDrawNo")
             let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
@@ -73,12 +79,17 @@ class HomeViewController: UIViewController {
     var recentMottoNumList: [Int] = []
     var recentLottoNumList: [Int] = []
     
+    let numberFormatter = NumberFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "홈"
         
-       
+        numberFormatter.numberStyle = .decimal
+//        let formattedNumber = numberFormatter.string(for: memoCount)!
+        
+        self.tabBarController?.tabBar.tintColor = UIColor(named: "myOrange")
         
         let result = monitorNetwork()
         
@@ -109,7 +120,7 @@ class HomeViewController: UIViewController {
                 }
                 
                 UserDefaults.standard.set(991, forKey: "recentDrawNo")
-                print(drawResults.count)
+                
                 let c = drawResults.count
                 self.recentDrawNo = 991
 //            }
@@ -119,6 +130,12 @@ class HomeViewController: UIViewController {
         recentDrawResults = drawResults.filter(predicate) // 가장 최근 회차 정보
         
         
+        numbersView.clipsToBounds = true
+        numbersView.layer.cornerRadius = 8
+        drawView.clipsToBounds = true
+        drawView.layer.cornerRadius = 8
+        resultView.clipsToBounds = true
+        resultView.layer.cornerRadius = 8
         
     }
     
@@ -163,7 +180,7 @@ class HomeViewController: UIViewController {
     }
     
     func saveResult(drawResult: DrawResult){
-        print("saveResult",drawResult.drwNo)
+        
         try! self.localRealm.write {
             localRealm.add(drawResult)
         }
@@ -175,7 +192,7 @@ class HomeViewController: UIViewController {
     
     func checkIsRecent(recent: Int) {
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(recent + 1)"
-        print("checkIsRecent",recent)
+        
         
 //        DispatchQueue.global().sync {
             
@@ -257,12 +274,9 @@ class HomeViewController: UIViewController {
 
     func updateUIByRecentDrawNo(recentDrawNo: Int) {
         
-        drawNumLabel.text = "\(recentDrawNo)"
+        drawNumLabel.text = "\(recentDrawNo) 회차"
         let recentResult = recentDrawResults.first ?? DrawResult(drwNo: 0, drwNoDate: "", drwtNo1: 0, drwtNo2: 0, drwtNo3: 0, drwtNo4: 0, drwtNo5: 0, drwtNo6: 0, firstAccumamnt: 0, firstWinamnt: 0, firstPrzwnerCo: 0, bnusNo: 0)
         
-        // nil 발생
-        print("update",recentDrawResults.first)
-        print("recentResult",recentResult)
 //        let recentResult = recentDrawResult.first!
         var index = 1
         for v in resultStackView.arrangedSubviews {
@@ -278,26 +292,28 @@ class HomeViewController: UIViewController {
             case 4: label.text = "\(recentResult.drwtNo4)"
             case 5: label.text = "\(recentResult.drwtNo5)"
             case 6: label.text = "\(recentResult.drwtNo6)"
-            case 8: label.text = "\(recentResult.bnusNo)"
+            case 8:
+                label.text = "\(recentResult.bnusNo)"
             default: // 7번은 +
+                label.textColor = .orange
                 label.text = "+"
             }
-            let num = Int(label.text!) ?? 0
-            switch num {
-            case 1...9: label.backgroundColor = .yellow
-            case 10...19: label.backgroundColor = .blue
-            case 20...29: label.backgroundColor = .red
-            case 30...39: label.backgroundColor = .gray
-            case 40...45: label.backgroundColor = .green
-            default: label.backgroundColor = .clear
-            }
+//            let num = Int(label.text!) ?? 0
+//            switch num {
+//            case 1...9: label.backgroundColor = .yellow
+//            case 10...19: label.backgroundColor = .blue
+//            case 20...29: label.backgroundColor = .red
+//            case 30...39: label.backgroundColor = .gray
+//            case 40...45: label.backgroundColor = .green
+//            default: label.backgroundColor = .clear
+//            }
        
             index += 1
         }
-        
-        firstWinamntLabel.text = "\(recentResult.firstWinamnt)"
-        firstAccumamntLabel.text = "\(recentResult.firstAccumamnt)"
-        firstPrzwnerCoLabel.text = "\(recentResult.firstPrzwnerCo)"
+//        let formattedNumber = numberFormatter.string(for: memoCount)!
+        firstWinamntLabel.text = numberFormatter.string(for: recentResult.firstWinamnt)! + "원"
+        firstAccumamntLabel.text = numberFormatter.string(for: recentResult.firstAccumamnt)! + "원"
+        firstPrzwnerCoLabel.text = numberFormatter.string(for: recentResult.firstPrzwnerCo)! + "명"
         
         
         

@@ -11,6 +11,7 @@ class MottoPaperCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MottoPaperCollectionViewCell"
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var gameALabel: UILabel!
     @IBOutlet weak var gameBLabel: UILabel!
     @IBOutlet weak var gameCLabel: UILabel!
@@ -20,6 +21,17 @@ class MottoPaperCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        gameALabel.text = ""
+        gameBLabel.text = ""
+        gameCLabel.text = ""
+        gameDLabel.text = ""
+        gameELabel.text = ""
+        
     }
 
 }
