@@ -1,6 +1,9 @@
 # SeSAC_Lotto
 새싹 첫 개인 프로젝트 repo입니다!
 
+# 시연 영상(11.30(화) 3:30AM)
+![iPhone11_Motto](https://user-images.githubusercontent.com/61327153/143922796-e65ef185-d06b-47a9-9e23-0f5ff9e4f282.gif)
+
 # 개인 기획서
 
 ## 기획 아이디어
