@@ -9,7 +9,10 @@ import UIKit
 
 class LottoTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var testLabel: UILabel!
+    
+    @IBOutlet weak var gameLabel: UILabel!
+    @IBOutlet weak var numbersStackView: UIStackView!
+    
     static let identifier = "LottoTableViewCell"
 
     override func awakeFromNib() {

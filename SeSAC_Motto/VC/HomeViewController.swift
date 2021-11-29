@@ -23,6 +23,9 @@ class HomeViewController: UIViewController {
 //    @IBOutlet weak var mottoTableView: UITableView!
 //    @IBOutlet weak var lottoTableView: UITableView!
     
+    @IBOutlet weak var mottoCountLabel: UILabel!
+    @IBOutlet weak var lottoCountLabel: UILabel!
+    
     @IBOutlet weak var mottoPrz1CountLabel: UILabel!
     @IBOutlet weak var mottoPrz2CountLabel: UILabel!
     @IBOutlet weak var mottoPrz3CountLabel: UILabel!
@@ -97,8 +100,15 @@ class HomeViewController: UIViewController {
         
         drawResults = localRealm.objects(DrawResult.self)
         
+        
         recentDrawNo = 991
-        loadAllDrawData(drwNo: recentDrawNo)
+        
+        let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
+        if drawResults.filter(predicate).count == 0  { // 가장 최근 회차 정보가 없다면
+            loadAllDrawData(drwNo: recentDrawNo)
+        }
+        
+     
 
         checkIsRecent(recent: recentDrawNo)
         
@@ -126,7 +136,6 @@ class HomeViewController: UIViewController {
 //            }
         }
         
-        let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
         recentDrawResults = drawResults.filter(predicate) // 가장 최근 회차 정보
         
         
@@ -293,24 +302,21 @@ class HomeViewController: UIViewController {
             case 5: label.text = "\(recentResult.drwtNo5)"
             case 6: label.text = "\(recentResult.drwtNo6)"
             case 8:
+                label.clipsToBounds = false
                 label.text = "\(recentResult.bnusNo)"
+                label.backgroundColor = .white
+                label.layer.borderWidth = 0.5
+                label.layer.borderColor = UIColor.myOrange?.cgColor
+                label.textColor = .myOrange
+                
             default: // 7번은 +
                 label.textColor = .orange
                 label.text = "+"
+                
             }
-//            let num = Int(label.text!) ?? 0
-//            switch num {
-//            case 1...9: label.backgroundColor = .yellow
-//            case 10...19: label.backgroundColor = .blue
-//            case 20...29: label.backgroundColor = .red
-//            case 30...39: label.backgroundColor = .gray
-//            case 40...45: label.backgroundColor = .green
-//            default: label.backgroundColor = .clear
-//            }
-       
             index += 1
         }
-//        let formattedNumber = numberFormatter.string(for: memoCount)!
+        
         firstWinamntLabel.text = numberFormatter.string(for: recentResult.firstWinamnt)! + "원"
         firstAccumamntLabel.text = numberFormatter.string(for: recentResult.firstAccumamnt)! + "원"
         firstPrzwnerCoLabel.text = numberFormatter.string(for: recentResult.firstPrzwnerCo)! + "명"
@@ -379,13 +385,12 @@ class HomeViewController: UIViewController {
             
         }
         
-//        var recentTargetList: Results<Motto>!
-//        if tableView == mottoTableView {
-//            recentTargetList = recentMottoLists
-//        } else {
-//            recentTargetList = recentLottoLists
-//        }
+
+        drawDateLabel.text = recentDrawResult.drwNoDate
+        UserDefaults.standard.set(recentDrawResult.drwNoDate, forKey: "recentDrawDate")
         
+        mottoCountLabel.text = "\(recentMottoLists.count)게임"
+        lottoCountLabel.text = "\(recentLottoLists.count)게임"
         
         mottoPrz1CountLabel.text = "\(recentMottoLists.filter("prize == 1").count)개"
         mottoPrz2CountLabel.text = "\(recentMottoLists.filter("prize == 2").count)개"

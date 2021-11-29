@@ -13,21 +13,25 @@ class ManualBuyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var numberLabel: UILabel!
     
-    override var isSelected: Bool {
+    override var isSelected: Bool{
         didSet {
             if isSelected {
-                self.backgroundColor = .yellow
+                numberLabel.textColor = .white
+                self.backgroundColor = .myOrange
             } else {
-                self.backgroundColor = .green
+                numberLabel.textColor = .lightGray
+                self.backgroundColor = .clear
             }
-            
-            
+
+
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
     }
 
 }

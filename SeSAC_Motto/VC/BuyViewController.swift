@@ -29,7 +29,7 @@ class BuyViewController: UIViewController {
     
     var nextDrawNo = 0 {
         didSet {
-            nextDrawNoLabel.text = "\(nextDrawNo)"
+            nextDrawNoLabel.text = "\(nextDrawNo)회차"
             print("nextDrawNo",nextDrawNo)
         }
     }
@@ -98,17 +98,7 @@ class BuyViewController: UIViewController {
         
         updateBuyCountLabel()
         
-//        let numberFormatter = NumberFormatter()
-//        numberFormatter.numberStyle = .decimal
-//        let mottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == true", NSNumber(integerLiteral: nextDrawNo))
-//        mottoes = localRealm.objects(Motto.self).filter(mottoPredicate)
-//        mottoBuyCountLabel.text = numberFormatter.string(for: mottoes.count * 1000)! + "원"
-//
-//        let lottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == false", NSNumber(integerLiteral: nextDrawNo))
-//        lottoes = localRealm.objects(Motto.self).filter(lottoPredicate)
-//        lottoBuyCountLabel.text = numberFormatter.string(for: lottoes.count * 1000)! + "원"
-//
-    }
+       }
     
     func updateBuyCountLabel() {
         let numberFormatter = NumberFormatter()
@@ -126,6 +116,7 @@ class BuyViewController: UIViewController {
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: MottoBuyViewController.identifier) as? MottoBuyViewController else { return }
         
+        self.navigationController?.navigationBar.tintColor = .myOrange
         self.navigationController?.pushViewController(vc, animated: true)
         
         
@@ -135,7 +126,7 @@ class BuyViewController: UIViewController {
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: LottoBuyViewController.identifier) as? LottoBuyViewController else { return }
         
-        
+        self.navigationController?.navigationBar.tintColor = .myOrange
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

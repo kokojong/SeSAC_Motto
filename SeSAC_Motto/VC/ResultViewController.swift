@@ -61,9 +61,27 @@ class ResultViewController: UIViewController {
         }
         
         tableView.estimatedRowHeight = 70
-//        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         
+    }
+    
+    func updateStackViews(stackView: UIStackView, idx: Int) {
+        
+        let winMotto = winMottoes[idx]
+        let winNumberList = [winMotto.mottoDrwtNo1, winMotto.mottoDrwtNo2, winMotto.mottoDrwtNo3, winMotto.mottoDrwtNo4, winMotto.mottoDrwtNo5, winMotto.mottoDrwtNo6]
+        var index = 0
+        for v in stackView.arrangedSubviews {
+            let label = v as! UILabel
+            label.clipsToBounds = true
+            label.layer.cornerRadius = label.layer.frame.size.width / 2
+            label.textColor = .white
+
+            label.text = "\(winNumberList[index])"
+     
+       
+            index += 1
+        }
     }
   
 }
@@ -82,11 +100,31 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         let winMotto = winMottoes[indexPath.row]
         let winDrawResult = winDrawResults[indexPath.row]
         // 1000회차 구매 번호  1 2 3 4 5 6
-        cell.numberLabel.text = "\(winMotto.mottoDrwNo)회차 구매 번호 \(winMotto.mottoDrwtNo1) \(winMotto.mottoDrwtNo2) \(winMotto.mottoDrwtNo3) \(winMotto.mottoDrwtNo4) \(winMotto.mottoDrwtNo5) \(winMotto.mottoDrwtNo6)"
+//        cell.numberLabel.text = "\(winMotto.mottoDrwNo)회차 구매 번호 \(winMotto.mottoDrwtNo1) \(winMotto.mottoDrwtNo2) \(winMotto.mottoDrwtNo3) \(winMotto.mottoDrwtNo4) \(winMotto.mottoDrwtNo5) \(winMotto.mottoDrwtNo6)"
         
         // 900회차 1등 상금 : 123456789원
-        cell.winLabel.text = "\(winDrawResult.drwNo)회차 1등! 상금 : \(winDrawResult.firstWinamnt)원"
-        cell.backgroundColor = .yellow
+//        cell.winLabel.text = "\(winDrawResult.drwNo)회차 1등! 상금 : \(winDrawResult.firstWinamnt)원"
+//        cell.backgroundColor = .yellow
+        
+        switch winMotto.mottoNum {
+        case 0: cell.gameLabel.text = "A"
+        case 1: cell.gameLabel.text = "B"
+        case 2: cell.gameLabel.text = "C"
+        case 3: cell.gameLabel.text = "D"
+        case 4: cell.gameLabel.text = "E"
+        default : cell.gameLabel.text = "Z"
+        }
+        
+        cell.mottoDrawNoLabel.text = "\(winMotto.mottoDrwNo)회차 구매 번호"
+        cell.winDrawNoLabel.text = "\(winDrawResult.drwNo)회차 1등 번호"
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        cell.winAmountLabel.text = "\(numberFormatter.string(for: winDrawResult.firstWinamnt) ?? "0")" + "원"
+        
+        cell.bgView.clipsToBounds = true
+        cell.bgView.layer.cornerRadius = 8
+        updateStackViews(stackView: cell.numbersStackView, idx: indexPath.row)
         
         return cell
     }

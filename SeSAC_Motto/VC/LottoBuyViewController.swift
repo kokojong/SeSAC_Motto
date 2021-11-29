@@ -13,6 +13,7 @@ class LottoBuyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var tableViewContainerView: UIView!
     static let identifier = "LottoBuyViewController"
     
     var lottoList: [[Int]] = []
@@ -32,6 +33,9 @@ class LottoBuyViewController: UIViewController {
         tableView.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        tableViewContainerView.clipsToBounds = true
+        tableViewContainerView.layer.cornerRadius = 8
         
         let tableViewNib = UINib(nibName: LottoTableViewCell.identifier, bundle: nil)
         tableView.register(tableViewNib, forCellReuseIdentifier: LottoTableViewCell.identifier)
@@ -71,10 +75,12 @@ class LottoBuyViewController: UIViewController {
         } else {
             if lottoList.count < 5 {
                 lottoList.append(numberList.sorted())
+                deselectAll()
             } else {
                 showAlert(title: "게임수 오류", message: "한번에 5개의 게임까지 저장이 가능합니다.")
             }
         }
+        
         
         tableView.reloadData()
         
@@ -114,8 +120,14 @@ extension LottoBuyViewController: UICollectionViewDataSource, UICollectionViewDe
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ManualBuyCollectionViewCell.identifier, for: indexPath) as? ManualBuyCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = .green
-        cell.numberLabel.text = String(indexPath.row + 1)
+        
+    
+        cell.layer.cornerRadius = cell.layer.frame.size.width / 2
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.backgroundColor = UIColor.clear
+        cell.numberLabel.textColor = .lightGray
+        cell.numberLabel.text = String(format: "%02d", indexPath.row + 1)
         
         return cell
     }
@@ -137,6 +149,32 @@ extension LottoBuyViewController: UICollectionViewDataSource, UICollectionViewDe
         
     }
     
+    func deselectAll() {
+        collectionView.indexPathsForSelectedItems?.forEach {
+            collectionView.deselectItem(at: $0, animated: true)
+            if let index = numberList.firstIndex(of: $0.row + 1) {
+                numberList.remove(at: index)
+            }
+            
+        }
+    }
+    
+    func updateStackViews(stackView: UIStackView, game: Int) {
+        
+        let numList = lottoList[game]
+        var index = 0
+        for v in stackView.arrangedSubviews {
+            let label = v as! UILabel
+            label.clipsToBounds = true
+            label.layer.cornerRadius = label.layer.frame.size.width / 2
+            label.textColor = .white
+
+            label.text = "\(numList[index])"
+     
+       
+            index += 1
+        }
+    }
     
 }
 
@@ -148,10 +186,29 @@ extension LottoBuyViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LottoTableViewCell.identifier, for: indexPath) as? LottoTableViewCell else { return UITableViewCell()}
         
-        cell.testLabel.text = "\(lottoList[indexPath.row][0]) \(lottoList[indexPath.row][1]) \(lottoList[indexPath.row][2]) \(lottoList[indexPath.row][3]) \(lottoList[indexPath.row][4]) \(lottoList[indexPath.row][5]) "
+        switch indexPath.row {
+        case 0:
+            cell.gameLabel.text = "A"
+            if lottoList[indexPath.row].count > 0{
+                updateStackViews(stackView: cell.numbersStackView, game: indexPath.row)
+            }
+        case 1: cell.gameLabel.text = "B"
+        case 2: cell.gameLabel.text = "C"
+        case 3: cell.gameLabel.text = "D"
+        case 4: cell.gameLabel.text = "E"
+        default: print("error")
+        }
+        if lottoList[indexPath.row].count > 0{
+            updateStackViews(stackView: cell.numbersStackView, game: indexPath.row)
+        }
+        
+        
+//        cell.testLabel.text = "\(lottoList[indexPath.row][0]) \(lottoList[indexPath.row][1]) \(lottoList[indexPath.row][2]) \(lottoList[indexPath.row][3]) \(lottoList[indexPath.row][4]) \(lottoList[indexPath.row][5]) "
         
         return cell
     }
+    
+    
     
     
 }

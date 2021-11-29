@@ -126,8 +126,12 @@ extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == includeCollectionView {
             guard let cell = includeCollectionView.dequeueReusableCell(withReuseIdentifier: ManualBuyCollectionViewCell.identifier, for: indexPath) as? ManualBuyCollectionViewCell else { return UICollectionViewCell() }
             
-//            cell.backgroundColor = .green
-            cell.numberLabel.text = String(indexPath.row + 1)
+            cell.layer.cornerRadius = cell.layer.frame.size.width / 2
+            cell.layer.borderWidth = 0.5
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.backgroundColor = UIColor.clear
+            cell.numberLabel.textColor = .lightGray
+            cell.numberLabel.text = String(format: "%02d", indexPath.row + 1)
             
             return cell
             
@@ -135,8 +139,12 @@ extension MottoBuyViewController: UICollectionViewDelegate, UICollectionViewData
         else {
             guard let cell = exceptCollectionView.dequeueReusableCell(withReuseIdentifier: ManualBuyCollectionViewCell.identifier, for: indexPath) as? ManualBuyCollectionViewCell else { return UICollectionViewCell() }
             
-//            cell.backgroundColor = .green
-            cell.numberLabel.text = String(indexPath.row + 1)
+            cell.layer.cornerRadius = cell.layer.frame.size.width / 2
+            cell.layer.borderWidth = 0.5
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.backgroundColor = UIColor.clear
+            cell.numberLabel.textColor = .lightGray
+            cell.numberLabel.text = String(format: "%02d", indexPath.row + 1)
             return cell
         }
         

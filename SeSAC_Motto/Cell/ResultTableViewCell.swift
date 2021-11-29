@@ -11,19 +11,32 @@ class ResultTableViewCell: UITableViewCell {
     
     static let identifier = "ResultTableViewCell"
 
-    @IBOutlet weak var numberLabel: UILabel!
+
+    @IBOutlet weak var mottoDrawNoLabel: UILabel!
+    @IBOutlet weak var winDrawNoLabel: UILabel!
     
-    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var gameLabel: UILabel!
+    @IBOutlet weak var numbersStackView: UIStackView!
+    @IBOutlet weak var winAmountLabel: UILabel!
+    
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+       
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        gameLabel.text = "A"
     }
     
 }
