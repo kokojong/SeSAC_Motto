@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast
 
 class MottoPaperViewController: UIViewController {
     
@@ -44,9 +45,12 @@ class MottoPaperViewController: UIViewController {
         }
     }
 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.makeToast("모또가 저장되었습니다")
         
         mottoPapers = localRealm.objects(MottoPaper.self)
         

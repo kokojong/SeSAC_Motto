@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast
 
 class LottoPaperViewController: UIViewController {
     
@@ -49,6 +50,7 @@ class LottoPaperViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.makeToast("구매 기록이 추가되었습니다")
         
         lottoPapers = localRealm.objects(MottoPaper.self)
         

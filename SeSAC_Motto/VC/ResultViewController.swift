@@ -11,6 +11,7 @@ import RealmSwift
 class ResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     static let identifier = "ResultViewController"
     
@@ -22,13 +23,52 @@ class ResultViewController: UIViewController {
     
     var isMotto: Bool = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        if isMotto {
+            let predicate = NSPredicate(format: "isMotto == true")
+            mottoes = localRealm.objects(Motto.self).filter(predicate)
+        } else {
+            let predicate = NSPredicate(format: "isMotto == false")
+            mottoes = localRealm.objects(Motto.self).filter(predicate)
+        }
+        
+        for motto in mottoes {
+            for drawResult in drawResults {
+                // 모두 일치한다면
+                if motto.mottoDrwtNo1 == drawResult.drwtNo1 && motto.mottoDrwtNo2 == drawResult.drwtNo2 && motto.mottoDrwtNo3 == drawResult.drwtNo3 && motto.mottoDrwtNo4 == drawResult.drwtNo4 && motto.mottoDrwtNo5 == drawResult.drwtNo5 && motto.mottoDrwtNo6 == drawResult.drwtNo6 {
+
+                    if !winMottoes.contains(motto) {
+                        winMottoes.append(motto)
+                        winDrawResults.append(drawResult)
+                    }
+
+                }
+            }
+
+        }
+        
+        if winMottoes.count == 0 {
+            emptyLabel.isHidden = false
+            if isMotto == true {
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n모또를 더 추가해보세요.☺️"
+            } else {
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n구매 기록을 더 추가해보세요.☺️"
+            }
+        } else {
+            emptyLabel.isHidden = true
+        }
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "아깝게 놓친 1등"
         
         
-        if isMotto {
+        if isMotto == true {
             let predicate = NSPredicate(format: "isMotto == true")
             mottoes = localRealm.objects(Motto.self).filter(predicate)
         } else {
@@ -60,6 +100,19 @@ class ResultViewController: UIViewController {
             
         }
         
+        if winMottoes.count == 0 {
+           
+            if isMotto == true {
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n모또를 더 추가해보세요.☺️"
+            } else {
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n구매 기록을 더 추가해보세요.☺️"
+            }
+            emptyLabel.isHidden = false
+        } else {
+            emptyLabel.isHidden = true
+        }
+
+        
         tableView.estimatedRowHeight = 70
         tableView.rowHeight = UITableView.automaticDimension
         
@@ -83,6 +136,11 @@ class ResultViewController: UIViewController {
             index += 1
         }
     }
+    
+
+
+      
+    
   
 }
 
@@ -131,3 +189,5 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
+

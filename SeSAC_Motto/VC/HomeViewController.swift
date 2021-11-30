@@ -87,10 +87,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "홈"
+        self.navigationItem.title = "Motto"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 25, weight: .bold)]
+        self.navigationController?.navigationBar.backgroundColor = .myOrange
+    
         
         numberFormatter.numberStyle = .decimal
-//        let formattedNumber = numberFormatter.string(for: memoCount)!
         
         self.tabBarController?.tabBar.tintColor = UIColor(named: "myOrange")
         
@@ -105,7 +107,7 @@ class HomeViewController: UIViewController {
         
         let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
         if drawResults.filter(predicate).count == 0  { // 가장 최근 회차 정보가 없다면
-            loadAllDrawData(drwNo: recentDrawNo)
+            loadAllDrawData(drawNo: recentDrawNo)
         }
         
      
@@ -118,22 +120,20 @@ class HomeViewController: UIViewController {
         
         // 기본적으로 처음에 realm에 저장
         if drawResults.count < 991 { // 네트워크 오류,  등으로 991개를 못받은 경우 -> 모자란 만큼 받아오자
-//            DispatchQueue.global().sync {
                 
-                for i in 1...991 {
-                    let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: 991 - i))
+            for i in 1...991 {
+                let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: 991 - i))
 
-                    if drawResults.filter(predicate).count == 0 {
-                        loadAllDrawData(drwNo: 991 - i)
-                    }
-                    
+                if drawResults.filter(predicate).count == 0 {
+                    loadAllDrawData(drawNo: 991 - i)
                 }
                 
-                UserDefaults.standard.set(991, forKey: "recentDrawNo")
-                
-                let c = drawResults.count
-                self.recentDrawNo = 991
-//            }
+            }
+            
+            UserDefaults.standard.set(991, forKey: "recentDrawNo")
+          
+            self.recentDrawNo = 991
+
         }
         
         recentDrawResults = drawResults.filter(predicate) // 가장 최근 회차 정보
@@ -148,9 +148,10 @@ class HomeViewController: UIViewController {
         
     }
     
-    func loadAllDrawData(drwNo: Int) {
+    func loadAllDrawData(drawNo: Int) {
+        
     
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)"
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drawNo)"
             // https://www.dhlottery.co.kr/common.do? method=getLottoNumber&drwNo=903
 
         
@@ -177,7 +178,12 @@ class HomeViewController: UIViewController {
                 let firstPrzwnerCo = json["firstPrzwnerCo"].intValue
                 
                 let result = DrawResult(drwNo: drwNo, drwNoDate: drwNoDate, drwtNo1: drwtNo1, drwtNo2: drwtNo2, drwtNo3: drwtNo3, drwtNo4: drwtNo4, drwtNo5: drwtNo5, drwtNo6: drwtNo6, firstAccumamnt: firstAccumamnt, firstWinamnt: firstWinamnt, firstPrzwnerCo: firstPrzwnerCo, bnusNo: bnusNo)
-                self.saveResult(drawResult: result)
+                
+                let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: drawNo))
+                if self.drawResults.filter(predicate).count == 0  { // 가장 최근 회차 정보가 없다면
+                    self.saveResult(drawResult: result)
+                }
+                
                 
 
             case .failure(let error):
@@ -201,9 +207,6 @@ class HomeViewController: UIViewController {
     
     func checkIsRecent(recent: Int) {
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(recent + 1)"
-        
-        
-//        DispatchQueue.global().sync {
             
             AF.request(url, method: .get).validate().responseJSON { response in
                 switch response.result {
@@ -229,6 +232,11 @@ class HomeViewController: UIViewController {
                         let firstPrzwnerCo = json["firstPrzwnerCo"].intValue
                         
                         let result = DrawResult(drwNo: drwNo, drwNoDate: drwNoDate, drwtNo1: drwtNo1, drwtNo2: drwtNo2, drwtNo3: drwtNo3, drwtNo4: drwtNo4, drwtNo5: drwtNo5, drwtNo6: drwtNo6, firstAccumamnt: firstAccumamnt, firstWinamnt: firstWinamnt, firstPrzwnerCo: firstPrzwnerCo, bnusNo: bnusNo)
+                        
+                        let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: self.recentDrawNo))
+                        if self.drawResults.filter(predicate).count == 0  { // 가장 최근 회차 정보가 없다면
+                            self.saveResult(drawResult: result)
+                        }
                         self.saveResult(drawResult: result)
                         
                         self.recentDrawNo = recent+1
@@ -240,7 +248,6 @@ class HomeViewController: UIViewController {
                 }
             
             }
-//        }
         
     }
     

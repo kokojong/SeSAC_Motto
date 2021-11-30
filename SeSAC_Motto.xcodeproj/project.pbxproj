@@ -12,6 +12,8 @@
 		046783CB27455F6400C4C8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046783C927455F6400C4C8AC /* Main.storyboard */; };
 		046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046783CC27455F6600C4C8AC /* Assets.xcassets */; };
 		046783D027455F6600C4C8AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046783CE27455F6600C4C8AC /* LaunchScreen.storyboard */; };
+		0469B17B2755A5B2000DDAD9 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469B17A2755A5B2000DDAD9 /* UIView+Shadow.swift */; };
+		0469B17E2755FD0B000DDAD9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 0469B17D2755FD0B000DDAD9 /* Toast */; };
 		04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C12745F8E100E368FD /* Home.storyboard */; };
 		04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4C32745F9E000E368FD /* HomeViewController.swift */; };
 		04B5B4C62746016A00E368FD /* Buy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C52746016A00E368FD /* Buy.storyboard */; };
@@ -52,6 +54,7 @@
 		046783CC27455F6600C4C8AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046783CF27455F6600C4C8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046783D127455F6600C4C8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0469B17A2755A5B2000DDAD9 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		04B5B4C12745F8E100E368FD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		04B5B4C32745F9E000E368FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04B5B4C52746016A00E368FD /* Buy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Buy.storyboard; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 				04BAA3A927490E8600C7BD8E /* Alamofire in Frameworks */,
 				04BAA38527476E3300C7BD8E /* RealmSwift in Frameworks */,
 				04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */,
+				0469B17E2755FD0B000DDAD9 /* Toast in Frameworks */,
 				04BAA38327476E3300C7BD8E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,10 +121,10 @@
 				046783C327455F6400C4C8AC /* AppDelegate.swift */,
 				04BAA3D82753418500C7BD8E /* MyColor.swift */,
 				046783C527455F6400C4C8AC /* SceneDelegate.swift */,
+				046783CE27455F6600C4C8AC /* LaunchScreen.storyboard */,
 				04BAA38627477C9400C7BD8E /* Model */,
 				04B5B4CB2746019E00E368FD /* Storyboard */,
 				04B5B4CC274618CD00E368FD /* VC */,
-				046783CE27455F6600C4C8AC /* LaunchScreen.storyboard */,
 				04BAA3A62748EC2F00C7BD8E /* Cell */,
 				046783D127455F6600C4C8AC /* Info.plist */,
 				046783CC27455F6600C4C8AC /* Assets.xcassets */,
@@ -145,13 +149,14 @@
 			children = (
 				04B5B4C32745F9E000E368FD /* HomeViewController.swift */,
 				04B5B4CD274618EC00E368FD /* BuyViewController.swift */,
-				04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */,
-				04B5B4CF274618FA00E368FD /* HistoryViewController.swift */,
-				04B5B4D12746190E00E368FD /* MapViewController.swift */,
 				04BAA3BE274B626000C7BD8E /* MottoBuyViewController.swift */,
 				04BAA3C2274FA61C00C7BD8E /* LottoBuyViewController.swift */,
 				04BAA3C0274CD2EF00C7BD8E /* MottoPaperViewController.swift */,
 				04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */,
+				04B5B4CF274618FA00E368FD /* HistoryViewController.swift */,
+				04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */,
+				04B5B4D12746190E00E368FD /* MapViewController.swift */,
+				0469B17A2755A5B2000DDAD9 /* UIView+Shadow.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				04BAA38427476E3300C7BD8E /* RealmSwift */,
 				04BAA3A827490E8600C7BD8E /* Alamofire */,
 				04BAA3AB27490EAD00C7BD8E /* SwiftyJSON */,
+				0469B17D2755FD0B000DDAD9 /* Toast */,
 			);
 			productName = SeSAC_Motto;
 			productReference = 046783C027455F6400C4C8AC /* SeSAC_Motto.app */;
@@ -236,6 +242,7 @@
 				04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				04BAA3A727490E8600C7BD8E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				04BAA3AA27490EAD00C7BD8E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				0469B17C2755FD0B000DDAD9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 046783C127455F6400C4C8AC /* Products */;
 			projectDirPath = "";
@@ -279,6 +286,7 @@
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
 				04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */,
+				0469B17B2755A5B2000DDAD9 /* UIView+Shadow.swift in Sources */,
 				04B5B4D0274618FA00E368FD /* HistoryViewController.swift in Sources */,
 				04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */,
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
@@ -443,20 +451,20 @@
 				DEVELOPMENT_TEAM = HQ9MZ38KLH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Motto/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "모의로또 - 모또";
+				INFOPLIST_KEY_CFBundleDisplayName = "모또";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kokojong.SeSAC-Motto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -475,20 +483,20 @@
 				DEVELOPMENT_TEAM = HQ9MZ38KLH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Motto/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "모의로또 - 모또";
+				INFOPLIST_KEY_CFBundleDisplayName = "모또";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kokojong.SeSAC-Motto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -521,6 +529,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0469B17C2755FD0B000DDAD9 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -548,6 +564,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0469B17D2755FD0B000DDAD9 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0469B17C2755FD0B000DDAD9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		04BAA38227476E3300C7BD8E /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04BAA38127476E3300C7BD8E /* XCRemoteSwiftPackageReference "realm-cocoa" */;

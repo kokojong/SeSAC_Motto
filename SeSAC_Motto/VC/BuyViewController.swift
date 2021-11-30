@@ -9,7 +9,6 @@ import UIKit
 import RealmSwift
 
 class BuyViewController: UIViewController {
-    @IBOutlet weak var collectionViewContainer: UIView!
     
     @IBOutlet weak var mottoCollectionView: UICollectionView!
     @IBOutlet weak var lottoCollectionView: UICollectionView!
@@ -19,6 +18,11 @@ class BuyViewController: UIViewController {
     @IBOutlet weak var lottoBuyButton: UIButton!
     @IBOutlet weak var mottoBuyCountLabel: UILabel!
     @IBOutlet weak var lottoBuyCountLabel: UILabel!
+    
+    @IBOutlet weak var mottoEmptyLabel: UILabel!
+    @IBOutlet weak var lottoEmptyLabel: UILabel!
+    
+    
     let localRealm = try! Realm()
     
     var mottoPapers: Results<MottoPaper>! // 해당 회차의 paper(realm 데이터)
@@ -39,7 +43,11 @@ class BuyViewController: UIViewController {
         mottoCollectionView.reloadData()
         lottoCollectionView.reloadData()
         nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
+        updateEmptyLabel()
         updateBuyCountLabel()
+        
+        
+        
     }
     
     override func viewDidLoad() {
@@ -69,9 +77,9 @@ class BuyViewController: UIViewController {
         let flowLayout1 = UICollectionViewFlowLayout()
         let space: CGFloat = 8
         let inset: CGFloat = 5
-        let w = mottoCollectionView.frame.size.width - 7*space
+        let w = mottoCollectionView.frame.size.width - 5*space
 //        let totalWidth = UIScreen.main.bounds.width - 3*space // 2개 배치 -> 공간은 3개 비우기(여백까지)
-        flowLayout1.itemSize = CGSize(width: w/2, height: w/2)
+        flowLayout1.itemSize = CGSize(width: w/2.4, height: w/2)
         
         flowLayout1.scrollDirection = .horizontal // 가로 스크롤
         
@@ -79,7 +87,7 @@ class BuyViewController: UIViewController {
         
         let flowLayout2 = UICollectionViewFlowLayout()
 //        let totalWidth = UIScreen.main.bounds.width - 3*space // 2개 배치 -> 공간은 3개 비우기(여백까지)
-        flowLayout2.itemSize = CGSize(width: w/2, height: w/2)
+        flowLayout2.itemSize = CGSize(width: w/2.4, height: w/2)
         
         flowLayout2.scrollDirection = .horizontal // 가로 스크롤
         
@@ -96,6 +104,8 @@ class BuyViewController: UIViewController {
         lottoBuyButton.clipsToBounds = true
         lottoBuyButton.layer.cornerRadius = 8
         
+        updateEmptyLabel()
+    
         updateBuyCountLabel()
         
        }
@@ -110,6 +120,22 @@ class BuyViewController: UIViewController {
         let lottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == false", NSNumber(integerLiteral: nextDrawNo))
         lottoes = localRealm.objects(Motto.self).filter(lottoPredicate)
         lottoBuyCountLabel.text = numberFormatter.string(for: lottoes.count * 1000)! + "원"
+    }
+    
+    func updateEmptyLabel() {
+        if mottoPapers.count == 0 {
+            mottoEmptyLabel.isHidden = false
+            mottoEmptyLabel.text = "\(nextDrawNo)회차의 모또가 없습니다.\n모또를 더 추가해보세요.☺️"
+        } else {
+            mottoEmptyLabel.isHidden = true
+        }
+        
+        if lottoPapers.count == 0 {
+            lottoEmptyLabel.isHidden = false
+            lottoEmptyLabel.text = "\(nextDrawNo)회차의 모또가 없습니다.\n구매 정보를 더 추가해보세요.☺️"
+        } else {
+            lottoEmptyLabel.isHidden = true
+        }
     }
     
     @IBAction func onMottoBuyButtonClicked(_ sender: UIButton) {
@@ -161,11 +187,21 @@ extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSourc
                 
                 let text = "\(String(format: "%02d", game.mottoDrwtNo1)) \(String(format: "%02d", game.mottoDrwtNo2)) \(String(format: "%02d", game.mottoDrwtNo3)) \(String(format: "%02d", game.mottoDrwtNo4)) \(String(format: "%02d", game.mottoDrwtNo5)) \(String(format: "%02d", game.mottoDrwtNo6))"
                 switch i {
-                case 0 : cell.gameALabel.text = "A \(text)"
-                case 1 : cell.gameBLabel.text = "B \(text)"
-                case 2 : cell.gameCLabel.text = "C \(text)"
-                case 3 : cell.gameDLabel.text = "D \(text)"
-                case 4 : cell.gameELabel.text = "E \(text)"
+                case 0 :
+                    cell.gameALabel.text = "\(text)"
+                    cell.ALabel.text = "A"
+                case 1 :
+                    cell.gameBLabel.text = "\(text)"
+                    cell.BLabel.text = "B"
+                case 2 :
+                    cell.gameCLabel.text = "\(text)"
+                    cell.CLabel.text = "C"
+                case 3 :
+                    cell.gameDLabel.text = "\(text)"
+                    cell.DLabel.text = "D"
+                case 4 :
+                    cell.gameELabel.text = "\(text)"
+                    cell.ELabel.text = "E"
                 default : print("default")
                 }
                 
@@ -191,17 +227,41 @@ extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             let predicate = NSPredicate(format: "mottoPaperNum == %@ AND isMottoPaper == false", NSNumber(integerLiteral: row))
             let lottoPaper = lottoPapers.filter(predicate).first!.mottoPaper
             
+            
+            cell.ALabel.isHidden = true
+            cell.BLabel.isHidden = true
+            cell.CLabel.isHidden = true
+            cell.DLabel.isHidden = true
+            cell.ELabel.isHidden = true
+            
+            
             for i in 0...lottoPaper.count-1 {
                 let predicate = NSPredicate(format: "mottoNum == %@", NSNumber(integerLiteral: i))
                 let game = lottoPaper.filter(predicate).first! // 0~4번 게임
                 
                 let text = "\(String(format: "%02d", game.mottoDrwtNo1)) \(String(format: "%02d", game.mottoDrwtNo2)) \(String(format: "%02d", game.mottoDrwtNo3)) \(String(format: "%02d", game.mottoDrwtNo4)) \(String(format: "%02d", game.mottoDrwtNo5)) \(String(format: "%02d", game.mottoDrwtNo6))"
+                
                 switch i {
-                case 0 : cell.gameALabel.text = "A \(text)"
-                case 1 : cell.gameBLabel.text = "B \(text)"
-                case 2 : cell.gameCLabel.text = "C \(text)"
-                case 3 : cell.gameDLabel.text = "D \(text)"
-                case 4 : cell.gameELabel.text = "E \(text)"
+                case 0 :
+                    cell.gameALabel.text = "\(text)"
+                    cell.ALabel.text = "A"
+                    cell.ALabel.isHidden = false
+                case 1 :
+                    cell.gameBLabel.text = "\(text)"
+                    cell.BLabel.text = "B"
+                    cell.BLabel.isHidden = false
+                case 2 :
+                    cell.gameCLabel.text = "\(text)"
+                    cell.CLabel.text = "C"
+                    cell.CLabel.isHidden = false
+                case 3 :
+                    cell.gameDLabel.text = "\(text)"
+                    cell.DLabel.text = "D"
+                    cell.DLabel.isHidden = false
+                case 4 :
+                    cell.gameELabel.text = "\(text)"
+                    cell.ELabel.text = "E"
+                    cell.ELabel.isHidden = false
                 default : print("default")
                 }
                 

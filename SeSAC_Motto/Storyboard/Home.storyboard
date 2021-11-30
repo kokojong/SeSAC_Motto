@@ -22,22 +22,22 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBG-xJ-dA0" userLabel="ScrollViewContent">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="585"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="900회차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH7-io-Ry9">
-                                                <rect key="frame" x="25" y="20" width="325" height="24"/>
+                                                <rect key="frame" x="25" y="15" width="325" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ju-0u-VJi">
-                                                <rect key="frame" x="25" y="52" width="325" height="18"/>
+                                                <rect key="frame" x="25" y="47" width="325" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02f-33-9Qe" userLabel="numbersView">
-                                                <rect key="frame" x="24" y="86" width="327" height="79"/>
+                                                <rect key="frame" x="24" y="81" width="327" height="79"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="NKx-bE-V64">
                                                         <rect key="frame" x="16.5" y="22" width="294" height="35"/>
@@ -136,7 +136,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8T-rz-yLC" userLabel="drawView">
-                                                <rect key="frame" x="24" y="181" width="327" height="180"/>
+                                                <rect key="frame" x="24" y="176" width="327" height="180"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 당첨액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOd-2u-3Sw">
                                                         <rect key="frame" x="20" y="20" width="287" height="18"/>
@@ -208,7 +208,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlB-Dl-N3N" userLabel="resultView">
-                                                <rect key="frame" x="24" y="389" width="327" height="176"/>
+                                                <rect key="frame" x="24" y="384" width="327" height="150"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JP-2d-2jn">
                                                         <rect key="frame" x="8" y="8" width="70" height="18"/>
@@ -427,9 +427,10 @@
                                                     <constraint firstAttribute="trailing" secondItem="TIW-rn-Jvw" secondAttribute="trailing" constant="8" id="3G1-O0-Ucz"/>
                                                     <constraint firstItem="9JP-2d-2jn" firstAttribute="top" secondItem="JlB-Dl-N3N" secondAttribute="top" constant="8" id="5wM-47-kAf"/>
                                                     <constraint firstItem="pri-xu-TYv" firstAttribute="trailing" secondItem="Zun-oc-lKJ" secondAttribute="trailing" id="A7W-MI-1t8"/>
+                                                    <constraint firstItem="pri-xu-TYv" firstAttribute="bottom" secondItem="TIW-rn-Jvw" secondAttribute="bottom" id="AYS-Oq-ZUo"/>
                                                     <constraint firstItem="pri-xu-TYv" firstAttribute="leading" secondItem="JlB-Dl-N3N" secondAttribute="leading" constant="8" id="FPz-fU-FQr"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Zun-oc-lKJ" secondAttribute="bottom" constant="66" id="LQc-C2-kNR"/>
-                                                    <constraint firstItem="UUy-n3-Pzj" firstAttribute="top" secondItem="9JP-2d-2jn" secondAttribute="bottom" constant="8" id="QB5-Af-rBJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Zun-oc-lKJ" secondAttribute="bottom" constant="40" id="LQc-C2-kNR"/>
+                                                    <constraint firstItem="UUy-n3-Pzj" firstAttribute="bottom" secondItem="s9s-hW-5io" secondAttribute="bottom" id="OIa-gl-nm7"/>
                                                     <constraint firstItem="Zun-oc-lKJ" firstAttribute="top" secondItem="9JP-2d-2jn" secondAttribute="bottom" constant="66" id="TDz-Ie-Vzi"/>
                                                     <constraint firstItem="TIW-rn-Jvw" firstAttribute="leading" secondItem="Zun-oc-lKJ" secondAttribute="trailing" constant="8" id="W8t-6B-yKX"/>
                                                     <constraint firstAttribute="trailing" secondItem="s9s-hW-5io" secondAttribute="trailing" constant="8" id="iNq-rZ-j4k"/>
@@ -439,7 +440,6 @@
                                                     <constraint firstItem="UUy-n3-Pzj" firstAttribute="leading" secondItem="JlB-Dl-N3N" secondAttribute="leading" constant="8" id="uLT-b2-goG"/>
                                                     <constraint firstItem="UUy-n3-Pzj" firstAttribute="trailing" secondItem="9JP-2d-2jn" secondAttribute="trailing" id="wbg-7t-U5Y"/>
                                                     <constraint firstItem="9JP-2d-2jn" firstAttribute="leading" secondItem="JlB-Dl-N3N" secondAttribute="leading" constant="8" id="xXh-rt-Dyy"/>
-                                                    <constraint firstItem="pri-xu-TYv" firstAttribute="top" secondItem="Zun-oc-lKJ" secondAttribute="bottom" constant="8" id="zfl-Ao-FMB"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -457,16 +457,16 @@
                                             <constraint firstItem="JlB-Dl-N3N" firstAttribute="top" secondItem="B8T-rz-yLC" secondAttribute="bottom" constant="28" id="azh-ie-0tZ"/>
                                             <constraint firstItem="02f-33-9Qe" firstAttribute="top" secondItem="9Ju-0u-VJi" secondAttribute="bottom" constant="16" id="fJ2-vz-yrL"/>
                                             <constraint firstAttribute="trailing" secondItem="02f-33-9Qe" secondAttribute="trailing" constant="24" id="ffm-dr-e8d"/>
-                                            <constraint firstItem="tH7-io-Ry9" firstAttribute="top" secondItem="UBG-xJ-dA0" secondAttribute="top" constant="20" id="kQ6-e0-ERg"/>
+                                            <constraint firstItem="tH7-io-Ry9" firstAttribute="top" secondItem="UBG-xJ-dA0" secondAttribute="top" constant="15" id="kQ6-e0-ERg"/>
                                             <constraint firstAttribute="trailing" secondItem="tH7-io-Ry9" secondAttribute="trailing" constant="25" id="wuK-6V-EWc"/>
                                             <constraint firstItem="9Ju-0u-VJi" firstAttribute="top" secondItem="tH7-io-Ry9" secondAttribute="bottom" constant="8" id="zZR-Q8-55R"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="UBG-xJ-dA0" firstAttribute="top" secondItem="DV1-ca-1MM" secondAttribute="top" constant="8" id="FbE-7k-gft"/>
+                                    <constraint firstItem="UBG-xJ-dA0" firstAttribute="top" secondItem="DV1-ca-1MM" secondAttribute="top" id="FbE-7k-gft"/>
                                     <constraint firstItem="DV1-ca-1MM" firstAttribute="leading" secondItem="UBG-xJ-dA0" secondAttribute="leading" id="Nkb-6i-C2q"/>
-                                    <constraint firstItem="UBG-xJ-dA0" firstAttribute="bottom" secondItem="DV1-ca-1MM" secondAttribute="bottom" constant="8" id="Pgu-xl-rNe"/>
+                                    <constraint firstItem="UBG-xJ-dA0" firstAttribute="bottom" secondItem="DV1-ca-1MM" secondAttribute="bottom" id="Pgu-xl-rNe"/>
                                     <constraint firstItem="UBG-xJ-dA0" firstAttribute="width" secondItem="FVM-de-IBb" secondAttribute="width" id="buS-4z-l5E"/>
                                     <constraint firstItem="UBG-xJ-dA0" firstAttribute="trailing" secondItem="DV1-ca-1MM" secondAttribute="trailing" id="th9-IC-lve"/>
                                 </constraints>
@@ -485,9 +485,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="5NC-TC-KkK"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="eFl-Pz-lCB">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="YIz-OH-N1T"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="eFl-Pz-lCB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="drawDateLabel" destination="9Ju-0u-VJi" id="Gne-uM-zyf"/>
@@ -539,7 +537,6 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <namedColor name="myGrayBackground">
             <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Toast
 
 class LottoBuyViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class LottoBuyViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var tableViewContainerView: UIView!
+    @IBOutlet weak var saveGameButton: UIButton!
     static let identifier = "LottoBuyViewController"
     
     var lottoList: [[Int]] = []
@@ -27,7 +29,7 @@ class LottoBuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "구매 기록 추가"
+        title = "구매 기록 입력"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -53,6 +55,9 @@ class LottoBuyViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         
         layout.scrollDirection = .vertical
+        
+        saveGameButton.clipsToBounds = true
+        saveGameButton.layer.cornerRadius = 8
 
         collectionView.isScrollEnabled = false
         collectionView.collectionViewLayout = layout
@@ -75,6 +80,7 @@ class LottoBuyViewController: UIViewController {
         } else {
             if lottoList.count < 5 {
                 lottoList.append(numberList.sorted())
+                self.view.makeToast("게임정보가 저장되었습니다")
                 deselectAll()
             } else {
                 showAlert(title: "게임수 오류", message: "한번에 5개의 게임까지 저장이 가능합니다.")

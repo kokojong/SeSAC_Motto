@@ -20,39 +20,106 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HkH-MG-A8V" userLabel="ScrollContentView">
-                                <rect key="frame" x="0.0" y="169" width="414" height="558.5"/>
+                                <rect key="frame" x="0.0" y="165" width="414" height="566"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ip-Xa-Qla" userLabel="lottoView">
-                                        <rect key="frame" x="0.0" y="309" width="414" height="241.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro9-Zj-PKZ" userLabel="mottoView">
+                                        <rect key="frame" x="0.0" y="52" width="414" height="243"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실 구매" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-k1-mvv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 구매액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6T-KB-SRj">
+                                                <rect key="frame" x="25" y="0.0" width="364" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zx-Kj-6Tl">
+                                                <rect key="frame" x="25" y="23" width="234" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" name="myOrange"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Cb-JsW" userLabel="mottoBuyButton">
+                                                <rect key="frame" x="289" y="23" width="100" height="30"/>
+                                                <color key="backgroundColor" name="myOrange"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="f49-Fa-jZM"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="구매하기 +"/>
+                                                <connections>
+                                                    <action selector="onMottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dO3-Vz-6gz"/>
+                                                </connections>
+                                            </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-4g-8OD">
+                                                <rect key="frame" x="0.0" y="63" width="414" height="180"/>
+                                                <color key="backgroundColor" name="myGrayBackground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="tug-9l-fQZ"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DfN-ee-HPe">
+                                                    <size key="itemSize" width="128" height="212"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="motto" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mck-Yq-jRb" userLabel="mottoEmptyLabel">
+                                                <rect key="frame" x="184.5" y="143" width="45" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="2ft-4g-8OD" firstAttribute="leading" secondItem="ro9-Zj-PKZ" secondAttribute="leading" id="1NT-Dk-UGW"/>
+                                            <constraint firstAttribute="trailing" secondItem="x6T-KB-SRj" secondAttribute="trailing" constant="25" id="HQv-nN-dxl"/>
+                                            <constraint firstItem="6Zx-Kj-6Tl" firstAttribute="leading" secondItem="ro9-Zj-PKZ" secondAttribute="leading" constant="25" id="JYF-tm-muY"/>
+                                            <constraint firstItem="Uvt-Cb-JsW" firstAttribute="height" secondItem="6Zx-Kj-6Tl" secondAttribute="height" id="Rjr-SP-J4Z"/>
+                                            <constraint firstItem="Uvt-Cb-JsW" firstAttribute="leading" secondItem="6Zx-Kj-6Tl" secondAttribute="trailing" constant="30" id="WHw-In-Cdu"/>
+                                            <constraint firstItem="Uvt-Cb-JsW" firstAttribute="centerY" secondItem="6Zx-Kj-6Tl" secondAttribute="centerY" id="WPt-rA-v3g"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uvt-Cb-JsW" secondAttribute="trailing" constant="25" id="WbN-kU-iV5"/>
+                                            <constraint firstAttribute="trailing" secondItem="2ft-4g-8OD" secondAttribute="trailing" id="XOL-Ht-v6e"/>
+                                            <constraint firstItem="6Zx-Kj-6Tl" firstAttribute="top" secondItem="x6T-KB-SRj" secondAttribute="bottom" constant="5" id="aST-BK-ADw"/>
+                                            <constraint firstItem="mck-Yq-jRb" firstAttribute="centerX" secondItem="ro9-Zj-PKZ" secondAttribute="centerX" id="eKH-Xb-hih"/>
+                                            <constraint firstItem="mck-Yq-jRb" firstAttribute="centerY" secondItem="2ft-4g-8OD" secondAttribute="centerY" id="jrv-90-Tql"/>
+                                            <constraint firstItem="x6T-KB-SRj" firstAttribute="top" secondItem="ro9-Zj-PKZ" secondAttribute="top" id="loj-6m-NJB"/>
+                                            <constraint firstItem="2ft-4g-8OD" firstAttribute="top" secondItem="6Zx-Kj-6Tl" secondAttribute="bottom" constant="10" id="m4l-Xc-wLo"/>
+                                            <constraint firstAttribute="bottom" secondItem="2ft-4g-8OD" secondAttribute="bottom" id="rKq-rV-ZOB"/>
+                                            <constraint firstItem="x6T-KB-SRj" firstAttribute="leading" secondItem="ro9-Zj-PKZ" secondAttribute="leading" constant="25" id="xLg-35-joy"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ip-Xa-Qla" userLabel="lottoView">
+                                        <rect key="frame" x="0.0" y="315" width="414" height="243"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실 구매액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-k1-mvv">
                                                 <rect key="frame" x="25" y="0.0" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="us4-Lr-hJk">
-                                                <rect key="frame" x="25" y="23" width="239" height="24"/>
+                                                <rect key="frame" x="25" y="23" width="239" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" name="myOrange"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LY-mh-k7r" userLabel="lottoBuyButton">
-                                                <rect key="frame" x="289" y="18.5" width="100" height="33"/>
+                                                <rect key="frame" x="289" y="23" width="100" height="30"/>
                                                 <color key="backgroundColor" name="myOrange"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="KZz-jO-tjM"/>
-                                                    <constraint firstAttribute="height" constant="33" id="rgH-yf-mY8"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="입력하기 +"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="입력하기 +"/>
                                                 <connections>
                                                     <action selector="onLottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xDh-mK-cEq"/>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oz6-O4-1zI">
-                                                <rect key="frame" x="0.0" y="61.5" width="414" height="180"/>
+                                                <rect key="frame" x="0.0" y="63" width="414" height="180"/>
                                                 <color key="backgroundColor" name="myGrayBackground"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="mVZ-Uu-tfA"/>
@@ -74,6 +141,12 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lotto" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-u1-6A1" userLabel="lottoEmptyLabel">
+                                                <rect key="frame" x="190" y="143" width="34.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -81,6 +154,7 @@
                                             <constraint firstItem="Oz6-O4-1zI" firstAttribute="leading" secondItem="6Ip-Xa-Qla" secondAttribute="leading" id="A38-WX-yZg"/>
                                             <constraint firstItem="0LY-mh-k7r" firstAttribute="centerY" secondItem="us4-Lr-hJk" secondAttribute="centerY" id="Crf-iu-9fw"/>
                                             <constraint firstItem="0LY-mh-k7r" firstAttribute="leading" secondItem="us4-Lr-hJk" secondAttribute="trailing" constant="25" id="Ge0-pb-Cn6"/>
+                                            <constraint firstItem="0LY-mh-k7r" firstAttribute="height" secondItem="us4-Lr-hJk" secondAttribute="height" id="Gl7-k2-b2v"/>
                                             <constraint firstAttribute="trailing" secondItem="NaG-k1-mvv" secondAttribute="trailing" constant="25" id="Kat-Qg-Ivs"/>
                                             <constraint firstItem="NaG-k1-mvv" firstAttribute="leading" secondItem="6Ip-Xa-Qla" secondAttribute="leading" constant="25" id="MAP-GT-3Vl"/>
                                             <constraint firstAttribute="bottom" secondItem="Oz6-O4-1zI" secondAttribute="bottom" id="NK4-YF-nCo"/>
@@ -88,67 +162,9 @@
                                             <constraint firstItem="Oz6-O4-1zI" firstAttribute="top" secondItem="0LY-mh-k7r" secondAttribute="bottom" constant="10" id="SI9-7g-pv5"/>
                                             <constraint firstAttribute="trailing" secondItem="0LY-mh-k7r" secondAttribute="trailing" constant="25" id="VYh-Zf-lla"/>
                                             <constraint firstAttribute="trailing" secondItem="Oz6-O4-1zI" secondAttribute="trailing" id="Vmd-7m-Qn4"/>
+                                            <constraint firstItem="AJf-u1-6A1" firstAttribute="centerX" secondItem="6Ip-Xa-Qla" secondAttribute="centerX" id="ZJ0-oV-MqP"/>
                                             <constraint firstItem="NaG-k1-mvv" firstAttribute="top" secondItem="6Ip-Xa-Qla" secondAttribute="top" id="gd3-M2-PEF"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro9-Zj-PKZ" userLabel="mottoView">
-                                        <rect key="frame" x="0.0" y="52" width="414" height="237"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 구매" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6T-KB-SRj">
-                                                <rect key="frame" x="25" y="0.0" width="364" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zx-Kj-6Tl">
-                                                <rect key="frame" x="25" y="23" width="234" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <color key="textColor" name="myOrange"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvt-Cb-JsW" userLabel="mottoBuyButton">
-                                                <rect key="frame" x="289" y="18.5" width="100" height="33"/>
-                                                <color key="backgroundColor" name="myOrange"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="f49-Fa-jZM"/>
-                                                    <constraint firstAttribute="height" constant="33" id="nWJ-yr-FFH"/>
-                                                </constraints>
-                                                <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="구매하기 +"/>
-                                                <connections>
-                                                    <action selector="onMottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dO3-Vz-6gz"/>
-                                                </connections>
-                                            </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-4g-8OD">
-                                                <rect key="frame" x="0.0" y="57" width="414" height="180"/>
-                                                <color key="backgroundColor" name="myGrayBackground"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="180" id="tug-9l-fQZ"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DfN-ee-HPe">
-                                                    <size key="itemSize" width="128" height="212"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells/>
-                                            </collectionView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="2ft-4g-8OD" firstAttribute="leading" secondItem="ro9-Zj-PKZ" secondAttribute="leading" id="1NT-Dk-UGW"/>
-                                            <constraint firstAttribute="trailing" secondItem="x6T-KB-SRj" secondAttribute="trailing" constant="25" id="HQv-nN-dxl"/>
-                                            <constraint firstItem="6Zx-Kj-6Tl" firstAttribute="leading" secondItem="ro9-Zj-PKZ" secondAttribute="leading" constant="25" id="JYF-tm-muY"/>
-                                            <constraint firstItem="Uvt-Cb-JsW" firstAttribute="leading" secondItem="6Zx-Kj-6Tl" secondAttribute="trailing" constant="30" id="WHw-In-Cdu"/>
-                                            <constraint firstItem="Uvt-Cb-JsW" firstAttribute="centerY" secondItem="6Zx-Kj-6Tl" secondAttribute="centerY" id="WPt-rA-v3g"/>
-                                            <constraint firstAttribute="trailing" secondItem="Uvt-Cb-JsW" secondAttribute="trailing" constant="25" id="WbN-kU-iV5"/>
-                                            <constraint firstAttribute="trailing" secondItem="2ft-4g-8OD" secondAttribute="trailing" id="XOL-Ht-v6e"/>
-                                            <constraint firstItem="6Zx-Kj-6Tl" firstAttribute="top" secondItem="x6T-KB-SRj" secondAttribute="bottom" constant="5" id="aST-BK-ADw"/>
-                                            <constraint firstItem="x6T-KB-SRj" firstAttribute="top" secondItem="ro9-Zj-PKZ" secondAttribute="top" id="loj-6m-NJB"/>
-                                            <constraint firstItem="2ft-4g-8OD" firstAttribute="top" secondItem="6Zx-Kj-6Tl" secondAttribute="bottom" constant="10" id="m4l-Xc-wLo"/>
-                                            <constraint firstAttribute="bottom" secondItem="2ft-4g-8OD" secondAttribute="bottom" id="rKq-rV-ZOB"/>
-                                            <constraint firstItem="x6T-KB-SRj" firstAttribute="leading" secondItem="ro9-Zj-PKZ" secondAttribute="leading" constant="25" id="xLg-35-joy"/>
+                                            <constraint firstItem="AJf-u1-6A1" firstAttribute="centerY" secondItem="Oz6-O4-1zI" secondAttribute="centerY" id="vLg-Be-Xdn"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900회차" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-gg-t5M">
@@ -188,9 +204,11 @@
                         <outlet property="lottoBuyButton" destination="0LY-mh-k7r" id="J3N-CD-gKo"/>
                         <outlet property="lottoBuyCountLabel" destination="us4-Lr-hJk" id="eDX-Ph-Zed"/>
                         <outlet property="lottoCollectionView" destination="Oz6-O4-1zI" id="RLM-TU-rpN"/>
+                        <outlet property="lottoEmptyLabel" destination="AJf-u1-6A1" id="V9I-V8-gFD"/>
                         <outlet property="mottoBuyButton" destination="Uvt-Cb-JsW" id="CuD-Ej-4hl"/>
                         <outlet property="mottoBuyCountLabel" destination="6Zx-Kj-6Tl" id="bdc-8E-2fn"/>
                         <outlet property="mottoCollectionView" destination="2ft-4g-8OD" id="1IX-bo-96Z"/>
+                        <outlet property="mottoEmptyLabel" destination="mck-Yq-jRb" id="BXd-h9-RnH"/>
                         <outlet property="nextDrawNoLabel" destination="m5a-gg-t5M" id="9oQ-wf-PWU"/>
                     </connections>
                 </viewController>
@@ -261,7 +279,7 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포함하지 않을 숫자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CU3-QA-uJS">
-                                                <rect key="frame" x="8" y="395.5" width="127" height="21"/>
+                                                <rect key="frame" x="25" y="395.5" width="364" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -276,7 +294,8 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Kx6-Gb-tPP" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" id="1RF-gN-kb2"/>
-                                            <constraint firstItem="CU3-QA-uJS" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" constant="8" id="E1e-Sp-fRA"/>
+                                            <constraint firstAttribute="trailing" secondItem="CU3-QA-uJS" secondAttribute="trailing" constant="25" id="4Xf-GT-Bmm"/>
+                                            <constraint firstItem="CU3-QA-uJS" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" constant="25" id="E1e-Sp-fRA"/>
                                             <constraint firstItem="CU3-QA-uJS" firstAttribute="top" secondItem="Kx6-Gb-tPP" secondAttribute="bottom" constant="20" id="FFs-rP-h5O"/>
                                             <constraint firstItem="pGT-SN-aJ5" firstAttribute="leading" secondItem="ZXW-w9-5hY" secondAttribute="leading" id="NPp-Br-a2d"/>
                                             <constraint firstItem="pGT-SN-aJ5" firstAttribute="top" secondItem="CU3-QA-uJS" secondAttribute="bottom" constant="10" id="Ohm-gW-zoo"/>
@@ -385,14 +404,14 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GJ-CV-ywT">
-                                <rect key="frame" x="100" y="810" width="214" height="44"/>
+                                <rect key="frame" x="8" y="803" width="398" height="44"/>
                                 <color key="backgroundColor" name="myOrange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="fxC-3a-a36"/>
                                 </constraints>
                                 <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="saveGame"/>
+                                <buttonConfiguration key="configuration" style="plain" title="게임 저장하기"/>
                                 <connections>
                                     <action selector="onSaveGameButtonClicked:" destination="DJ5-76-3g0" eventType="touchUpInside" id="hDs-i5-w7D"/>
                                 </connections>
@@ -401,17 +420,17 @@
                         <viewLayoutGuide key="safeArea" id="smu-co-Y2m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0GJ-CV-ywT" firstAttribute="top" secondItem="up8-OT-7g3" secondAttribute="bottom" constant="15" id="0Bi-3a-1Ni"/>
+                            <constraint firstItem="0GJ-CV-ywT" firstAttribute="top" secondItem="up8-OT-7g3" secondAttribute="bottom" constant="8" id="0Bi-3a-1Ni"/>
                             <constraint firstItem="up8-OT-7g3" firstAttribute="leading" secondItem="smu-co-Y2m" secondAttribute="leading" constant="8" id="0lb-d9-eTn"/>
                             <constraint firstItem="smu-co-Y2m" firstAttribute="trailing" secondItem="up8-OT-7g3" secondAttribute="trailing" constant="8" id="0oN-0z-i59"/>
                             <constraint firstItem="0GJ-CV-ywT" firstAttribute="centerX" secondItem="B6Y-dl-4iO" secondAttribute="centerX" id="3vH-I9-9QI"/>
                             <constraint firstItem="2C6-g2-7Ar" firstAttribute="top" secondItem="smu-co-Y2m" secondAttribute="top" id="6jr-x4-idK"/>
-                            <constraint firstItem="smu-co-Y2m" firstAttribute="bottom" secondItem="0GJ-CV-ywT" secondAttribute="bottom" constant="8" id="9w3-5j-fCj"/>
+                            <constraint firstItem="smu-co-Y2m" firstAttribute="bottom" secondItem="0GJ-CV-ywT" secondAttribute="bottom" constant="15" id="9w3-5j-fCj"/>
                             <constraint firstItem="smu-co-Y2m" firstAttribute="trailing" secondItem="2C6-g2-7Ar" secondAttribute="trailing" constant="20" id="ErU-c6-H2k"/>
-                            <constraint firstItem="smu-co-Y2m" firstAttribute="trailing" secondItem="0GJ-CV-ywT" secondAttribute="trailing" constant="100" id="G3r-5t-v5y"/>
+                            <constraint firstItem="smu-co-Y2m" firstAttribute="trailing" secondItem="0GJ-CV-ywT" secondAttribute="trailing" constant="8" id="G3r-5t-v5y"/>
                             <constraint firstItem="up8-OT-7g3" firstAttribute="top" secondItem="2C6-g2-7Ar" secondAttribute="bottom" constant="20" id="O2X-5M-IKG"/>
                             <constraint firstItem="2C6-g2-7Ar" firstAttribute="leading" secondItem="smu-co-Y2m" secondAttribute="leading" constant="20" id="Vz2-0a-BTv"/>
-                            <constraint firstItem="0GJ-CV-ywT" firstAttribute="leading" secondItem="smu-co-Y2m" secondAttribute="leading" constant="100" id="vFg-xL-4Ub"/>
+                            <constraint firstItem="0GJ-CV-ywT" firstAttribute="leading" secondItem="smu-co-Y2m" secondAttribute="leading" constant="8" id="vFg-xL-4Ub"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tfq-3R-jlB">
@@ -424,6 +443,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="up8-OT-7g3" id="VVp-Ig-aB1"/>
+                        <outlet property="saveGameButton" destination="0GJ-CV-ywT" id="Nh3-o8-Pch"/>
                         <outlet property="tableView" destination="Bxa-c7-wVg" id="UGc-Qh-99M"/>
                         <outlet property="tableViewContainerView" destination="2C6-g2-7Ar" id="up0-up-qbN"/>
                     </connections>
