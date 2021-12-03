@@ -29,7 +29,7 @@ class MottoBuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "모의 로또 구매"
+        title = "자동 모또 추가하기"
         
         mottoPapers = localRealm.objects(MottoPaper.self)
         

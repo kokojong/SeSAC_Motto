@@ -25,7 +25,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ro9-Zj-PKZ" userLabel="mottoView">
                                         <rect key="frame" x="0.0" y="52" width="414" height="243"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 구매액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6T-KB-SRj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6T-KB-SRj">
                                                 <rect key="frame" x="25" y="0.0" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -45,7 +45,7 @@
                                                 </constraints>
                                                 <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="구매하기 +"/>
+                                                <state key="normal" title="추가하기 +"/>
                                                 <connections>
                                                     <action selector="onMottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dO3-Vz-6gz"/>
                                                 </connections>
@@ -93,7 +93,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ip-Xa-Qla" userLabel="lottoView">
                                         <rect key="frame" x="0.0" y="315" width="414" height="243"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실 구매액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-k1-mvv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-k1-mvv">
                                                 <rect key="frame" x="25" y="0.0" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -113,7 +113,7 @@
                                                 </constraints>
                                                 <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="입력하기 +"/>
+                                                <state key="normal" title="추가하기 +"/>
                                                 <connections>
                                                     <action selector="onLottoBuyButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xDh-mK-cEq"/>
                                                 </connections>
@@ -197,7 +197,7 @@
                             <constraint firstItem="HkH-MG-A8V" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="w0i-dG-yul"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="구매" image="rectangle.and.pencil.and.ellipsis" catalog="system" id="5gX-13-ae7"/>
+                    <tabBarItem key="tabBarItem" title="추가하기" image="rectangle.and.pencil.and.ellipsis" catalog="system" id="5gX-13-ae7"/>
                     <navigationItem key="navigationItem" id="X3u-LY-HB4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -330,7 +330,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k7o-gC-O7C">
-                        <barButtonItem key="rightBarButtonItem" title="5게임 저장" id="JTY-Sl-GEs">
+                        <barButtonItem key="rightBarButtonItem" title="5게임 추가" id="JTY-Sl-GEs">
                             <color key="tintColor" name="myOrange"/>
                             <connections>
                                 <action selector="onSave5GamesButtonClicked:" destination="PXF-Bp-NTw" id="9Jd-fZ-ne2"/>
@@ -925,12 +925,6 @@
                                             <constraint firstAttribute="height" constant="35" id="xXJ-oI-N8J"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6j-HJ-PTX">
-                                        <rect key="frame" x="15" y="391" width="69.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="myGrayBackground"/>
                                 <constraints>
@@ -943,7 +937,6 @@
                                     <constraint firstItem="ocE-BS-f9S" firstAttribute="leading" secondItem="lUE-5F-Mz6" secondAttribute="leading" id="Kkt-zB-eoT"/>
                                     <constraint firstItem="lUE-5F-Mz6" firstAttribute="trailing" secondItem="KhR-0A-N3e" secondAttribute="trailing" id="Lx5-xI-3Cr"/>
                                     <constraint firstItem="CjD-l2-Cg6" firstAttribute="leading" secondItem="nm1-wJ-GRx" secondAttribute="leading" constant="15" id="MBy-Ii-tOY"/>
-                                    <constraint firstItem="b6j-HJ-PTX" firstAttribute="leading" secondItem="nm1-wJ-GRx" secondAttribute="leading" constant="15" id="MnD-mC-ooO"/>
                                     <constraint firstItem="KhR-0A-N3e" firstAttribute="leading" secondItem="CjD-l2-Cg6" secondAttribute="leading" id="NgK-57-0iC"/>
                                     <constraint firstItem="lUE-5F-Mz6" firstAttribute="leading" secondItem="KhR-0A-N3e" secondAttribute="leading" id="Ph1-2q-y6g"/>
                                     <constraint firstItem="MbV-nB-bfX" firstAttribute="centerY" secondItem="KhR-0A-N3e" secondAttribute="centerY" id="RcJ-vz-mA9"/>
@@ -968,7 +961,6 @@
                                     <constraint firstItem="ocE-BS-f9S" firstAttribute="trailing" secondItem="lUE-5F-Mz6" secondAttribute="trailing" id="uSr-Xx-UAs"/>
                                     <constraint firstItem="MbV-nB-bfX" firstAttribute="trailing" secondItem="aie-16-fq2" secondAttribute="trailing" id="uYT-ms-DXa"/>
                                     <constraint firstItem="bhc-Us-b8C" firstAttribute="centerY" secondItem="lUE-5F-Mz6" secondAttribute="centerY" id="us7-3J-Dbt"/>
-                                    <constraint firstAttribute="bottom" secondItem="b6j-HJ-PTX" secondAttribute="bottom" constant="35" id="yaj-rt-pRA"/>
                                     <constraint firstItem="2hT-ts-fFd" firstAttribute="trailing" secondItem="2Ke-wC-O3d" secondAttribute="trailing" id="z5e-8a-pr8"/>
                                 </constraints>
                             </view>
@@ -1584,12 +1576,6 @@
                                             <constraint firstAttribute="height" constant="35" id="49M-18-gGI"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETO-BH-PER">
-                                        <rect key="frame" x="15" y="391" width="69.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="myGrayBackground"/>
                                 <constraints>
@@ -1601,7 +1587,6 @@
                                     <constraint firstItem="yqA-9p-dBb" firstAttribute="leading" secondItem="IAH-JI-Vhj" secondAttribute="trailing" constant="18" id="81B-yW-Adv"/>
                                     <constraint firstItem="yqA-9p-dBb" firstAttribute="leading" secondItem="DTU-h0-mqJ" secondAttribute="leading" id="9rg-S1-y6T"/>
                                     <constraint firstItem="qXD-cW-UiD" firstAttribute="leading" secondItem="yqA-9p-dBb" secondAttribute="leading" id="BeI-n2-mWe"/>
-                                    <constraint firstItem="ETO-BH-PER" firstAttribute="leading" secondItem="y36-wz-IwP" secondAttribute="leading" constant="15" id="CLL-vN-fSV"/>
                                     <constraint firstItem="iPP-Hm-YE0" firstAttribute="leading" secondItem="y36-wz-IwP" secondAttribute="leading" constant="15" id="Cn6-Hi-QW1"/>
                                     <constraint firstItem="DTU-h0-mqJ" firstAttribute="leading" secondItem="uhw-FO-npF" secondAttribute="trailing" constant="18" id="Fym-Bw-30I"/>
                                     <constraint firstItem="7SN-Vq-JQo" firstAttribute="leading" secondItem="qXD-cW-UiD" secondAttribute="leading" id="HVz-mi-J3Q"/>
@@ -1621,7 +1606,6 @@
                                     <constraint firstAttribute="trailing" secondItem="DEt-zJ-7ag" secondAttribute="trailing" constant="18" id="gRS-3v-mha"/>
                                     <constraint firstItem="uhw-FO-npF" firstAttribute="leading" secondItem="iPP-Hm-YE0" secondAttribute="leading" id="luF-6v-nCr"/>
                                     <constraint firstItem="DTU-h0-mqJ" firstAttribute="centerY" secondItem="uhw-FO-npF" secondAttribute="centerY" id="mBL-gh-8FL"/>
-                                    <constraint firstAttribute="bottom" secondItem="ETO-BH-PER" secondAttribute="bottom" constant="35" id="pIk-Gm-eDM"/>
                                     <constraint firstItem="qXD-cW-UiD" firstAttribute="leading" secondItem="R2R-0D-BrN" secondAttribute="trailing" constant="18" id="pQL-cG-pXW"/>
                                     <constraint firstItem="IAH-JI-Vhj" firstAttribute="trailing" secondItem="uhw-FO-npF" secondAttribute="trailing" id="sNE-3E-9lc"/>
                                     <constraint firstItem="DEt-zJ-7ag" firstAttribute="centerY" secondItem="iPP-Hm-YE0" secondAttribute="centerY" id="t9X-T0-oou"/>
@@ -1667,7 +1651,6 @@
                         <outlet property="eNumberStackView" destination="7SN-Vq-JQo" id="mu9-lF-Oda"/>
                         <outlet property="lottoPaperBuyDateLabel" destination="g4Q-l5-oT5" id="rmJ-lT-FmQ"/>
                         <outlet property="nextDrawDateLabel" destination="5IY-cs-m8x" id="8As-sj-XtN"/>
-                        <outlet property="priceLabel" destination="ETO-BH-PER" id="UPu-mO-QaC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FM6-kn-hcY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

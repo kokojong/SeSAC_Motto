@@ -26,7 +26,6 @@ class LottoPaperViewController: UIViewController {
     
     @IBOutlet weak var lottoPaperBuyDateLabel: UILabel!
     @IBOutlet weak var nextDrawDateLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
     static let identifier = "LottoPaperViewController"
 
     var lottoNumerList: [[Int]] = []
@@ -50,7 +49,7 @@ class LottoPaperViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.makeToast("구매 기록이 추가되었습니다")
+        self.view.makeToast("수동 모또가 추가되었습니다")
         
         lottoPapers = localRealm.objects(MottoPaper.self)
         
@@ -110,7 +109,6 @@ class LottoPaperViewController: UIViewController {
         lottoPaperBuyDateLabel.text = "\(dateFormatter.string(from: lottoPaper.mottoPaperBuyDate))"
         
         drawNoLabel.text = "\(lottoPaper.mottoPaperDrwNo)회차"
-        priceLabel.text = "\(lottoNumerList.count),000원"
 
         let recentDrawDateString = UserDefaults.standard.string(forKey: "recentDrawDate") ?? "2021-11-27"
         let dateFormatter2 = DateFormatter()

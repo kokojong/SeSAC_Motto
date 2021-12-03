@@ -53,7 +53,7 @@ class BuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "구매"
+        title = "추가하기"
         
         nextDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") + 1
         
@@ -115,24 +115,24 @@ class BuyViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         let mottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == true", NSNumber(integerLiteral: nextDrawNo))
         mottoes = localRealm.objects(Motto.self).filter(mottoPredicate)
-        mottoBuyCountLabel.text = numberFormatter.string(for: mottoes.count * 1000)! + "원"
+        mottoBuyCountLabel.text = numberFormatter.string(for: mottoes.count)! + "게임"
         
         let lottoPredicate = NSPredicate(format: "mottoDrwNo == %@ AND isMotto == false", NSNumber(integerLiteral: nextDrawNo))
         lottoes = localRealm.objects(Motto.self).filter(lottoPredicate)
-        lottoBuyCountLabel.text = numberFormatter.string(for: lottoes.count * 1000)! + "원"
+        lottoBuyCountLabel.text = numberFormatter.string(for: lottoes.count)! + "게임"
     }
     
     func updateEmptyLabel() {
         if mottoPapers.count == 0 {
             mottoEmptyLabel.isHidden = false
-            mottoEmptyLabel.text = "\(nextDrawNo)회차의 모또가 없습니다.\n모또를 더 추가해보세요.☺️"
+            mottoEmptyLabel.text = "\(nextDrawNo)회차의 자동/반자동 모또가 없습니다.\n모또를 더 추가해보세요.☺️"
         } else {
             mottoEmptyLabel.isHidden = true
         }
         
         if lottoPapers.count == 0 {
             lottoEmptyLabel.isHidden = false
-            lottoEmptyLabel.text = "\(nextDrawNo)회차의 모또가 없습니다.\n구매 정보를 더 추가해보세요.☺️"
+            lottoEmptyLabel.text = "\(nextDrawNo)회차의 수동 모또가 없습니다.\n구매 정보를 더 추가해보세요.☺️"
         } else {
             lottoEmptyLabel.isHidden = true
         }
@@ -276,7 +276,6 @@ extension BuyViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             
             cell.clipsToBounds = true
             cell.layer.cornerRadius = 8
-            cell.dateLabel.text = "2021.11.29"
 
             return cell
         }

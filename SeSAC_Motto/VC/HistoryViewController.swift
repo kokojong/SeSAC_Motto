@@ -41,8 +41,8 @@ class HistoryViewController: UIViewController {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        mottoBuyCountLabel.text = "\(numberFormatter.string(for: mottoes.count * 1000) ?? "0")" + "원"
-        lottoBuyCountLabel.text = "\(numberFormatter.string(for: lottoes.count * 1000) ?? "0")" + "원"
+        mottoBuyCountLabel.text = "\(numberFormatter.string(for: mottoes.count) ?? "0")" + "게임"
+        lottoBuyCountLabel.text = "\(numberFormatter.string(for: lottoes.count) ?? "0")" + "게임"
      
         
         for i in 1...5 {
@@ -78,7 +78,7 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "구매 기록"
+        title = "기록 보기"
         
         let mottoPredicate = NSPredicate(format: "isMotto == true")
         mottoes = localRealm.objects(Motto.self).filter(mottoPredicate)
@@ -88,8 +88,8 @@ class HistoryViewController: UIViewController {
 
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        mottoBuyCountLabel.text = "\(numberFormatter.string(for: mottoes.count * 1000) ?? "0")" + "원"
-        lottoBuyCountLabel.text = "\(numberFormatter.string(for: lottoes.count * 1000) ?? "0")" + "원"
+        mottoBuyCountLabel.text = "\(numberFormatter.string(for: mottoes.count) ?? "0")" + "게임"
+        lottoBuyCountLabel.text = "\(numberFormatter.string(for: lottoes.count) ?? "0")" + "게임"
         
         for i in 1...5 {
             let predicate = NSPredicate(format: "prize == %@", NSNumber(integerLiteral: i))

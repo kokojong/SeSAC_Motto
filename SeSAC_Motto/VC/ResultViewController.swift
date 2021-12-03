@@ -52,9 +52,9 @@ class ResultViewController: UIViewController {
         if winMottoes.count == 0 {
             emptyLabel.isHidden = false
             if isMotto == true {
-                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n모또를 더 추가해보세요.☺️"
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n자동 모또를 더 추가해보세요.☺️"
             } else {
-                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n구매 기록을 더 추가해보세요.☺️"
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n수동 모또를 더 추가해보세요.☺️"
             }
         } else {
             emptyLabel.isHidden = true
@@ -103,9 +103,9 @@ class ResultViewController: UIViewController {
         if winMottoes.count == 0 {
            
             if isMotto == true {
-                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n모또를 더 추가해보세요.☺️"
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n자동 모또를 더 추가해보세요.☺️"
             } else {
-                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n구매 기록을 더 추가해보세요.☺️"
+                emptyLabel.text = "아깝게 놓친 1등 정보가 없습니다.\n수동 모또를 더 추가해보세요.☺️"
             }
             emptyLabel.isHidden = false
         } else {
@@ -173,7 +173,7 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         default : cell.gameLabel.text = "Z"
         }
         
-        cell.mottoDrawNoLabel.text = "\(winMotto.mottoDrwNo)회차 구매 번호"
+        cell.mottoDrawNoLabel.text = "\(winMotto.mottoDrwNo)회차 모또 번호"
         cell.winDrawNoLabel.text = "\(winDrawResult.drwNo)회차 1등 번호"
         
         let numberFormatter = NumberFormatter()

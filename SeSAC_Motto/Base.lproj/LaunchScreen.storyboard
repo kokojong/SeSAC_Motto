@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FD-GH-58H">
-                                <rect key="frame" x="81" y="378" width="252" height="140"/>
+                                <rect key="frame" x="81" y="398" width="252" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mottoSimbol" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-jY-m4U">
-                                        <rect key="frame" x="132" y="20" width="100" height="100"/>
+                                        <rect key="frame" x="132" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="POH-Q7-a12"/>
                                             <constraint firstAttribute="width" secondItem="LfK-jY-m4U" secondAttribute="height" id="qbd-u0-Xfv"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모또" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KT-d6-v4E">
-                                        <rect key="frame" x="20" y="34" width="104" height="72"/>
+                                        <rect key="frame" x="20" y="14" width="104" height="72"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
                                         <color key="textColor" red="1" green="0.41568627450000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -36,8 +36,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="LfK-jY-m4U" firstAttribute="top" secondItem="3FD-GH-58H" secondAttribute="top" constant="20" id="BGU-Pg-U0F"/>
-                                    <constraint firstAttribute="bottom" secondItem="LfK-jY-m4U" secondAttribute="bottom" constant="20" id="E7D-KF-8BU"/>
+                                    <constraint firstItem="LfK-jY-m4U" firstAttribute="top" secondItem="3FD-GH-58H" secondAttribute="top" id="BGU-Pg-U0F"/>
+                                    <constraint firstAttribute="bottom" secondItem="LfK-jY-m4U" secondAttribute="bottom" id="E7D-KF-8BU"/>
                                     <constraint firstItem="3KT-d6-v4E" firstAttribute="leading" secondItem="3FD-GH-58H" secondAttribute="leading" constant="20" id="GOf-6u-3Wp"/>
                                     <constraint firstItem="LfK-jY-m4U" firstAttribute="leading" secondItem="3KT-d6-v4E" secondAttribute="trailing" constant="8" id="REo-LL-1E9"/>
                                     <constraint firstItem="3KT-d6-v4E" firstAttribute="centerY" secondItem="LfK-jY-m4U" secondAttribute="centerY" id="ngD-BI-Wg2"/>
@@ -45,7 +45,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 로또 어플" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-QE-zMs">
-                                <rect key="frame" x="122.5" y="332" width="169" height="36"/>
+                                <rect key="frame" x="122.5" y="352" width="169" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.41568627450000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

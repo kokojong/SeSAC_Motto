@@ -50,7 +50,7 @@ class MottoPaperViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.makeToast("모또가 저장되었습니다")
+        self.view.makeToast("자동 모또가 추가되었습니다")
         
         mottoPapers = localRealm.objects(MottoPaper.self)
         

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7c-Cj-7vt">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="46.5" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBG-xJ-dA0" userLabel="ScrollViewContent">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
@@ -210,7 +210,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlB-Dl-N3N" userLabel="resultView">
                                                 <rect key="frame" x="24" y="384" width="327" height="150"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모의 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JP-2d-2jn">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자동 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JP-2d-2jn">
                                                         <rect key="frame" x="8" y="8" width="70" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="1ey-Xs-DXw"/>
@@ -309,7 +309,7 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zun-oc-lKJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수동 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zun-oc-lKJ">
                                                         <rect key="frame" x="8" y="92" width="70" height="18"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="CJs-fF-9jV"/>
@@ -465,6 +465,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="UBG-xJ-dA0" firstAttribute="top" secondItem="DV1-ca-1MM" secondAttribute="top" id="FbE-7k-gft"/>
+                                    <constraint firstAttribute="height" constant="574" id="H9O-zK-HNi"/>
                                     <constraint firstItem="DV1-ca-1MM" firstAttribute="leading" secondItem="UBG-xJ-dA0" secondAttribute="leading" id="Nkb-6i-C2q"/>
                                     <constraint firstItem="UBG-xJ-dA0" firstAttribute="bottom" secondItem="DV1-ca-1MM" secondAttribute="bottom" id="Pgu-xl-rNe"/>
                                     <constraint firstItem="UBG-xJ-dA0" firstAttribute="width" secondItem="FVM-de-IBb" secondAttribute="width" id="buS-4z-l5E"/>
@@ -478,9 +479,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="s7c-Cj-7vt" secondAttribute="trailing" id="BRV-FZ-3Cw"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="s7c-Cj-7vt" secondAttribute="bottom" id="ITS-gI-IRV"/>
+                            <constraint firstItem="s7c-Cj-7vt" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="MZc-u6-XDY"/>
                             <constraint firstItem="s7c-Cj-7vt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Xne-64-hWn"/>
-                            <constraint firstItem="s7c-Cj-7vt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="pP8-Cl-4BC"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="5NC-TC-KkK"/>

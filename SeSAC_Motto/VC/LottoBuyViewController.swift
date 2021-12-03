@@ -29,7 +29,7 @@ class LottoBuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "구매 기록 입력"
+        title = "수동 모또 추가하기"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -80,7 +80,7 @@ class LottoBuyViewController: UIViewController {
         } else {
             if lottoList.count < 5 {
                 lottoList.append(numberList.sorted())
-                self.view.makeToast("게임정보가 저장되었습니다")
+                self.view.makeToast("게임 정보가 저장되었습니다")
                 deselectAll()
             } else {
                 showAlert(title: "게임수 오류", message: "한번에 5개의 게임까지 저장이 가능합니다.")
