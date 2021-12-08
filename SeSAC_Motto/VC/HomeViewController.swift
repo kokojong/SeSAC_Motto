@@ -20,9 +20,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var firstPrzwnerCoLabel: UILabel!
     @IBOutlet weak var resultStackView: UIStackView!
     
-//    @IBOutlet weak var mottoTableView: UITableView!
-//    @IBOutlet weak var lottoTableView: UITableView!
-    
     @IBOutlet weak var mottoCountLabel: UILabel!
     @IBOutlet weak var lottoCountLabel: UILabel!
     
@@ -50,7 +47,6 @@ class HomeViewController: UIViewController {
     
     var recentMottoLists: Results<Motto>!
     var recentLottoLists: Results<Motto>!
-//    var recentDrawResult: Results<DrawResult>!
     
     var recentDrawNo = UserDefaults.standard.integer(forKey: "recentDrawNo") {
         didSet {
@@ -59,7 +55,6 @@ class HomeViewController: UIViewController {
             UserDefaults.standard.set(recentDrawNo, forKey: "recentDrawNo")
             let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
             
-            // 이걸 지금 못받아옴(처음 991)
             recentDrawResults = drawResults.filter(predicate)// 가장 최근 회차 정보
             checkIsRecent(recent: recentDrawNo)
             updateBottomViewByRecentDrawNo()
@@ -284,7 +279,6 @@ class HomeViewController: UIViewController {
         let queue = DispatchQueue(label: "Network")
         monitor.start(queue: queue)
         
-//        print("status",status)
         return status
     }
 
@@ -293,7 +287,6 @@ class HomeViewController: UIViewController {
         drawNumLabel.text = "\(recentDrawNo) 회차"
         let recentResult = recentDrawResults.first ?? DrawResult(drwNo: 0, drwNoDate: "", drwtNo1: 0, drwtNo2: 0, drwtNo3: 0, drwtNo4: 0, drwtNo5: 0, drwtNo6: 0, firstAccumamnt: 0, firstWinamnt: 0, firstPrzwnerCo: 0, bnusNo: 0)
         
-//        let recentResult = recentDrawResult.first!
         var index = 1
         for v in resultStackView.arrangedSubviews {
             let label = v as! UILabel
@@ -328,8 +321,6 @@ class HomeViewController: UIViewController {
         firstAccumamntLabel.text = numberFormatter.string(for: recentResult.firstAccumamnt)! + "원"
         firstPrzwnerCoLabel.text = numberFormatter.string(for: recentResult.firstPrzwnerCo)! + "명"
         
-        
-        
     }
     
     func updateBottomViewByRecentDrawNo() {
@@ -338,7 +329,6 @@ class HomeViewController: UIViewController {
         recentMottoLists = localRealm.objects(Motto.self).filter(recentMottoPredicate)
         recentLottoLists = localRealm.objects(Motto.self).filter(recentLottoPredicate)
         
-        // 여기서 recentDrawResult가 nil
         recentDrawResult = recentDrawResults.first ?? recentDrawResult
         recentResultNumList = [recentDrawResult.drwtNo1, recentDrawResult.drwtNo2, recentDrawResult.drwtNo3, recentDrawResult.drwtNo4, recentDrawResult.drwtNo5, recentDrawResult.drwtNo6]
         recentResultBnsNum = [recentDrawResult.bnusNo]

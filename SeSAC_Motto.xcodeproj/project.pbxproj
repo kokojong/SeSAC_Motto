@@ -12,7 +12,6 @@
 		046783CB27455F6400C4C8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046783C927455F6400C4C8AC /* Main.storyboard */; };
 		046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046783CC27455F6600C4C8AC /* Assets.xcassets */; };
 		046783D027455F6600C4C8AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046783CE27455F6600C4C8AC /* LaunchScreen.storyboard */; };
-		0469B17B2755A5B2000DDAD9 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469B17A2755A5B2000DDAD9 /* UIView+Shadow.swift */; };
 		0469B17E2755FD0B000DDAD9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 0469B17D2755FD0B000DDAD9 /* Toast */; };
 		04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B5B4C12745F8E100E368FD /* Home.storyboard */; };
 		04B5B4C42745F9E000E368FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B5B4C32745F9E000E368FD /* HomeViewController.swift */; };
@@ -54,7 +53,6 @@
 		046783CC27455F6600C4C8AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		046783CF27455F6600C4C8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		046783D127455F6600C4C8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0469B17A2755A5B2000DDAD9 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		04B5B4C12745F8E100E368FD /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		04B5B4C32745F9E000E368FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04B5B4C52746016A00E368FD /* Buy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Buy.storyboard; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				04B5B4CF274618FA00E368FD /* HistoryViewController.swift */,
 				04BAA3A42748E6FA00C7BD8E /* ResultViewController.swift */,
 				04B5B4D12746190E00E368FD /* MapViewController.swift */,
-				0469B17A2755A5B2000DDAD9 /* UIView+Shadow.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -286,7 +283,6 @@
 				04B5B4CE274618EC00E368FD /* BuyViewController.swift in Sources */,
 				046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */,
 				04BAA3BC274B540600C7BD8E /* ManualBuyCollectionViewCell.swift in Sources */,
-				0469B17B2755A5B2000DDAD9 /* UIView+Shadow.swift in Sources */,
 				04B5B4D0274618FA00E368FD /* HistoryViewController.swift in Sources */,
 				04BAA38A2747866900C7BD8E /* LottoSpotAPIModel.swift in Sources */,
 				046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */,
@@ -447,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HQ9MZ38KLH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Motto/Info.plist;
@@ -479,7 +475,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = HQ9MZ38KLH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Motto/Info.plist;

@@ -14,8 +14,8 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "updateBottomViewByRecentDrawNo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,9 +30,9 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
-            landmarkName = "updateBottomViewByRecentDrawNo()"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
+            landmarkName = "updateUIByRecentDrawNo(recentDrawNo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,10 +46,10 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "recentDrawNo"
-            landmarkType = "24">
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "HomeViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "F554EB6A-EC53-43E0-AEE6-A311A3ADE975 - 5bfa48c97cc3c04f"
@@ -154,8 +154,8 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,8 +170,8 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,8 +186,8 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "loadAllDrawData(drawNo:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,8 +202,8 @@
             filePath = "SeSAC_Motto/VC/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "updateUIByRecentDrawNo(recentDrawNo:)"
             landmarkType = "7">
          </BreakpointContent>

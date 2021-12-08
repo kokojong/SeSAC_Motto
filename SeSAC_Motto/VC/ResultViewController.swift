@@ -178,7 +178,13 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource {
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        cell.winAmountLabel.text = "\(numberFormatter.string(for: winDrawResult.firstWinamnt) ?? "0")" + "원"
+        var firstWinamnt: String = ""
+        if winDrawResult.firstWinamnt != 0 { // 1등 당첨자가 존재 한다면
+            firstWinamnt = numberFormatter.string(for: winDrawResult.firstWinamnt) ?? "0" + "원"
+        } else {
+            firstWinamnt = "\(numberFormatter.string(for: winDrawResult.firstAccumamnt) ?? "0")" + "/n원"
+        }
+        cell.winAmountLabel.text = firstWinamnt
         
         cell.bgView.clipsToBounds = true
         cell.bgView.layer.cornerRadius = 8
