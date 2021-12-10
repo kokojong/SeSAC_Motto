@@ -38,11 +38,3 @@
 ## 이터레이션 별 일정
 [이터레이션 별 일정](https://fluffy-brie-4fd.notion.site/0720f716960644309ce84b9c971f67cd)
 
-
-🚩 아래 페이지는 추후에 수정 될 계획입니다(일단은 제출용으로 전체 페이지를 첨부합니다)
-
-[노션 페이지로 이동](https://fluffy-brie-4fd.notion.site/5991375e7eb64db79b1eb307aadec5be)
-
-
-# 팀 빌딩
-[노션 페이지로 ](https://fluffy-brie-4fd.notion.site/38b0566f448a44d3b47fb5db98173661)
