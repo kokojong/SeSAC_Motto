@@ -98,7 +98,7 @@ class HomeViewController: UIViewController {
         drawResults = localRealm.objects(DrawResult.self)
         
         
-        recentDrawNo = 991
+        recentDrawNo = 1000
         
         let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: recentDrawNo))
         if drawResults.filter(predicate).count == 0  { // 가장 최근 회차 정보가 없다면
@@ -114,20 +114,20 @@ class HomeViewController: UIViewController {
         updateUIByRecentDrawNo(recentDrawNo: recentDrawNo)
         
         // 기본적으로 처음에 realm에 저장
-        if drawResults.count < 991 { // 네트워크 오류,  등으로 991개를 못받은 경우 -> 모자란 만큼 받아오자
+        if drawResults.count < 1000 { // 네트워크 오류등으로 991개를 못받은 경우 -> 모자란 만큼 받아오자
                 
-            for i in 1...991 {
-                let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: 991 - i))
+            for i in 1...1000 {
+                let predicate = NSPredicate(format: "drwNo == %@", NSNumber(integerLiteral: 1000 - i))
 
                 if drawResults.filter(predicate).count == 0 {
-                    loadAllDrawData(drawNo: 991 - i)
+                    loadAllDrawData(drawNo: 1000 - i)
                 }
                 
             }
             
-            UserDefaults.standard.set(991, forKey: "recentDrawNo")
+            UserDefaults.standard.set(1000, forKey: "recentDrawNo")
           
-            self.recentDrawNo = 991
+            self.recentDrawNo = 1000
 
         }
         
@@ -258,14 +258,12 @@ class HomeViewController: UIViewController {
             if path.status == .satisfied {
                 status = true
                 DispatchQueue.main.async {
-                    print("연결되어 있음")
                     status = true
                     
                 }
             } else {
                 status = false
                 DispatchQueue.main.async {
-                    print("연결되어 있지 않음")
                     status = false
                     
                     let alert = UIAlertController(title: "네트워크 오류", message: "네트워크에 연결되어 있지 않아요.\n설정화면으로 이동합니다 🥲", preferredStyle: .alert)

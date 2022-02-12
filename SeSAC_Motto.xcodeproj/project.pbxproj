@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0425FA982767A91B000B736B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0425FA972767A91B000B736B /* GoogleService-Info.plist */; };
 		046783C427455F6400C4C8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046783C327455F6400C4C8AC /* AppDelegate.swift */; };
 		046783C627455F6400C4C8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046783C527455F6400C4C8AC /* SceneDelegate.swift */; };
 		046783CB27455F6400C4C8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046783C927455F6400C4C8AC /* Main.storyboard */; };
@@ -43,9 +44,13 @@
 		04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */; };
 		04BAA3C92750C47100C7BD8E /* LottoPaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */; };
 		04BAA3D92753418600C7BD8E /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAA3D82753418500C7BD8E /* MyColor.swift */; };
+		CA9138D2DCEF3BC22EA9ACFF /* Pods_SeSAC_Motto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A938F50E440E7FE555AAFBA /* Pods_SeSAC_Motto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0425FA972767A91B000B736B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0425FADC276B6B3B000B736B /* SeSAC_Motto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC_Motto.entitlements; sourceTree = "<group>"; };
+		0425FADD276B6B46000B736B /* SeSAC_MottoRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC_MottoRelease.entitlements; sourceTree = "<group>"; };
 		046783C027455F6400C4C8AC /* SeSAC_Motto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_Motto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046783C327455F6400C4C8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046783C527455F6400C4C8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +84,9 @@
 		04BAA3C5274FB71800C7BD8E /* LottoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LottoTableViewCell.xib; sourceTree = "<group>"; };
 		04BAA3C82750C47100C7BD8E /* LottoPaperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoPaperViewController.swift; sourceTree = "<group>"; };
 		04BAA3D82753418500C7BD8E /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
+		868300AE9E912E0AEF20E1FF /* Pods-SeSAC_Motto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC_Motto.release.xcconfig"; path = "Target Support Files/Pods-SeSAC_Motto/Pods-SeSAC_Motto.release.xcconfig"; sourceTree = "<group>"; };
+		91694E05655238993266A5C9 /* Pods-SeSAC_Motto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeSAC_Motto.debug.xcconfig"; path = "Target Support Files/Pods-SeSAC_Motto/Pods-SeSAC_Motto.debug.xcconfig"; sourceTree = "<group>"; };
+		9A938F50E440E7FE555AAFBA /* Pods_SeSAC_Motto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeSAC_Motto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 				04BAA3AC27490EAD00C7BD8E /* SwiftyJSON in Frameworks */,
 				0469B17E2755FD0B000DDAD9 /* Toast in Frameworks */,
 				04BAA38327476E3300C7BD8E /* Realm in Frameworks */,
+				CA9138D2DCEF3BC22EA9ACFF /* Pods_SeSAC_Motto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +111,8 @@
 			children = (
 				046783C227455F6400C4C8AC /* SeSAC_Motto */,
 				046783C127455F6400C4C8AC /* Products */,
+				FDB7EE03143EF6ED35D2EAAD /* Pods */,
+				840D0492FC36363D07141057 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +127,8 @@
 		046783C227455F6400C4C8AC /* SeSAC_Motto */ = {
 			isa = PBXGroup;
 			children = (
+				0425FADD276B6B46000B736B /* SeSAC_MottoRelease.entitlements */,
+				0425FADC276B6B3B000B736B /* SeSAC_Motto.entitlements */,
 				046783C327455F6400C4C8AC /* AppDelegate.swift */,
 				04BAA3D82753418500C7BD8E /* MyColor.swift */,
 				046783C527455F6400C4C8AC /* SceneDelegate.swift */,
@@ -126,6 +139,7 @@
 				04BAA3A62748EC2F00C7BD8E /* Cell */,
 				046783D127455F6600C4C8AC /* Info.plist */,
 				046783CC27455F6600C4C8AC /* Assets.xcassets */,
+				0425FA972767A91B000B736B /* GoogleService-Info.plist */,
 			);
 			path = SeSAC_Motto;
 			sourceTree = "<group>";
@@ -184,6 +198,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		840D0492FC36363D07141057 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A938F50E440E7FE555AAFBA /* Pods_SeSAC_Motto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDB7EE03143EF6ED35D2EAAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91694E05655238993266A5C9 /* Pods-SeSAC_Motto.debug.xcconfig */,
+				868300AE9E912E0AEF20E1FF /* Pods-SeSAC_Motto.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 046783D427455F6600C4C8AC /* Build configuration list for PBXNativeTarget "SeSAC_Motto" */;
 			buildPhases = (
+				77DC4475B61494FC71B5CAD5 /* [CP] Check Pods Manifest.lock */,
 				046783BC27455F6400C4C8AC /* Sources */,
 				046783BD27455F6400C4C8AC /* Frameworks */,
 				046783BE27455F6400C4C8AC /* Resources */,
+				A0D47E5618B9646315B361F0 /* [CP] Embed Pods Frameworks */,
+				0425FA992767AB97000B736B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -228,7 +262,7 @@
 			};
 			buildConfigurationList = 046783BB27455F6400C4C8AC /* Build configuration list for PBXProject "SeSAC_Motto" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -262,6 +296,7 @@
 				046783CD27455F6600C4C8AC /* Assets.xcassets in Resources */,
 				04BAA3C7274FB71800C7BD8E /* LottoTableViewCell.xib in Resources */,
 				046783CB27455F6400C4C8AC /* Main.storyboard in Resources */,
+				0425FA982767A91B000B736B /* GoogleService-Info.plist in Resources */,
 				04B5B4C82746018B00E368FD /* History.storyboard in Resources */,
 				04B5B4C22745F8E100E368FD /* Home.storyboard in Resources */,
 				04BAA3BD274B540600C7BD8E /* ManualBuyCollectionViewCell.xib in Resources */,
@@ -270,6 +305,67 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0425FA992767AB97000B736B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		77DC4475B61494FC71B5CAD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeSAC_Motto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0D47E5618B9646315B361F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeSAC_Motto/Pods-SeSAC_Motto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeSAC_Motto/Pods-SeSAC_Motto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SeSAC_Motto/Pods-SeSAC_Motto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		046783BC27455F6400C4C8AC /* Sources */ = {
@@ -439,11 +535,14 @@
 		};
 		046783D527455F6600C4C8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91694E05655238993266A5C9 /* Pods-SeSAC_Motto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSAC_Motto/SeSAC_Motto.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HQ9MZ38KLH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Motto/Info.plist;
@@ -460,7 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kokojong.SeSAC-Motto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -471,11 +570,13 @@
 		};
 		046783D627455F6600C4C8AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 868300AE9E912E0AEF20E1FF /* Pods-SeSAC_Motto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSAC_Motto/SeSAC_MottoRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HQ9MZ38KLH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Motto/Info.plist;
@@ -492,7 +593,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kokojong.SeSAC-Motto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
