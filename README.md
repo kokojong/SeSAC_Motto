@@ -23,7 +23,7 @@
 
 <!-- ![UI초안](https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg) -->
 
-<img src="https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg" width="600" height="400"/>
+<img src="https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg" width="600"/>
 
 기획이 개발 과정 중 수정 되었지만, 초안은 위와 같습니다.
 
@@ -59,7 +59,7 @@
 
 ## 새로 배운 것
 
-- 앱 개발부터 출시까지의 경험
+- 앱 기획부터 출시까지의 경험
 - 오토레이아웃을 통한 기기 대응(iPhone8 및 iPhone11 이상 대응)
 - Alamofire를 이용한 비동기 네트워크 통신
 - Realm을 이용한 데이터 저장 및 활용, 데이터 스키마 구성
