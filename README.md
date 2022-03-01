@@ -122,3 +122,13 @@ func saveResult(drawResult: DrawResult){
 ```
 
 </br>
+
+## 출시 정보
+
+### v1.0
+- 2021.12.03 출시
+
+### v1.1
+- 2022.02.11 업데이트
+- Firebase Crashlytics, Firebase Analytics 적용
+- 불필요한 코드 제거
