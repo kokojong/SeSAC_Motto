@@ -11,32 +11,6 @@
 
 </br>
 
-## 기획 아이디어
-
-로또 1등을 꿈꾸지만 구매하기에는 부담스럽기 때문에 모의로 구매하는 아이디어에서 출발했습니다
-
-다른 기능으로는 모의로 구매한 번호 중 이전 회차의 1등 번호와 비교하는 '아깝게 놓친 1등' 기능이 있습니다.
-
- </br>
-
-## UI 초안
-
-<!-- ![UI초안](https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg) -->
-
-<img src="https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg" width="600"/>
-
-기획이 개발 과정 중 수정 되었지만, 초안은 위와 같습니다.
-
- </br>
-
-## UI
-
-| (반)자동 모또 추가하기 | 수동 모또 추가하기 | 아깝게 놓친 1등 확인하기 |
-| ------ | ------ | ------ |
-| ![motto_auto_add](https://user-images.githubusercontent.com/61327153/155891400-5c73be86-c536-42c1-8ea4-8e4b3e3d8758.gif) | ![motto_manually_add](https://user-images.githubusercontent.com/61327153/155891402-312bae32-784d-4644-bb3e-c94659a25203.gif) | ![motto_missed_prize](https://user-images.githubusercontent.com/61327153/155891403-578b0313-01cc-434a-933f-3df14903af59.gif) |
-
-
- </br>
 
 ## 개발 기간 및 사용 기술
 
@@ -85,15 +59,28 @@
                   includedNumberList.remove(at: index)
               }
           }
-      } else {
-          if exceptedNumberList.contains(indexPath.row + 1){
-              if let index = exceptedNumberList.firstIndex(of: indexPath.row + 1) {
-                  exceptedNumberList.remove(at: index)
-
-              }
-          }
       }
+      ...
   }
+```
+```swift
+class ManualBuyCollectionViewCell: UICollectionViewCell {
+
+    static let identifier = "ManualBuyCollectionViewCell"
+    
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    override var isSelected: Bool{
+        didSet {
+            if isSelected {
+                numberLabel.textColor = .white
+                self.backgroundColor = .myOrange
+            } else {
+                numberLabel.textColor = .lightGray
+                self.backgroundColor = .clear
+            }
+        }
+    }
 ```
 
 - 과도한 API 호출로 인한 지연 -> 최신 회차의 정보부터 받아오고 이전 회차 정보는 비동기로 realm에 저장
@@ -122,6 +109,32 @@ func saveResult(drawResult: DrawResult){
 ```
 
 </br>
+
+## 기획 아이디어
+
+로또 1등을 꿈꾸지만 구매하기에는 부담스럽기 때문에 모의로 구매하는 아이디어에서 출발했습니다
+
+다른 기능으로는 모의로 구매한 번호 중 이전 회차의 1등 번호와 비교하는 '아깝게 놓친 1등' 기능이 있습니다.
+
+ </br>
+
+## UI 초안
+
+<!-- ![UI초안](https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg) -->
+
+<img src="https://user-images.githubusercontent.com/61327153/142159927-5d04c31a-4d7c-4014-ab39-ce98db63df9a.jpeg" width="600"/>
+
+기획이 개발 과정 중 수정 되었지만, 초안은 위와 같습니다.
+
+ </br>
+
+## UI
+
+| (반)자동 모또 추가하기 | 수동 모또 추가하기 | 아깝게 놓친 1등 확인하기 |
+| ------ | ------ | ------ |
+| ![motto_auto_add](https://user-images.githubusercontent.com/61327153/155891400-5c73be86-c536-42c1-8ea4-8e4b3e3d8758.gif) | ![motto_manually_add](https://user-images.githubusercontent.com/61327153/155891402-312bae32-784d-4644-bb3e-c94659a25203.gif) | ![motto_missed_prize](https://user-images.githubusercontent.com/61327153/155891403-578b0313-01cc-434a-933f-3df14903af59.gif) |
+
+ </br>
 
 ## 출시 정보
 
