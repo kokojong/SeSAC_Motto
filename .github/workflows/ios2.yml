@@ -13,7 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Build
-        run: 
+        run: |
           # xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
-          pod install --repo-update --clean-install --project-directory=/Motto/
-          xcodebuild build -workspace Motto/SeSAC-Motto.xcworkspace -scheme SeSAC-Motto -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
+          pod install --repo-update --clean-install --project-directory=/Motto
+          
+          # xcodebuild build -workspace Motto/SeSAC-Motto.xcworkspace -scheme SeSAC-Motto -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
