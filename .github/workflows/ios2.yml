@@ -1,0 +1,21 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        env:
+          scheme: ${{ 'default' }}
+          platform: ${{ 'iOS Simulator' }}
+        run: 
+          # xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
+          xcodebuild build -project SeSAC-Motto/SeSAC-Motto.xcodeproj -scheme SeSAC-Motto -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
