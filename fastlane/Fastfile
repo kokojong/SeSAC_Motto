@@ -17,26 +17,31 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :beta do
+  lane :beta do |options|
+	increment_version_number(version_number: options[:version])
 	get_certificates
     	get_provisioning_profile
-    	# increment_build_number(
-        	# build_number: latest_testflight_build_number + 1
-    	# )
-    	# build_app(
-      	# configuration: "Debug"
-    	# )
+     	api_key = app_store_connect_api_key(
+    	key_id: "N6JAFQ297C",
+    	issuer_id: "f8d1c379-27c7-42dc-97ef-e5ccb78c04d6",
+    	key_filepath: "./AuthKey_N6JAFQ297C.p8"
+  	)
+
+  pilot(api_key: api_key)
  	increment_build_number(xcodeproj: "SeSAC_Motto.xcodeproj")
     	build_app(workspace: "SeSAC_Motto.xcworkspace", scheme: "SeSAC_Motto")
-   	upload_to_testflight(skip_waiting_for_build_processing: true)
-   	send_slack
+   	upload_to_testflight(
+		skip_waiting_for_build_processing: true
+		 )
+
+#   	send_slack
 	end
 
   error do |lane, exception, options|
     	slack(
      	message: "에러 발생 : #{exception}",
       	success: false,
-      	slack_url: "https://thefastlanetest.slack.com/archives/C03JC1A164E",
+	slack_url: "https://hooks.slack.com/services/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"
     	)
 	end
 
@@ -50,7 +55,7 @@ lane :send_slack do
     slack(
       message: "앱스토어 업로드가 완료되었습니다.",
       channel: "#fastlane-테스트",
-      slack_url: "https://hooks.slack.com/services/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",
+      slack_url: "https://hooks.slack.com/services/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",
       default_payloads: [:lane, :test_result, :git_branch, :git_author],
       payload: {
 	"Version": version + " (" + build + ")"
@@ -61,6 +66,10 @@ lane :send_slack do
 lane :buildTest do
  build_app(workspace: "SeSAC_Motto.xcworkspace", scheme: "SeSAC_Motto")
    end
+
+after_all do
+	send_slack
+end
 
 
 end
