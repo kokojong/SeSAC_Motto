@@ -1,0 +1,68 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :beta do
+	get_certificates
+    	get_provisioning_profile
+    	# increment_build_number(
+        	# build_number: latest_testflight_build_number + 1
+    	# )
+    	# build_app(
+      	# configuration: "Debug"
+    	# )
+ 	increment_build_number(xcodeproj: "SeSAC_Motto.xcodeproj")
+    	build_app(workspace: "SeSAC_Motto.xcworkspace", scheme: "SeSAC_Motto")
+   	upload_to_testflight(skip_waiting_for_build_processing: true)
+   	send_slack
+	end
+
+  error do |lane, exception, options|
+    	slack(
+     	message: "에러 발생 : #{exception}",
+      	success: false,
+      	slack_url: "https://thefastlanetest.slack.com/archives/C03JC1A164E",
+    	)
+	end
+
+lane :send_slack do
+    version = get_version_number(
+	xcodeproj: "SeSAC_Motto.xcodeproj", 
+	target: "SeSAC_Motto"
+    )
+    build = get_build_number(xcodeproj: "SeSAC_Motto.xcodeproj") 
+    
+    slack(
+      message: "앱스토어 업로드가 완료되었습니다.",
+      channel: "#fastlane-테스트",
+      slack_url: "https://hooks.slack.com/services/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",
+      default_payloads: [:lane, :test_result, :git_branch, :git_author],
+      payload: {
+	"Version": version + " (" + build + ")"
+      }
+    )
+   end
+
+lane :buildTest do
+ build_app(workspace: "SeSAC_Motto.xcworkspace", scheme: "SeSAC_Motto")
+   end
+
+
+end
+
+    # add actions here: https://docs.fastlane.tools/actions
